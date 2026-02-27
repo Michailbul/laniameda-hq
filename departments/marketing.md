@@ -25,7 +25,8 @@ The seven themes we build content around:
 
 | # | Pillar | What it covers |
 |---|---|---|
-| 1 | **AI Creatorship** | Image/video/shot prompts for creators; laniameda.gallery |
+| 1 | **Art** | What art is, how to practice it, artistic vision, the compulsion to create — advice for artists, philosophy of making, the renaissance era of AI creation |
+| 2 | **AI Creatorship** | Image/video/shot prompts for creators; laniameda.gallery |
 | 2 | **Cinematic Frames & Mood Boards** | Pinterest-style prompt + reference library; visual references |
 | 3 | **Web Design + AI Design** | Carousels, landing pages, UI via generative AI; design prompts |
 | 4 | **Generative AI / AI Tools** | Tool discoveries, model comparisons, workflow breakdowns |

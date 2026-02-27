@@ -60,6 +60,7 @@ Every piece of content must map to one of these:
 
 | Pillar | Signal keywords |
 |---|---|
+| Art | what is art, artistic vision, how to practice, mastery, compulsion to create, artist philosophy, renaissance era, making things |
 | AI Creatorship | prompts, image gen, video gen, model workflow, shot breakdown |
 | Cinematic Frames | mood boards, aesthetic references, color grading, visual vibe |
 | Web / AI Design | UI, landing page, design system, generative design, component |
