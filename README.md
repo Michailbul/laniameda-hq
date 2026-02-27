@@ -30,6 +30,10 @@ laniameda-hq/
     index.md                 ← all active projects + repos + status
   agents/
     roster.md                ← Lani / Meda / Persey — roles + protocols
+  brand/
+    visual.md                ← color system, typography, shape, motion, components
+    voice.md                 ← brand voice, tone, vocabulary, what we don't say
+    content-standards.md     ← content types, quality bar, what gets killed
 ```
 
 ---
