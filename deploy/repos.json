@@ -1,5 +1,14 @@
 [
   {
+    "path": "laniameda/laniameda-hq",
+    "origin": "https://github.com/laniamedaHQ/laniameda-hq",
+    "note": "Studio ground truth — clone first"
+  },
+  {
+    "path": "laniameda/laniameda.gallery",
+    "origin": "https://github.com/laniamedaHQ/laniameda-gallery"
+  },
+  {
     "path": "ai-creator-os",
     "origin": "https://github.com/laniamedaHQ/ai-creator-os"
   },
@@ -8,8 +17,8 @@
     "origin": "https://github.com/laniamedaHQ/run-music"
   },
   {
-    "path": "laniameda/3d-particles",
-    "origin": "https://github.com/laniamedaHQ/3d-particles"
+    "path": "laniameda/laniameda-website",
+    "origin": "https://github.com/laniamedaHQ/laniameda-website"
   },
   {
     "path": "laniameda/carousel-agent",
@@ -18,22 +27,6 @@
   {
     "path": "laniameda/image-stitch",
     "origin": "https://github.com/laniamedaHQ/image-stitch"
-  },
-  {
-    "path": "laniameda/laniameda-website",
-    "origin": "https://github.com/laniamedaHQ/laniameda-website"
-  },
-  {
-    "path": "laniameda/laniameda.gallery",
-    "origin": "https://github.com/laniamedaHQ/laniameda-gallery"
-  },
-  {
-    "path": "laniameda/laniameda-hq",
-    "origin": "https://github.com/laniamedaHQ/laniameda-hq"
-  },
-  {
-    "path": "laniameda/portfolio-first",
-    "origin": "https://github.com/laniamedaHQ/portfolio-first"
   },
   {
     "path": "laniameda/portfolio-second",
