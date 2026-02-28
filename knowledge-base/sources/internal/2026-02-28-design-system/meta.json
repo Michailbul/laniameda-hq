@@ -1,0 +1,15 @@
+{
+  "title": "Laniameda Design System v1.0",
+  "type": "internal",
+  "source": "ImageStitch app (light theme) — extracted 2026-02-28",
+  "date_processed": "2026-02-28",
+  "pillar": "ai-creatorship",
+  "verdict": "useful",
+  "distilled": true,
+  "marketing_ready": false,
+  "tags": ["design-system", "tokens", "typography", "colors", "image-stitch", "laniameda"],
+  "files": {
+    "full_doc": "~/work/laniameda/laniameda-hq/studio/design-system/",
+    "pdf": "~/.openclaw/workspace-meda/projects/design-system/laniameda-design-system-v1.pdf"
+  }
+}
