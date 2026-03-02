@@ -28,6 +28,7 @@ The account has 49K followers — this isn't a viral fluke, it's consistent sign
 - Potential prompt to add to Prompt Storage vault (if full prompt text is retrieved)
 
 ## Action Items
-- [ ] Retrieve full prompt text from follow-up tweet (requires X login)
-- [ ] Add to Prompt Storage vault under `ui_design` promptType once prompt text is available
-- [ ] Consider as carousel content angle: "Modular prompt systems replace design templates"
+- [x] Attempted to retrieve full prompt text — **deleted by Amir** (confirmed via live DOM inspection)
+- [ ] Follow @AmirMushich — may release via newsletter/DM later
+- [ ] Consider recreating the concept independently in Nano Banana using the image as reference
+- [ ] Carousel content angle: "Modular prompt systems replace design templates" — can use the image directly

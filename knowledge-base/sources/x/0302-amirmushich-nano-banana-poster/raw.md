@@ -9,7 +9,7 @@ Prompt 👇
 
 **Author:** @AmirMushich — Creative Director. Ex-Warner Music, PepsiCo, Spotify designer. Fusing 10+ yr of brand & ad design with AI.
 
-**Note:** Follow-up tweet with full prompt text not retrieved (requires X login). Image saved locally.
+**Note:** Follow-up tweet with prompt text was **deleted** by Amir. Confirmed via full DOM inspection of the live page while logged in — no thread continuation exists. The "Prompt 👇" follow-up was removed after it drove engagement (common pattern: preview → delete → sell later). Image saved locally.
 
 **Image description:**
 Two brand poster cards side by side — Adidas (left) and Red Bull (right). Both use a modular geometric grid layout with overlapping circles and color blocks adapted to each brand's palette. Bottom of image shows the workflow: "Change one variable" → "Hit 'Generate' get unlimited assets". Demonstrates how one smart prompt template generates on-brand visuals across different brands by swapping variables.
