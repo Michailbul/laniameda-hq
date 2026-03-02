@@ -1,15 +1,13 @@
-# Google Calendar (via Composio)
+# Google Calendar
 
-- **Category:** integrations
-- **Status:** ✅ Active
-- **What it does:** Calendar access for reading and creating events, accessed via Composio integration
-- **What works:**
-  - Read upcoming events
-  - Create new events
-  - Check availability
-- **What doesn't work / limitations:**
-  - Access goes through Composio — adds one hop
-  - Direct Google Calendar API can be faster for complex queries
-- **How we use it:** Agents check Michael's calendar during heartbeats and when scheduling tasks
-- **Links:** https://composio.dev/tools/googlecalendar
-- **Last updated:** 2026-03-02
+**Category:** integrations  
+**Status:** ✅ Active
+
+## What It Does
+Calendar access for scheduling, event lookup, and proactive reminders.
+
+## How We Use It
+Via Composio integration + `google-calendar` skill (`~/.openclaw/workspace/skills/google-calendar/`).
+
+## Env Requirements
+Composio API key + Google Calendar authorized via Composio dashboard.
