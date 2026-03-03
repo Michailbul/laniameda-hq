@@ -69,6 +69,15 @@ This is not a content strategy. It's a worldview we build everything from.
 
 ---
 
+## The Four Principles — Studio Bible
+
+These are non-negotiable. The foundation everything is built on.
+
+1. **Marketing First** — every product, every build, every decision has a content angle
+2. **Begin with the end in mind** — know the outcome before you start
+3. **Never settle for mediocrity** — quality is non-negotiable, always
+4. **Approach everything as art** — craft, intention, and emotional depth in all work
+
 ## Core Mantras
 
 - **Marketing First** — every product decision has a content angle
