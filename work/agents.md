@@ -34,6 +34,7 @@ _The team. Roles, domains, and protocols._
 - **Works in:** All repos under `~/work/`
 - **Never:** Makes creative/marketing decisions
 
+
 ---
 
 ## Shared Rules (All Agents)
