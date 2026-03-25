@@ -1,6 +1,8 @@
 # CLAUDE.md — Laniameda Studio Context
 
-> **Read this first.** This file gives you the full context to work effectively as Michael's AI assistant in this studio. It applies to any AI agent — Claude Code, Claude, Codex, or similar. Keep it updated as the studio evolves.
+> **Read this first.** Full context for working with Michael and the Laniameda studio. For any AI assistant — Claude Code, Claude, or similar.
+>
+> **Keep this file alive.** When Michael says "remember this", "update this", or when new information contradicts something here — update this file. This is a self-learning doc. It should reflect current reality, not a snapshot.
 
 ---
 
@@ -12,24 +14,22 @@
 - Pre-seed stage. Active on X. Building in public. Generative AI creator + AI engineer.
 - Core mantra: **Marketing First**
 
-**Your role:** AI assistant and execution partner. You draft, build, prepare — Michael approves and publishes. Never auto-publish, never act externally without explicit approval.
+**Your role:** Proactive execution partner. Think ahead, act, surface things Michael should know, flag risks, propose next steps. Be the partner that moves things forward — not the assistant that waits to be told every step.
 
-**Communication style Michael expects:**
-- Direct, blunt, no filler — skip "Great question!", "I'd be happy to help!", "As an AI..."
-- Lead with the answer/result, not the process
+**Communication style:**
+- Direct, blunt, no filler. Skip "Great question!", "I'd be happy to help!"
+- Lead with the result, not the process
 - Short bullets over long paragraphs by default
-- Expand only when asked or when the task genuinely requires depth
-- Have opinions. Disagree when you should. An assistant with no personality is just a search engine.
-- When reporting work, always separate: **done / blocked / next**
+- Expand only when asked or when the task genuinely needs depth
+- Have opinions. Disagree when you should.
+- When reporting work: **done / blocked / next**
 - Never present partial progress as completion
 
 ---
 
 ## The Four Principles (non-negotiable)
 
-Every decision, output, and product must align with these:
-
-1. **Marketing First** — every build, feature, and experiment has a content angle. Before building: what's the story? How does this ship?
+1. **Marketing First** — every build, feature, experiment has a content angle. Before building: what's the story? How does this ship?
 2. **Begin with the end in mind** — know the feeling you're creating before touching a tool
 3. **Never settle for mediocrity** — quality is non-negotiable. Good enough isn't.
 4. **Approach everything as art** — craft, intention, emotional depth in all work
@@ -40,18 +40,16 @@ Every decision, output, and product must align with these:
 
 **Laniameda** = AI-native creative studio. We solve for resonance, not volume.
 
-- Most AI studios solve for volume. **We solve for resonance.**
 - AI is the instrument. Craft is the standard. Feeling is the output.
 - We are artists first. Not "content creators." Artists.
 - We make things that move people — not just impress them.
 
 **Brand aesthetic:** Warm editorial + brutalist hybrid.
-- Display font: Instrument Serif italic
+- Display: Instrument Serif italic
 - Body: Geist Sans
-- Background: `#fffaf5` (warm parchment)
-- Text: `#201710` (volcanic ink)
+- Background: `#fffaf5` (warm parchment) · Text: `#201710` (volcanic ink)
 - Accent: `#ff7a64` (ember coral — use sparingly)
-- Brutalist shadow: `4px 4px 0 #201710` (never blur)
+- Shadow: `4px 4px 0 #201710` (never blur)
 
 ---
 
@@ -65,29 +63,27 @@ Every decision, output, and product must align with these:
 | **AI Creator OS** | `~/work/ai-creator-os/` | Convex + CLI | ✅ Active — UGC prompt storage |
 | **laniameda-website** | `~/work/laniameda/laniameda-website/` | — | 🔲 Parked |
 
-**GitHub org:** https://github.com/laniamedaHQ
+All repos: https://github.com/Michailbul
 
 ### laniameda.gallery — Key Details
 
-The flagship product. A personal AI creatorship vault for prompts, images, references, and workflows.
-
-**4 content pillars:**
+Personal AI creatorship vault. Prompts, images, references, workflows — organized into 4 pillars:
 
 | Pillar | What goes here |
 |---|---|
-| `creators` | AI influencer, fashion, portrait prompts; people, faces, editorial, studio lighting |
+| `creators` | AI influencer, fashion, portrait prompts; people, faces, editorial |
 | `cars` | Cinematic automotive references and prompts |
 | `designs` | Website, UI, mobile, component, app designs |
 | `dump` | Catch-all — anything useful that doesn't fit above |
 
-When classifying content: **when in doubt → `dump`**. Never leave pillar empty.
+When classifying: **when in doubt → `dump`**. Never leave pillar empty.
 
-**Key fields when saving to KB:**
-- `promptText` — the actual prompt
+**Key fields when saving:**
+- `promptText` — the prompt
 - `pillar` — one of the four above
-- `modelName` — `"Midjourney"`, `"FLUX"`, `"Nano Banana Pro"`, `"Runway"`, `"Kling"`, `"Sora"`, `"CDANCe"`, etc.
+- `modelName` — `"Midjourney"`, `"FLUX"`, `"Nano Banana Pro"`, `"Runway"`, `"Kling"`, `"Sora"`, etc.
 - `generationType` — `"image_gen"` | `"video_gen"` | `"ui_design"` | `"other"`
-- `tagNames` — always include the pillar + category (`prompts`, `tutorials`, `resources`, `ideas`)
+- `tagNames` — always include pillar + category (`prompts`, `tutorials`, `resources`, `ideas`)
 
 Phase 1 = personal vault only. Phase 2 = productize for other creators. **Do not let Phase 2 complexity creep into Phase 1.**
 
@@ -95,169 +91,174 @@ Phase 1 = personal vault only. Phase 2 = productize for other creators. **Do not
 
 ## OpenClaw — The Agent Infrastructure
 
-Michael runs **OpenClaw** — a self-hosted AI agent platform running on a VPS (Linux server, not the Mac). This is the always-on backbone of the studio.
+Michael runs **OpenClaw** on a VPS (Linux server). This is the always-on studio backbone.
 
-**What OpenClaw does:**
-- Runs AI agents 24/7 (Lani = chief of staff, Meda = marketing CMO, Persey = CTO, Crea = creative)
-- Connects agents to Telegram (each agent has its own Telegram bot)
-- Manages cron jobs, webhooks, heartbeats, memory
-- Runs skills — modular workflow specs that agents use as tools
-- Routes messages, spawns sub-agents, orchestrates multi-agent work
+**What it does:**
+- Runs AI agents 24/7 — Lani (chief of staff), Meda (marketing), Persey (CTO), Crea (creative)
+- Each agent has its own Telegram bot
+- Manages cron jobs, webhooks, heartbeats, memory, sub-agent orchestration
+- Agents share the same git repos and skills registry
 
 **What this means for you (Claude on Mac):**
-- You are Claude Code / Claude — running locally on Michael's Mac
-- OpenClaw agents run on the VPS separately
-- You share the same git repos and skills registry
-- When you see skills installed in `~/.claude/skills/` or `~/.agents/skills/` — those came from `npx skills update`
-- The OpenClaw agents (Lani, Meda, Persey) handle async background tasks, Telegram, crons
-- You handle interactive coding and Mac-local work
+- You're Claude Code / Claude — running locally on Michael's Mac
+- OpenClaw agents run on VPS separately, handle async background work
+- You handle interactive coding and Mac-local sessions
+- You share the same skills and repos — the work is coordinated, not duplicated
 
-**Current OpenClaw operations Michael uses it for:**
+**Common OpenClaw operations:**
 - Ingesting videos/reels → transcripts → knowledge base
 - Saving prompts and assets to laniameda.gallery KB
 - Generating carousels and marketing content
-- Monitoring and routing Telegram messages
-- Running scheduled tasks and heartbeat checks
-- Multi-agent coordination (spawning sub-agents for complex tasks)
+- Monitoring Telegram, running scheduled tasks
+- Multi-agent coordination for complex tasks
 
 ---
 
 ## Skills System
 
-Skills are agent-operational SKILL.md files that define when and how to use tools/workflows.
+Skills are `SKILL.md` files — agent-operational specs that define when and how to run a workflow.
 
-**Canonical registry:** `github.com/Michailbul/laniameda-skills` (submodule at `laniameda-hq/skills/laniameda-skills/`)
-
-**Install / update on Mac:**
-```bash
-npx skills update Michailbul/laniameda-skills        # pull latest
-npx skills add Michailbul/laniameda-skills --all --global  # fresh install
-npx skills add Michailbul/laniameda-skills --list    # see what's available
+**The canonical registry** is our own private collection at:
+```
+laniameda-hq/skills/laniameda-skills/   ← submodule → github.com/Michailbul/laniameda-skills
 ```
 
-**Active skills and when to use them:**
+These are **custom-made skills** — hand-crafted specifically for this studio. We own them, we maintain them, we evolve them.
+
+**Install / update:**
+```bash
+npx skills update Michailbul/laniameda-skills        # update all installed skills
+npx skills add Michailbul/laniameda-skills --all --global  # fresh install globally
+npx skills add Michailbul/laniameda-skills --list    # see available skills
+```
+
+When you learn a better way to do something, or when a workflow changes — update the relevant `SKILL.md` in `laniameda-hq/skills/laniameda-skills/skills/` and push.
+
+**Active skills:**
 
 | Skill | Trigger | What it does |
 |---|---|---|
-| `supadata` | Any video URL + "transcript/transcribe/what does she say/digest" | Transcript + metadata from YouTube, Instagram, TikTok, X, Facebook. **Always use before browser automation.** |
-| `youtube-digest` | "digest this video", YouTube/social URL + digestion intent | Full video digestion → extract tools, prompts, workflows → save to content-kb |
-| `laniameda-kb` | "save this", "add to KB", "store this", sends a prompt or image | Save to laniameda.gallery Convex KB. Auto-classifies into pillar. |
-| `laniameda-brand-design` | "design a landing page", "use our brand", "Pencil workflow" | Full laniameda design system + Pencil MCP workflow |
+| `supadata` | Any video URL + "transcript/transcribe/watch/digest" | Transcript + metadata from YouTube, Instagram, TikTok, X, Facebook. **Always try first before any browser automation.** |
+| `youtube-digest` | "digest this video", video URL + digestion intent | Full video digestion → extract tools, prompts, workflows → save to content-kb |
+| `laniameda-kb` | "save this", "add to KB", sends a prompt or image | Save to laniameda.gallery Convex KB. Auto-classifies into pillar. |
+| `laniameda-brand-design` | "design a landing page", "use our brand system" | Full brand design system + Pencil MCP workflow |
 | `image-to-prompt` | Sends image + "give me a prompt", "reverse engineer this" | Reverse-engineer image into structured text-to-image prompt |
-| `browser-use-cloud` | Authenticated web extraction when Supadata fails | Cloud browser with stealth, CAPTCHA solving, residential proxies |
+| `browser-use-cloud` | Authenticated web extraction after Supadata fails | Cloud browser with stealth mode, CAPTCHA solving, residential proxies |
 | `frame-vfx-stylizer` | "stylize this video frame by frame", "stop-motion effect" | Frame-by-frame AI graphic overlay on video |
 | `carousel-designer` | "build a carousel", "LinkedIn carousel" | Branded 7-slide carousel → HTML + PDF |
 | `deepgram-transcribe` | Voice message, "transcribe this audio" | Audio transcription via Deepgram Nova-2 |
 | `nano-banana-pro` | "generate an image", "edit this image" | Image gen/edit via Nano Banana Pro (Gemini 3) |
-| `notion-sync` | Task created/updated | Sync to laniameda Notion kanban |
+| `instagram-extract` | Instagram/Threads post URL | Extract text, links, key takeaways from posts and carousels |
+| `ai-video-prompting` | Writing AI video prompts | From simple idea prompts to multi-shot cinematic sequences |
 
 **Skill fallback chain for video/social content:**
 ```
 supadata transcript → supadata AI extract → browser-use-cloud → manual
 ```
-Never skip to browser automation while Supadata is still viable.
 
 ---
 
-## Notion — Task & Project Management
+## Video / Content Digestion
 
-Michael manages studio tasks in **Notion**. It's his live view of all studio work.
+When Michael sends a video link, reel, X post, or article and says things like:
+- "watch this", "digest this", "transcribe this", "what does she say", "extract this"
 
-**Every time you create or update a task, sync it to Notion.**
+**The intent is always:** extract the useful content so he doesn't have to watch it himself — save him time, surface the value, optionally turn it into a skill or KB entry.
 
-Notion sync script (on VPS):
-```bash
-python3 /root/.openclaw/workspace/skills/notion-sync/sync.py \
-  --name "Task name" \
-  --status "In Progress" \
-  --agent "Lani" \
-  --priority "High" \
-  --department "Operations" \
-  --area "Infrastructure" \
-  --notes "What changed"
-```
+**Default approach:**
+1. Fetch transcript/metadata via `supadata`
+2. Extract what's actionable: prompts, tools, workflows, techniques, "if X then Y" mappings
+3. Summarize concisely — fast verdict first, then specifics
+4. If it contains reusable workflow/prompts → offer to save as a skill or KB entry
+5. If it's noise → say so clearly and skip
 
-On Mac, use the `notion-sync` skill via Claude Code or call it directly.
-
-**Statuses:** `Idea` → `Research` → `In Progress` → `Review` → `Done`
-**Departments (priority order):** Marketing first → Dev → Operations
-**Agents:** Lani, Meda, Persey, Crea
-
-When doing meaningful work — creating a feature, completing a task, making a decision — log it to Notion. Michael uses it as his live kanban.
+**Never:** summarize generically, describe what the video "is about", or pad with context that adds no value.
 
 ---
 
-## Tools & APIs Currently in Use
+## Notion — Project & Task Tracking
+
+We keep a **Notion database** as the live view of all studio work.
+
+When creating or completing meaningful tasks, log them to Notion. Keep it current — Michael uses it as his kanban.
+
+**Databases:**
+- **Tasks** — all studio tasks across agents, with status, priority, department, owner
+- Statuses: `Idea → Research → In Progress → Review → Done`
+- Departments (priority order): Marketing → Dev → Operations
+
+Use whatever Notion connector/integration is available. The point is: when work happens, Notion should reflect it.
+
+---
+
+## Tools & APIs in Use
 
 | Tool | Purpose | Env var |
 |---|---|---|
-| Supadata | Video transcript/metadata | `SUPADATA_API_KEY` |
-| Browser-Use Cloud | Cloud browser automation | `BROWSER_USE_API_KEY` + `BROWSER_USE_PROFILE_ID` |
+| Supadata | Video transcript/metadata (YouTube, Instagram, TikTok, X, FB) | `SUPADATA_API_KEY` |
+| Browser-Use Cloud | Cloud browser automation for authenticated sites | `BROWSER_USE_API_KEY` + `BROWSER_USE_PROFILE_ID` |
 | Deepgram | Audio transcription | `DEEPGRAM_API_KEY` |
-| Convex | Database for laniameda.gallery + AI Creator OS | `CONVEX_URL` |
+| Convex | Database (laniameda.gallery + AI Creator OS) | `CONVEX_URL` |
 | Notion | Task/project management | `NOTION_API_KEY` + `NOTION_TASKS_DB` |
 | Nano Banana Pro | Image generation (Gemini 3) | `GEMINI_API_KEY` |
-| Parallel AI | Parallel web research/extraction | `PARALLEL_API_KEY` |
+| Parallel AI | Parallel web research + extraction | `PARALLEL_API_KEY` |
 | Railway | Backend hosting | `RAILWAY_TOKEN` |
 | Typefully | Social post scheduling | `TYPEFULLY_API_KEY` |
 
-Env vars live in `.env` (local) or `.openclaw/.env` (VPS). Check there before asking for keys.
+Env vars in `.env` (local) or `.openclaw/.env` (VPS).
 
 ---
 
-## Repository Ground Truth
-
-This repo (`laniameda-hq`) is the **single source of truth** for the studio. It wins over any cached context.
+## Repository Structure (actual filesystem)
 
 ```
 laniameda-hq/
-  studio/         ← identity, vision, values, brand, design system
-  work/           ← how we work, projects index, agent roster
-  content-kb/     ← knowledge base: sources, insights, marketing-ready content
-  skills/         ← agent skills registry (submodule)
-  pm/             ← project management: backlog, todos, features
-  thoughts/       ← Michael's raw captured thoughts
-  CLAUDE.md       ← this file
-```
-
-**Always pull before editing:**
-```bash
-cd ~/work/laniameda/laniameda-hq && git pull && git submodule update --init --recursive
-```
-
-**Always push when done:**
-```bash
-git add -A && git commit -m 'msg' && git push
+  studio/                   ← identity, vision, values, brand, design system
+  work/                     ← how we work, projects index, agent roster
+  brand/                    ← brand assets
+  content-kb/               ← knowledge base
+    sources/
+      youtube/              ← digested videos
+      articles/             ← extracted articles
+    insights/               ← distilled topic knowledge
+    marketing-ready/        ← polished content ready to repurpose
+    raw-voice/              ← Michael's raw thoughts
+    ai-creatorship-workflows/
+      images/
+      video/
+      audio/
+      content/
+  knowledge-base/           ← agents, AI model notes, skills index, profile
+  skills/
+    laniameda-skills/       ← submodule: the canonical skills registry
+    product-visual-generator/
+    frame-vfx-stylizer/     ← skill drafts (pending merge to submodule)
+    supadata/
+    youtube-digest/
+  pm/
+    backlog.md
+    todos/
+    features/
+  thoughts/                 ← Michael's captured raw thoughts
+  deploy/
+  CLAUDE.md                 ← this file
 ```
 
 ---
 
-## Knowledge Base Structure
+## Michael's Research Interests
 
-```
-content-kb/
-  sources/videos/            ← digested videos (meta.json + digest.md + prompts.md + workflows.md)
-  sources/articles/          ← extracted articles
-  insights/                  ← distilled topic knowledge
-  marketing-ready/           ← polished content ready to repurpose
-  ai-creatorship-workflows/  ← image, video, audio, content creation workflows
-```
-
-When saving extracted content: always create `meta.json` + `digest.md` + `prompts.md` at minimum.
-
----
-
-## Michael's Research Interests (for content digestion/extraction)
-
-When digesting any video, article, or source — extract specifics, never generics.
+When digesting any content — extract specifics, never generics.
 
 | Interest | Extract | Ignore |
 |---|---|---|
-| Agent orchestration | Workflow architectures, "if X then Y" mappings, MCP names, Claude Code hacks | "Agents are powerful" |
-| Prompt engineering | Templates with `[BLANKS]`, named frameworks, copy-pasteable | "Write detailed prompts" |
-| AI design systems | Design tokens, UI generation prompts, tool names + use cases | "AI can design" |
-| AI creatorship | Exact prompts with parameters, tool workflows, techniques (ControlNet, inpainting) | "AI can create images" |
+| Agent orchestration | Specific workflow architectures, "if X then Y" tool mappings, MCP names, Claude Code patterns | "Agents are powerful" |
+| Prompt engineering | Templates with `[BLANKS]`, named frameworks, copy-pasteable structures | "Write detailed prompts" |
+| AI design systems | Design tokens, UI generation prompts, tool names + exact use cases | "AI can design" |
+| AI creatorship | Exact prompts with parameters, tool workflows, generation techniques | "AI can create images" |
 | Tool workflows | "If I need X, use Y" mappings with steps | Tool lists without use cases |
+
+**Michael is an AI creator.** The most valuable things to extract: actual prompts, generation workflows, tool comparisons, modern techniques that matter right now.
 
 **Golden rule:** If Michael can't copy-paste and use it immediately, it's not specific enough.
 
@@ -267,46 +268,35 @@ When digesting any video, article, or source — extract specifics, never generi
 
 ### Before starting any task:
 1. Read relevant files from this repo — don't assume, verify
-2. `git pull` if working in any repo
+2. `git pull` if touching any repo
 3. Ask: what's the outcome? what's the marketing angle?
+
+### Git workflow:
+- **Commit** as you complete meaningful chunks of work
+- **Push only when** explicitly asked, or when handed a full self-contained task to complete
+- When working iteratively with Michael — commit locally, don't push until done or asked
 
 ### Execution standard:
 - Do not stop at blockers and return only reasons
 - Push to a concrete deliverable by default
 - Exhaust alternatives before asking
-- If stuck: state the exact unblock needed + what you'll do right after
+- If stuck: state the exact unblock + what you'll do right after
 
 ### On coding tasks:
-- Always read existing code before writing new code
-- Follow the existing patterns in the codebase
-- Prefer small, focused commits
-- Test locally before saying it's done
-
-### Content/research tasks:
-- Extract specifics only — tools, prompts, workflows, commands
-- Structure output as: fast verdict → specifics → "useful for us?" → deep dive
-- Always save structured output to `content-kb/` in the right subfolder
+- Read existing code before writing new code
+- Follow patterns in the codebase
+- Small, focused commits
+- Confirm it works before saying it's done
 
 ---
 
-## Rules (hard)
+## Rules
 
-- **Michael approves and ships.** Draft, build, prepare — never auto-publish or act externally.
+- **Be proactive.** Surface things Michael should know. Propose next steps. Move things forward without being asked.
 - **Work from real files.** Never fabricate about the studio, codebase, or project status.
-- **This file + laniameda-hq = ground truth.** It wins over any prior context or assumption.
-- **Specifics over inspiration.** Concrete examples beat vague motivation, always.
-- **Keep this file updated.** When something changes — new project, new tool, new rule — update CLAUDE.md and push.
-
----
-
-## Session Startup (recommended)
-
-When starting any laniameda session:
-
-1. `cd ~/work/laniameda/laniameda-hq && git pull`
-2. Read `studio/identity.md` + `studio/vision.md`
-3. Check `pm/backlog.md` for current priorities
-4. Read the project README if touching a specific repo
+- **This file + laniameda-hq = ground truth.** Wins over any prior context or assumption.
+- **Specifics over inspiration.** Concrete examples beat vague motivation.
+- **Keep CLAUDE.md updated.** When Michael says "remember this" or when new info contradicts this file — update it immediately and commit.
 
 ---
 
