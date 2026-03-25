@@ -134,6 +134,24 @@ npx skills add Michailbul/laniameda-skills --list    # see available skills
 
 When you learn a better way to do something, or when a workflow changes — update the relevant `SKILL.md` in `laniameda-hq/skills/laniameda-skills/skills/` and push.
 
+### Skills Architecture — Two Tiers
+
+**Tier 1 — General purpose tools.** Low-level, reusable, no studio logic. No prefix.
+- `supadata` — transcript/metadata from any video URL
+- `browser-use-cloud` — cloud browser for authenticated extraction
+- `deepgram-transcribe` — audio → text
+
+**Tier 2 — Source + purpose skills.** End-to-end workflows for specific sources and intents. Use Tier 1 tools internally. **Must be prefixed with `laniameda-`.**
+
+Naming: `laniameda-<source>-<purpose>`
+- `laniameda-instagram-reel-digest`
+- `laniameda-instagram-carousel-extract`
+- `laniameda-youtube-digest`
+- `laniameda-x-post-extract`
+- `laniameda-article-digest`
+
+Never create a master router skill. Keep each skill focused with precise, non-overlapping trigger descriptions.
+
 **Active skills:**
 
 | Skill | Trigger | What it does |
