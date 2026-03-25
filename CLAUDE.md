@@ -227,8 +227,26 @@ Use whatever Notion connector/integration is available. The point is: when work 
 | Parallel AI | Parallel web research + extraction | `PARALLEL_API_KEY` |
 | Railway | Backend hosting | `RAILWAY_TOKEN` |
 | Typefully | Social post scheduling | `TYPEFULLY_API_KEY` |
+| **Composio** | External app integrations (Gmail, LinkedIn, Google Docs, YouTube, Reddit, Drive, PDF tools) | `COMPOSIO_CONSUMER_KEY` |
 
 Env vars in `.env` (local) or `.openclaw/.env` (VPS).
+
+### Composio — Connected Apps
+
+Composio is installed as an OpenClaw plugin. These apps are connected and ready to use:
+
+| App | Capabilities |
+|---|---|
+| **Gmail** | Read/send emails, search inbox, reply to threads |
+| **LinkedIn** | Post content, fetch profile data |
+| **Google Docs** | Read, create, update documents |
+| **YouTube** | Video metadata, channel info |
+| **Reddit** | Read posts, subreddit content |
+| **Google Drive** | Upload/download files, create docs |
+
+Also supports: **PDF/document generation** (HTML → PDF, text → structured doc).
+
+**Usage:** Call `COMPOSIO_SEARCH_TOOLS` first to discover tools for a given app, then execute via `COMPOSIO_MULTI_EXECUTE_TOOL`. Consumer key: `ck_uJ1EXyHwSE0QNxXZMI5_`.
 
 ---
 
