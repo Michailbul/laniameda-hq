@@ -120,19 +120,24 @@ Skills are `SKILL.md` files — agent-operational specs that define when and how
 
 **The canonical registry** is our own private collection at:
 ```
-laniameda-hq/skills/laniameda-skills/   ← submodule → github.com/Michailbul/laniameda-skills
+laniameda-hq/laniameda-skills/   ← submodule → github.com/Michailbul/laniameda-skills
 ```
 
 These are **custom-made skills** — hand-crafted specifically for this studio. We own them, we maintain them, we evolve them.
 
-**Install / update:**
+**Install / update laniameda skills:**
 ```bash
-npx skills update Michailbul/laniameda-skills        # update all installed skills
-npx skills add Michailbul/laniameda-skills --all --global  # fresh install globally
-npx skills add Michailbul/laniameda-skills --list    # see available skills
+cd ~/work/laniameda/laniameda-hq/laniameda-skills
+git pull
+./install-skills.sh              # sync all skills to ~/.agents/skills/ + ~/.claude/skills/
+./install-skills.sh supadata     # sync a single skill
 ```
 
-When you learn a better way to do something, or when a workflow changes — update the relevant `SKILL.md` in `laniameda-hq/skills/laniameda-skills/skills/` and push.
+**How it works:** Skills are organized in `skills/<category>/<skill>/` folders. `npx skills` can't discover nested dirs, so `install-skills.sh` copies them directly to `~/.agents/skills/` and creates symlinks in `~/.claude/skills/`. No `npx skills` needed for laniameda skills.
+
+**For third-party skills** (not ours), still use `npx skills add <source> --all --global`.
+
+When you learn a better way to do something, or when a workflow changes — update the relevant `SKILL.md` in `laniameda-hq/laniameda-skills/skills/<category>/` and push.
 
 ### Skills Architecture — Two Tiers
 
