@@ -85,6 +85,22 @@ Flow → switch to "Ingredients to Video" → upload character sheet → prompt 
 
 ---
 
+## Prompt Philosophy (from Notion page)
+
+The prompts work by **replacing CG/game language with photographic language**:
+
+| Avoid | Use |
+|-------|-----|
+| "Character reference sheet" | "Photographic identity sheet" |
+| "Model turnaround" | "Contact sheet" |
+| A-pose | Natural, casual stance |
+| Mechanical perfection | Identity consistency without symmetry |
+| 3D render/CGI/game character | Real photography, documentary feel |
+
+This keeps consistency but restores human realism.
+
+---
+
 ## Notes on Model
 - Author says Nano Banana 2 is "even stronger" than Nano Banana Pro for this workflow
 - Most demo footage was Nano Banana Pro (via Google Flow)
