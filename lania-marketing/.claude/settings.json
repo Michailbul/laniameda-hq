@@ -1,0 +1,19 @@
+{
+  "env": {
+    "LANIA_MARKETING_VERSION": "0.1.0"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "MultiEdit",
+      "Glob",
+      "Grep",
+      "Task",
+      "SlashCommand",
+      "WebSearch",
+      "WebFetch(domain:*)"
+    ]
+  }
+}

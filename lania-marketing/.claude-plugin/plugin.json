@@ -1,0 +1,7 @@
+{
+  "name": "lania-marketing-assistant",
+  "version": "0.1.0",
+  "description": "Claude Code marketing assistant for research, post drafting, repurposing, and carousel generation",
+  "commands": "./.claude/commands",
+  "agents": "./.claude/agents"
+}

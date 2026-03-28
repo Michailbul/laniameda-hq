@@ -87,6 +87,12 @@ When classifying: **when in doubt → `dump`**. Never leave pillar empty.
 
 Phase 1 = personal vault only. Phase 2 = productize for other creators. **Do not let Phase 2 complexity creep into Phase 1.**
 
+**Gallery ingest rule — images are mandatory:**
+- When saving prompts from any source (PDF, doc, website, video), **always extract and attach the associated images**. Prompts without images are the exception, not the default.
+- If images exist in the source material, extract them before ingesting. If images are >5MB, compress to JPEG first.
+- **Never silently save prompt-only when images were available.** If images can't be fetched, tell Michael explicitly before proceeding with prompt-only saves.
+- `allowPromptOnly: true` is a last resort — not a convenience shortcut.
+
 ---
 
 ## OpenClaw — The Agent Infrastructure
