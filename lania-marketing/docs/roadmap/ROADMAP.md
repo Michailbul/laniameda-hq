@@ -3,7 +3,7 @@
 ## Now (this week)
 - [ ] Marketing Pipeline MVP (no video): capture → distill → draft → approve → post → archive
 - [ ] Establish carousel template (fast, consistent, reusable)
-- [ ] Set up daily PM review loop (cron)
+- [x] Set up daily PM review loop (cron) ✅
 
 ## Next
 - [ ] Notion integration (dashboard frontend)

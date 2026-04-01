@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laniameda — Brand Picker</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@700&family=Chakra+Petch:wght@700&family=Darker+Grotesque:wght@400;900&family=Fraunces:opsz,wght@9..144,900&family=Geist:wght@400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&family=Space+Mono:wght@400&family=Syne:wght@700;800&family=Syne+Mono&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0e0c0a;
+    color: #F0EBE8;
+    font-family: 'Inter', sans-serif;
+    padding: 60px 40px 160px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    color: #8a8078;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .instructions {
+    color: #5a554e;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+
+  .instructions span { color: #F26157; }
+
+  h2 {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  .section {
+    margin-bottom: 56px;
+  }
+
+  .section-sub {
+    color: #5a554e;
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ===== SELECTABLE ITEMS ===== */
+  .selectable {
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .selectable::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 14px;
+    border: 2.5px solid transparent;
+    transition: border-color 0.2s;
+    pointer-events: none;
+  }
+
+  .selectable.selected::after {
+    border-color: #F26157;
+  }
+
+  .selectable.selected::before {
+    content: '✓';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background: #F26157;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    z-index: 10;
+  }
+
+  .selectable:hover { transform: translateY(-2px); }
+
+  /* ===== COLOR SWATCHES ===== */
+  .color-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    min-width: 130px;
+    max-width: 180px;
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1a1714;
+    border: 1px solid #2a2520;
+  }
+
+  .swatch-color { height: 88px; }
+
+  .swatch-info { padding: 10px 12px; }
+
+  .swatch-name {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
+  }
+
+  .swatch-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #6a6058;
+  }
+
+  /* ===== FONT PAIRINGS ===== */
+  .font-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  .font-card {
+    background: #151310;
+    border: 1px solid #2a2520;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .font-card .pair-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #4a4540;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .font-card .headline-demo { margin-bottom: 6px; line-height: 1.1; }
+  .font-card .body-demo { line-height: 1.55; opacity: 0.5; font-size: 0.78rem; }
+
+  /* ===== COMBO CARDS ===== */
+  .combo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .combo-card {
+    aspect-ratio: 1080 / 1350;
+    border-radius: 12px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .combo-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+  }
+
+  .combo-card .accent-bar {
+    width: 32px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+
+  .combo-card h3 { line-height: 1.05; letter-spacing: -0.02em; }
+
+  .combo-card .body-text {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+
+  .combo-card .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.25;
+    margin-top: 8px;
+  }
+
+  /* ===== GRADIENT STRIPS ===== */
+  .grad-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .grad-strip {
+    flex: 1;
+    min-width: 160px;
+    height: 64px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px 12px;
+    overflow: hidden;
+  }
+
+  .grad-strip span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    opacity: 0.6;
+  }
+
+  /* ===== FLOATING SUMMARY BAR ===== */
+  .summary-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #191919;
+    border-top: 1px solid #2a2520;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(25, 25, 25, 0.95);
+  }
+
+  .summary-bar .count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #8a8078;
+  }
+
+  .summary-bar .count strong {
+    color: #F26157;
+    font-size: 1.1rem;
+  }
+
+  .summary-bar .actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-clear {
+    background: #2a2520;
+    color: #8a8078;
+  }
+  .btn-clear:hover { background: #3a3530; }
+
+  .btn-export {
+    background: #F26157;
+    color: #fff;
+    font-weight: 600;
+  }
+  .btn-export:hover { background: #d4524a; }
+
+  /* ===== EXPORT MODAL ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.visible { display: flex; }
+
+  .modal {
+    background: #1a1714;
+    border: 1px solid #2a2520;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .modal h3 {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .modal .hint {
+    font-size: 0.75rem;
+    color: #5a554e;
+    margin-bottom: 16px;
+  }
+
+  .modal textarea {
+    width: 100%;
+    min-height: 300px;
+    background: #0e0c0a;
+    border: 1px solid #2a2520;
+    border-radius: 8px;
+    color: #F0EBE8;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 16px;
+    line-height: 1.6;
+    resize: vertical;
+  }
+
+  .modal .modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    justify-content: flex-end;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #1a1714;
+    margin: 40px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Brand Picker</h1>
+<p class="subtitle">click everything you like — colors, fonts, combos, gradients</p>
+<p class="instructions">
+  Tap to select, tap again to deselect. Pick as many as you want across all categories.
+  When done, hit <span>Export Picks</span> at the bottom — copy the summary and paste it back to me.
+</p>
+
+<!-- ===== ACCENT COLORS ===== -->
+<div class="section">
+  <h2>Accent Colors</h2>
+  <p class="section-sub">Pick the accent colors that feel right alongside Coral + Carbon + Teal + Linen</p>
+
+  <div class="color-grid">
+    <div class="swatch selectable" data-type="color" data-id="Amber #E8A838">
+      <div class="swatch-color" style="background: #E8A838;"></div>
+      <div class="swatch-info"><div class="swatch-name">Amber</div><div class="swatch-hex">#E8A838</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Plum #6B3A5E">
+      <div class="swatch-color" style="background: #6B3A5E;"></div>
+      <div class="swatch-info"><div class="swatch-name">Plum</div><div class="swatch-hex">#6B3A5E</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Slate Blue #4A5E7A">
+      <div class="swatch-color" style="background: #4A5E7A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Slate Blue</div><div class="swatch-hex">#4A5E7A</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Charcoal Violet #3D2E42">
+      <div class="swatch-color" style="background: #3D2E42;"></div>
+      <div class="swatch-info"><div class="swatch-name">Charcoal Violet</div><div class="swatch-hex">#3D2E42</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Graphite #3A3A3A">
+      <div class="swatch-color" style="background: #3A3A3A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Graphite</div><div class="swatch-hex">#3A3A3A</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Muted Teal #5E8E7A">
+      <div class="swatch-color" style="background: #5E8E7A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Muted Teal</div><div class="swatch-hex">#5E8E7A</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Vermillion #E23D28">
+      <div class="swatch-color" style="background: #E23D28;"></div>
+      <div class="swatch-info"><div class="swatch-name">Vermillion</div><div class="swatch-hex">#E23D28</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Electric Cream #FFF0B3">
+      <div class="swatch-color" style="background: #FFF0B3;"></div>
+      <div class="swatch-info"><div class="swatch-name">Electric Cream</div><div class="swatch-hex">#FFF0B3</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Ochre Gold #D4A042">
+      <div class="swatch-color" style="background: #D4A042;"></div>
+      <div class="swatch-info"><div class="swatch-name">Ochre Gold</div><div class="swatch-hex">#D4A042</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Rust #8B4A3A">
+      <div class="swatch-color" style="background: #8B4A3A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Rust</div><div class="swatch-hex">#8B4A3A</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Iron #2A2A2E">
+      <div class="swatch-color" style="background: #2A2A2E;"></div>
+      <div class="swatch-info"><div class="swatch-name">Iron</div><div class="swatch-hex">#2A2A2E</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Sage #8A9E7A">
+      <div class="swatch-color" style="background: #8A9E7A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Sage</div><div class="swatch-hex">#8A9E7A</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Forest #5A6E5A">
+      <div class="swatch-color" style="background: #5A6E5A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Forest</div><div class="swatch-hex">#5A6E5A</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Bone #E8DED1">
+      <div class="swatch-color" style="background: #E8DED1;"></div>
+      <div class="swatch-info"><div class="swatch-name">Bone</div><div class="swatch-hex">#E8DED1</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Warm White #F5EDE4">
+      <div class="swatch-color" style="background: #F5EDE4;"></div>
+      <div class="swatch-info"><div class="swatch-name">Warm White</div><div class="swatch-hex">#F5EDE4</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Dusty Rose #C47D7D">
+      <div class="swatch-color" style="background: #C47D7D;"></div>
+      <div class="swatch-info"><div class="swatch-name">Dusty Rose</div><div class="swatch-hex">#C47D7D</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Deep Indigo #2E2A5E">
+      <div class="swatch-color" style="background: #2E2A5E;"></div>
+      <div class="swatch-info"><div class="swatch-name">Deep Indigo</div><div class="swatch-hex">#2E2A5E</div></div>
+    </div>
+    <div class="swatch selectable" data-type="color" data-id="Burnt Sienna #C2622D">
+      <div class="swatch-color" style="background: #C2622D;"></div>
+      <div class="swatch-info"><div class="swatch-name">Burnt Sienna</div><div class="swatch-hex">#C2622D</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== FONT PAIRINGS ===== -->
+<div class="section">
+  <h2>Font Pairings</h2>
+  <p class="section-sub">Pick which pairings you want in the final system</p>
+
+  <div class="font-grid">
+    <div class="font-card selectable" data-type="font" data-id="Fraunces Black + Geist Regular">
+      <div class="pair-id">01 — Fraunces + Geist</div>
+      <div class="headline-demo" style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.5rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'Geist', sans-serif;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+    <div class="font-card selectable" data-type="font" data-id="Syne ExtraBold + Space Mono Regular">
+      <div class="pair-id">02 — Syne ExtraBold + Space Mono</div>
+      <div class="headline-demo" style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'Space Mono', monospace;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+    <div class="font-card selectable" data-type="font" data-id="Cormorant Bold + Geist Regular">
+      <div class="pair-id">03 — Cormorant Bold + Geist</div>
+      <div class="headline-demo" style="font-family: 'Cormorant', serif; font-weight: 700; font-size: 1.7rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'Geist', sans-serif;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+    <div class="font-card selectable" data-type="font" data-id="Darker Grotesque Black + JetBrains Mono Regular">
+      <div class="pair-id">04 — Darker Grotesque + JetBrains Mono</div>
+      <div class="headline-demo" style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 1.7rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'JetBrains Mono', monospace;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+    <div class="font-card selectable" data-type="font" data-id="Syne Mono Regular + JetBrains Mono Regular">
+      <div class="pair-id">05 — Syne Mono + JetBrains Mono</div>
+      <div class="headline-demo" style="font-family: 'Syne Mono', monospace; font-size: 1.3rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'JetBrains Mono', monospace;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+    <div class="font-card selectable" data-type="font" data-id="Chakra Petch Bold + Darker Grotesque Regular">
+      <div class="pair-id">06 — Chakra Petch + Darker Grotesque</div>
+      <div class="headline-demo" style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'Darker Grotesque', sans-serif; font-size: 0.85rem;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+    <div class="font-card selectable" data-type="font" data-id="Syne Bold + JetBrains Mono Regular">
+      <div class="pair-id">07 — Syne Bold + JetBrains Mono</div>
+      <div class="headline-demo" style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F26157;">Feel something real</div>
+      <div class="body-demo" style="font-family: 'JetBrains Mono', monospace;">The audience should feel something. That is the only metric worth tracking.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== PALETTE DIRECTIONS ===== -->
+<div class="section">
+  <h2>Palette Directions</h2>
+  <p class="section-sub">Pick full directions you gravitate toward — or just pick individual pieces below</p>
+
+  <div class="combo-grid">
+
+    <!-- B: Midnight Studio -->
+    <div class="combo-card selectable" data-type="combo" data-id="DIRECTION: B Midnight Studio — Amber, Slate Blue, Plum, Sage, Warm White" style="background: linear-gradient(180deg, #191919 0%, #4A5E7A 50%, #6B3A5E 100%); color: #FFF4EA; border: 1px solid #4A5E7A;">
+      <div>
+        <div class="label">Direction B — Midnight Studio</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A838;">Late-night creative session.</h3>
+        <p style="font-size: 0.72rem; margin-top: 8px; opacity: 0.5; font-family: 'JetBrains Mono', monospace;">Amber + Slate Blue + Plum + Sage + Warm White</p>
+      </div>
+      <div style="display: flex; gap: 6px;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #E8A838;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #4A5E7A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #6B3A5E;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #8A9E7A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #F5EDE4;"></div>
+      </div>
+    </div>
+
+    <!-- C: Signal + Silence -->
+    <div class="combo-card selectable" data-type="combo" data-id="DIRECTION: C Signal+Silence — Vermillion, Electric Cream, Graphite, Muted Teal, Charcoal Violet" style="background: linear-gradient(180deg, #191919 0%, #3A3A3A 50%, #3D2E42 100%); color: #FFF4EA; border: 1px solid #3A3A3A;">
+      <div>
+        <div class="label">Direction C — Signal + Silence</div>
+        <div class="accent-bar" style="background: #E23D28;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E23D28;">When color hits, it hits.</h3>
+        <p style="font-size: 0.72rem; margin-top: 8px; opacity: 0.5; font-family: 'JetBrains Mono', monospace;">Vermillion + Electric Cream + Graphite + Muted Teal + Charcoal Violet</p>
+      </div>
+      <div style="display: flex; gap: 6px;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #E23D28;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #FFF0B3;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #3A3A3A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #5E8E7A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #3D2E42;"></div>
+      </div>
+    </div>
+
+    <!-- D: Dusk Protocol -->
+    <div class="combo-card selectable" data-type="combo" data-id="DIRECTION: D Dusk Protocol — Plum, Charcoal Violet, Amber, Graphite, Electric Cream" style="background: linear-gradient(180deg, #3D2E42 0%, #6B3A5E 100%); color: #FFF0B3; border: 1px solid #6B3A5E;">
+      <div>
+        <div class="label">Direction D — Dusk Protocol</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A838;">Midnight velvet.</h3>
+        <p style="font-size: 0.72rem; margin-top: 8px; opacity: 0.5; font-family: 'JetBrains Mono', monospace;">Plum + Charcoal Violet + Amber + Graphite + Electric Cream</p>
+      </div>
+      <div style="display: flex; gap: 6px;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #6B3A5E;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #3D2E42;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #E8A838;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #3A3A3A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #FFF0B3;"></div>
+      </div>
+    </div>
+
+    <!-- F: Atelier -->
+    <div class="combo-card selectable" data-type="combo" data-id="DIRECTION: F Atelier — Plum, Slate Blue, Amber, Graphite, Muted Teal" style="background: linear-gradient(180deg, #191919 0%, #4A5E7A 40%, #6B3A5E 100%); color: #FFF4EA; border: 1px solid #F26157;">
+      <div>
+        <div class="label" style="color: #F26157;">Direction F — Atelier ★ recommended</div>
+        <div class="accent-bar" style="background: #F26157;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A838;">Studio warmth. Most range.</h3>
+        <p style="font-size: 0.72rem; margin-top: 8px; opacity: 0.5; font-family: 'JetBrains Mono', monospace;">Plum + Slate Blue + Amber + Graphite + Muted Teal</p>
+      </div>
+      <div style="display: flex; gap: 6px;">
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #6B3A5E;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #4A5E7A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #E8A838;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #3A3A3A;"></div>
+        <div style="width: 28px; height: 28px; border-radius: 50%; background: #5E8E7A;"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== COMBO CARDS ===== -->
+<div class="section">
+  <h2>Combo Cards</h2>
+  <p class="section-sub">Pick the color + font + mood combos that feel like laniameda</p>
+
+  <div class="combo-grid">
+
+    <!-- B originals -->
+    <!-- B1: Dark + Amber + DG+JetBrains -->
+    <div class="combo-card selectable" data-type="combo" data-id="[B] Carbon bg + Amber head / DG+JetBrains" style="background: #191919; color: #F5EDE4;">
+      <div>
+        <div class="label">[B] Carbon + Amber</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 2.2rem; color: #E8A838;">The work has weight or it doesn't ship.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">AI is how we build. Craft is the filter.</p>
+        <div class="meta">Darker Grotesque + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- B2: Plum + Coral + Fraunces -->
+    <div class="combo-card selectable" data-type="combo" data-id="[B] Plum bg + Coral head / Fraunces+Geist" style="background: #6B3A5E; color: #F5EDE4;">
+      <div>
+        <div class="label">[B] Plum + Coral</div>
+        <div class="accent-bar" style="background: #F26157;"></div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.9rem; color: #F26157;">Resonance over volume.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif;">We solve for what stays with people.</p>
+        <div class="meta">Fraunces + Geist</div>
+      </div>
+    </div>
+
+    <!-- B3: Slate + Linen + Cormorant -->
+    <div class="combo-card selectable" data-type="combo" data-id="[B] Slate Blue bg + Amber accent / Cormorant+Geist" style="background: #4A5E7A; color: #FFF4EA;">
+      <div>
+        <div class="label">[B] Slate Blue + warm text</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Cormorant', serif; font-weight: 700; font-size: 2.2rem;">Build in the open.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif;">Pre-seed, public, unapologetic.</p>
+        <div class="meta">Cormorant + Geist</div>
+      </div>
+    </div>
+
+    <!-- C originals -->
+    <!-- C1: Carbon + Vermillion + Chakra Petch -->
+    <div class="combo-card selectable" data-type="combo" data-id="[C] Carbon bg + Vermillion head / Chakra Petch+DG" style="background: #191919; color: #FFF4EA;">
+      <div>
+        <div class="label">[C] Carbon + Vermillion</div>
+        <div class="accent-bar" style="background: #E23D28;"></div>
+        <h3 style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.9rem; color: #E23D28;">The work has weight.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Darker Grotesque', sans-serif; font-size: 0.85rem;">Or it doesn't ship. That is the only rule.</p>
+        <div class="meta">Chakra Petch + Darker Grotesque</div>
+      </div>
+    </div>
+
+    <!-- C2: Charcoal Violet + Electric Cream + Syne ExtraBold -->
+    <div class="combo-card selectable" data-type="combo" data-id="[C] Charcoal Violet bg + Electric Cream / Syne ExtraBold+Space Mono" style="background: #3D2E42; color: #FFF0B3;">
+      <div>
+        <div class="label">[C] Charcoal Violet + Cream</div>
+        <div class="accent-bar" style="background: #FFF0B3;"></div>
+        <h3 style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem;">Resonance over volume.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Space Mono', monospace; color: #c8b888;">We solve for what stays with people.</p>
+        <div class="meta">Syne ExtraBold + Space Mono</div>
+      </div>
+    </div>
+
+    <!-- C3: Graphite + Muted Teal + Syne Mono -->
+    <div class="combo-card selectable" data-type="combo" data-id="[C] Graphite bg + Muted Teal head / Syne Mono+JetBrains" style="background: #3A3A3A; color: #FFF4EA;">
+      <div>
+        <div class="label">[C] Graphite + Muted Teal</div>
+        <div class="accent-bar" style="background: #5E8E7A;"></div>
+        <h3 style="font-family: 'Syne Mono', monospace; font-size: 1.35rem; color: #5E8E7A;">Build in the open.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">Pre-seed, public, unapologetic.</p>
+        <div class="meta">Syne Mono + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 1: Charcoal Violet + Amber + Fraunces -->
+    <div class="combo-card selectable" data-type="combo" data-id="Charcoal Violet bg + Amber head / Fraunces+Geist" style="background: #3D2E42; color: #FFF0B3;">
+      <div>
+        <div class="label">Charcoal Violet + Amber</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.8rem; color: #E8A838;">The work has weight or it doesn't ship.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif; color: #d4c8a0;">AI is how we build. Craft is the filter.</p>
+        <div class="meta">Fraunces + Geist</div>
+      </div>
+    </div>
+
+    <!-- 2: Carbon + Coral + Syne ExtraBold -->
+    <div class="combo-card selectable" data-type="combo" data-id="Carbon bg + Coral head / Syne ExtraBold+Space Mono" style="background: #191919; color: #FFF4EA;">
+      <div>
+        <div class="label">Carbon + Coral</div>
+        <div class="accent-bar" style="background: #F26157;"></div>
+        <h3 style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.7rem; color: #F26157;">Resonance over volume.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Space Mono', monospace;">We solve for what stays with people.</p>
+        <div class="meta">Syne ExtraBold + Space Mono</div>
+      </div>
+    </div>
+
+    <!-- 3: Plum + Electric Cream + Cormorant -->
+    <div class="combo-card selectable" data-type="combo" data-id="Plum bg + Electric Cream head / Cormorant+Geist" style="background: #6B3A5E; color: #FFF4EA;">
+      <div>
+        <div class="label">Plum + Electric Cream</div>
+        <div class="accent-bar" style="background: #FFF0B3;"></div>
+        <h3 style="font-family: 'Cormorant', serif; font-weight: 700; font-size: 2rem; color: #FFF0B3;">Artists first. Always.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif;">Every pixel carries intention.</p>
+        <div class="meta">Cormorant + Geist</div>
+      </div>
+    </div>
+
+    <!-- 4: Carbon + Amber + DG -->
+    <div class="combo-card selectable" data-type="combo" data-id="Carbon bg + Amber head / DG+JetBrains" style="background: #191919; color: #FFF4EA;">
+      <div>
+        <div class="label">Carbon + Amber</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 2.2rem; color: #E8A838;">Build in the open.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">The work speaks before the funding does.</p>
+        <div class="meta">Darker Grotesque + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 5: Slate Blue + Linen + Syne Bold -->
+    <div class="combo-card selectable" data-type="combo" data-id="Slate Blue bg + Linen text / Syne Bold+JetBrains" style="background: #4A5E7A; color: #FFF4EA;">
+      <div>
+        <div class="label">Slate Blue + Linen</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.8rem;">Craft is the filter.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">Good enough is not a standard we recognize.</p>
+        <div class="meta">Syne Bold + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 6: Linen + Plum head + Syne ExtraBold -->
+    <div class="combo-card selectable" data-type="combo" data-id="Linen bg + Plum head / Syne ExtraBold+Space Mono" style="background: #FFF4EA; color: #191919;">
+      <div>
+        <div class="label">Linen + Plum headline</div>
+        <div class="accent-bar" style="background: #6B3A5E;"></div>
+        <h3 style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; color: #6B3A5E;">Feel something.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Space Mono', monospace; color: #3a3530;">That is the only metric worth tracking.</p>
+        <div class="meta" style="color: #8a8078;">Syne ExtraBold + Space Mono</div>
+      </div>
+    </div>
+
+    <!-- 7: Graphite + Muted Teal + Chakra Petch -->
+    <div class="combo-card selectable" data-type="combo" data-id="Graphite bg + Muted Teal head / Chakra Petch+DG" style="background: #3A3A3A; color: #FFF4EA;">
+      <div>
+        <div class="label">Graphite + Muted Teal</div>
+        <div class="accent-bar" style="background: #5E8E7A;"></div>
+        <h3 style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.7rem; color: #5E8E7A;">AI-native creative studio.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Darker Grotesque', sans-serif; font-size: 0.85rem;">Solve for resonance. Not volume.</p>
+        <div class="meta">Chakra Petch + Darker Grotesque</div>
+      </div>
+    </div>
+
+    <!-- 8: Carbon→Violet gradient + Syne Mono -->
+    <div class="combo-card selectable" data-type="combo" data-id="Carbon→Violet gradient + Amber head / Syne Mono+JetBrains" style="background: linear-gradient(180deg, #191919, #3D2E42); color: #FFF4EA;">
+      <div>
+        <div class="label">Carbon→Violet gradient + Amber</div>
+        <div class="accent-bar" style="background: #E8A838;"></div>
+        <h3 style="font-family: 'Syne Mono', monospace; font-size: 1.35rem; color: #E8A838;">Resonance over volume.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">Not velocity, not virality. Resonance.</p>
+        <div class="meta">Syne Mono + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 9: Coral bg + Carbon text + Syne Bold -->
+    <div class="combo-card selectable" data-type="combo" data-id="Coral bg + Carbon text / Syne Bold+JetBrains" style="background: #F26157; color: #191919;">
+      <div>
+        <div class="label" style="color: #7a2a24;">Coral bg + Carbon text</div>
+        <div class="accent-bar" style="background: #191919;"></div>
+        <h3 style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.9rem;">Feel something.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace; color: #2a1510;">Everything else is noise dressed up as progress.</p>
+        <div class="meta" style="color: #4a1510;">Syne Bold + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 10: Vermillion head on Carbon + Fraunces -->
+    <div class="combo-card selectable" data-type="combo" data-id="Carbon bg + Vermillion head / Fraunces+Geist" style="background: #191919; color: #F5EDE4;">
+      <div>
+        <div class="label">Carbon + Vermillion</div>
+        <div class="accent-bar" style="background: #E23D28;"></div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.8rem; color: #E23D28;">The work has weight.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif;">Or it doesn't ship. That is the only rule.</p>
+        <div class="meta">Fraunces + Geist</div>
+      </div>
+    </div>
+
+    <!-- 11: Plum + Coral head + DG -->
+    <div class="combo-card selectable" data-type="combo" data-id="Plum bg + Coral head / DG+JetBrains" style="background: #6B3A5E; color: #FFF4EA;">
+      <div>
+        <div class="label">Plum + Coral</div>
+        <div class="accent-bar" style="background: #F26157;"></div>
+        <h3 style="font-family: 'Darker Grotesque', sans-serif; font-weight: 900; font-size: 2.2rem; color: #F26157;">Artists first.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">The audience should feel something real.</p>
+        <div class="meta">Darker Grotesque + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 12: Iron + Muted Teal + Syne Mono -->
+    <div class="combo-card selectable" data-type="combo" data-id="Iron bg + Muted Teal head / Syne Mono+JetBrains" style="background: #2A2A2E; color: #F5EDE4;">
+      <div>
+        <div class="label">Iron + Muted Teal</div>
+        <div class="accent-bar" style="background: #5E8E7A;"></div>
+        <h3 style="font-family: 'Syne Mono', monospace; font-size: 1.35rem; color: #5E8E7A;">Build in the open.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'JetBrains Mono', monospace;">Pre-seed, public, unapologetic.</p>
+        <div class="meta">Syne Mono + JetBrains Mono</div>
+      </div>
+    </div>
+
+    <!-- 13: Warm White + Vermillion + Chakra Petch -->
+    <div class="combo-card selectable" data-type="combo" data-id="Warm White bg + Vermillion head / Chakra Petch+DG" style="background: #F5EDE4; color: #191919;">
+      <div>
+        <div class="label">Warm White + Vermillion</div>
+        <div class="accent-bar" style="background: #E23D28;"></div>
+        <h3 style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.8rem; color: #E23D28;">Craft is the filter.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Darker Grotesque', sans-serif; font-size: 0.85rem; color: #3a3530;">Ship it right or hold it back.</p>
+        <div class="meta" style="color: #8a8078;">Chakra Petch + Darker Grotesque</div>
+      </div>
+    </div>
+
+    <!-- 14: Slate Blue + Coral + Cormorant -->
+    <div class="combo-card selectable" data-type="combo" data-id="Slate Blue bg + Coral head / Cormorant+Geist" style="background: #4A5E7A; color: #FFF4EA;">
+      <div>
+        <div class="label">Slate Blue + Coral</div>
+        <div class="accent-bar" style="background: #F26157;"></div>
+        <h3 style="font-family: 'Cormorant', serif; font-weight: 700; font-size: 2.2rem; color: #F26157;">Resonance.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif;">We solve for what stays with people.</p>
+        <div class="meta">Cormorant + Geist</div>
+      </div>
+    </div>
+
+    <!-- 15: Ochre Gold bg + Carbon + Fraunces -->
+    <div class="combo-card selectable" data-type="combo" data-id="Ochre Gold bg + Carbon text / Fraunces+Geist" style="background: #D4A042; color: #191919;">
+      <div>
+        <div class="label" style="color: #6a5020;">Ochre Gold + Carbon</div>
+        <div class="accent-bar" style="background: #191919;"></div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.8rem;">Feel something.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Geist', sans-serif; color: #2a2010;">That is the only metric worth tracking.</p>
+        <div class="meta" style="color: #5a4020;">Fraunces + Geist</div>
+      </div>
+    </div>
+
+    <!-- 16: Plum→Coral gradient + Syne ExtraBold -->
+    <div class="combo-card selectable" data-type="combo" data-id="Plum→Coral gradient / Syne ExtraBold+Space Mono" style="background: linear-gradient(180deg, #6B3A5E, #F26157); color: #FFF4EA;">
+      <div>
+        <div class="label">Plum → Coral gradient</div>
+        <div class="accent-bar" style="background: #FFF4EA;"></div>
+        <h3 style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem;">AI-native creative studio.</h3>
+      </div>
+      <div>
+        <p class="body-text" style="font-family: 'Space Mono', monospace;">Solve for resonance. Not volume.</p>
+        <div class="meta">Syne ExtraBold + Space Mono</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== GRADIENTS ===== -->
+<div class="section">
+  <h2>Gradients</h2>
+  <p class="section-sub">Pick the gradient combos you want to keep</p>
+
+  <div class="grad-grid">
+    <div class="grad-strip selectable" data-type="gradient" data-id="Carbon → Plum" style="background: linear-gradient(135deg, #191919, #6B3A5E);"><span style="color:#FFF0B3;">Carbon → Plum</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Carbon → Charcoal Violet" style="background: linear-gradient(135deg, #191919, #3D2E42);"><span style="color:#FFF0B3;">Carbon → Charcoal Violet</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Plum → Coral" style="background: linear-gradient(135deg, #6B3A5E, #F26157);"><span style="color:#FFF4EA;">Plum → Coral</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Slate → Amber" style="background: linear-gradient(135deg, #4A5E7A, #E8A838);"><span style="color:#191919;">Slate → Amber</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Carbon → Slate Blue" style="background: linear-gradient(135deg, #191919, #4A5E7A);"><span style="color:#FFF4EA;">Carbon → Slate Blue</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Charcoal Violet → Plum" style="background: linear-gradient(135deg, #3D2E42, #6B3A5E);"><span style="color:#FFF0B3;">Violet → Plum</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Graphite → Muted Teal" style="background: linear-gradient(135deg, #3A3A3A, #5E8E7A);"><span style="color:#FFF4EA;">Graphite → Teal</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Carbon → Vermillion" style="background: linear-gradient(135deg, #191919, #E23D28);"><span style="color:#FFF4EA;">Carbon → Vermillion</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Carbon → Amber" style="background: linear-gradient(135deg, #191919, #E8A838);"><span style="color:#FFF4EA;">Carbon → Amber</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Plum → Amber" style="background: linear-gradient(135deg, #6B3A5E, #E8A838);"><span style="color:#FFF4EA;">Plum → Amber</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Iron → Muted Teal" style="background: linear-gradient(135deg, #2A2A2E, #5E8E7A);"><span style="color:#FFF4EA;">Iron → Muted Teal</span></div>
+    <div class="grad-strip selectable" data-type="gradient" data-id="Slate Blue → Coral" style="background: linear-gradient(135deg, #4A5E7A, #F26157);"><span style="color:#FFF4EA;">Slate → Coral</span></div>
+  </div>
+</div>
+
+<!-- ===== FLOATING BAR ===== -->
+<div class="summary-bar">
+  <div class="count"><strong id="pick-count">0</strong> picks</div>
+  <div class="actions">
+    <button class="btn btn-clear" onclick="clearAll()">Clear all</button>
+    <button class="btn btn-export" onclick="exportPicks()">Export Picks</button>
+  </div>
+</div>
+
+<!-- ===== EXPORT MODAL ===== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Your Picks</h3>
+    <p class="hint">Copy this and paste it back to Claude. I will build the final system from these choices.</p>
+    <textarea id="export-text" readonly></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-clear" onclick="closeModal()">Close</button>
+      <button class="btn btn-export" onclick="copyExport()">Copy to clipboard</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Selection logic
+  document.querySelectorAll('.selectable').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('selected');
+      updateCount();
+    });
+  });
+
+  function updateCount() {
+    const count = document.querySelectorAll('.selected').length;
+    document.getElementById('pick-count').textContent = count;
+  }
+
+  function clearAll() {
+    document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+    updateCount();
+  }
+
+  function exportPicks() {
+    const picks = { colors: [], fonts: [], combos: [], gradients: [] };
+
+    document.querySelectorAll('.selected').forEach(el => {
+      const type = el.dataset.type;
+      const id = el.dataset.id;
+      if (type === 'color') picks.colors.push(id);
+      if (type === 'font') picks.fonts.push(id);
+      if (type === 'combo') picks.combos.push(id);
+      if (type === 'gradient') picks.gradients.push(id);
+    });
+
+    let text = '=== LANIAMEDA BRAND PICKS ===\n\n';
+
+    text += '## Base (locked)\n';
+    text += 'Coral #F26157 | Carbon #191919 | Teal #79B791 | Linen #FFF4EA\n\n';
+
+    if (picks.colors.length) {
+      text += '## Accent Colors I Like\n';
+      picks.colors.forEach(c => text += '- ' + c + '\n');
+      text += '\n';
+    }
+
+    if (picks.fonts.length) {
+      text += '## Font Pairings I Like\n';
+      picks.fonts.forEach(f => text += '- ' + f + '\n');
+      text += '\n';
+    }
+
+    if (picks.combos.length) {
+      text += '## Combo Cards I Like\n';
+      picks.combos.forEach(c => text += '- ' + c + '\n');
+      text += '\n';
+    }
+
+    if (picks.gradients.length) {
+      text += '## Gradients I Like\n';
+      picks.gradients.forEach(g => text += '- ' + g + '\n');
+      text += '\n';
+    }
+
+    if (!picks.colors.length && !picks.fonts.length && !picks.combos.length && !picks.gradients.length) {
+      text += '(no picks yet — go click some things!)\n';
+    }
+
+    text += '\n--- Paste this to Claude to proceed ---';
+
+    document.getElementById('export-text').value = text;
+    document.getElementById('modal').classList.add('visible');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('visible');
+  }
+
+  function copyExport() {
+    const textarea = document.getElementById('export-text');
+    textarea.select();
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      const btn = document.querySelector('.modal .btn-export');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy to clipboard', 1500);
+    });
+  }
+
+  // Close modal on overlay click
+  document.getElementById('modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('modal')) closeModal();
+  });
+</script>
+
+</body>
+</html>

@@ -15,3 +15,5 @@
 - [x] First batch drafts generated (X pack + LinkedIn + carousel plan) — 2026-02-26
 - [x] Daily PM cron set up + running — 2026-03-10
 - [x] Queue topped up: 2 new X drafts added — 2026-03-10
+- [x] Queue topped up: 2 new X drafts added (0401-batch) — 2026-04-01
+- [x] ROADMAP updated: daily PM cron marked done — 2026-04-01

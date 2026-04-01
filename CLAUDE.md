@@ -38,18 +38,17 @@
 
 ## Studio Identity
 
-**Laniameda** = AI-native creative studio. We solve for resonance, not volume.
+**Laniameda** = AI-native creative studio. We solve for resonance over volume.
 
-- AI is the instrument. Craft is the standard. Feeling is the output.
-- We are artists first. Not "content creators." Artists.
-- We make things that move people — not just impress them.
+- Artists first. The work has emotional weight or it doesn't ship.
+- AI is how we build. Craft is the filter. The audience should feel something.
 
-**Brand aesthetic:** Warm editorial + brutalist hybrid.
-- Display: Instrument Serif italic
-- Body: Geist Sans
-- Background: `#fffaf5` (warm parchment) · Text: `#201710` (volcanic ink)
-- Accent: `#ff7a64` (ember coral — use sparingly)
-- Shadow: `4px 4px 0 #201710` (never blur)
+**Brand design system:** See `studio/brand-guidelines.md` for the full locked system.
+- Anchor color: `#FF8C42` (Ember)
+- Dark theme (primary): `#0A0805` bg, `#F0EBE8` text
+- Light theme: `#FAF7F4` bg, `#1A1008` text
+- Display: Darker Grotesque (Black) — body: Inter — accent serif: Noto Serif Display italic — mono: JetBrains Mono
+- Dark mode is default. Warm tones everywhere. No pure black, no pure white.
 
 ---
 
@@ -337,6 +336,31 @@ When digesting any content — extract specifics, never generics.
 
 ---
 
+## Copy standards (non-negotiable)
+
+All written output — brand docs, social copy, marketing, even internal docs — must pass these filters. See `human-copy-standards` and `humanizer` skills for the full reference.
+
+**Kill on sight:**
+- Negative parallelisms: "not X, but Y" / "it's not just... it's..." / staccato negations ("No tricks. No shortcuts. Just hard work.")
+- Rule-of-three addiction: if everything comes in threes, break it
+- Inflation words: pivotal, crucial, groundbreaking, transformative, innovative, revolutionary
+- AI vocabulary: delve, underscore, showcase, foster, landscape (abstract), tapestry, testament, interplay, vibrant, seamless
+- Participial tails: "...highlighting the brand's commitment to..." — cut the tail, the fact was enough
+- Copula avoidance: "serves as" → "is". "Boasts" → "has". Say the simple thing.
+- Em-dash overuse: max one per paragraph. Use a period instead.
+- Synonym rotation: don't call the same thing a "platform," then a "solution," then an "ecosystem." Repeat the word.
+- Vague attributions: "experts say," "widely recognized" — name the source or cut the claim
+- Sycophantic tone: "Great question!" / "Certainly!" / "I'd be happy to..."
+
+**Write toward:**
+- Specific numbers, names, dates over generalizations
+- Varied sentence length and paragraph size
+- Opinions with stakes. If all proper nouns could be swapped and the text still works, it has no soul.
+- The simplest accurate word
+- Edges. A sentence that runs long but carries energy. A casual phrase inside formal copy. Too polished = forgettable.
+
+---
+
 ## Rules
 
 - **Be proactive.** Surface things Michael should know. Propose next steps. Move things forward without being asked.
@@ -344,7 +368,8 @@ When digesting any content — extract specifics, never generics.
 - **This file + laniameda-hq = ground truth.** Wins over any prior context or assumption.
 - **Specifics over inspiration.** Concrete examples beat vague motivation.
 - **Keep CLAUDE.md updated.** When Michael says "remember this" or when new info contradicts this file — update it immediately and commit.
+- **Run all copy through human-copy-standards.** Every agent, every output. No exceptions.
 
 ---
 
-_Owner: Michael + Lani | Last updated: 2026-03-25 | Timezone: Europe/Prague_
+_Owner: Michael + Lani | Last updated: 2026-03-29 | Timezone: Europe/Prague_

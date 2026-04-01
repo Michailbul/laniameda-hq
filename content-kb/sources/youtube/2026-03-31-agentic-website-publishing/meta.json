@@ -1,0 +1,18 @@
+{
+  "title": "I Built a Website That Publishes Itself With Claude Code in 22 Minutes (Part 2)",
+  "url": "https://www.youtube.com/watch?v=tyNd0wG424Y",
+  "channel": "Luke Carter",
+  "date": "2026-03-31",
+  "verdict": "USEFUL",
+  "tools_mentioned": ["Claude Code", "Claude Sonnet 4.6", "Supabase", "GitHub Actions", "Cloudflare"],
+  "techniques": [
+    "Brand corpus as AI brain — positioning, voice, banned phrases, hooks, keyword clusters",
+    "Kanban pipeline: Planned → Approved → Writing → Published / Draft",
+    "Auto mode vs Safe mode toggle for human-in-the-loop",
+    "Topic clusters + pillar interlinking for GEO/SEO density",
+    "Article headers as questions for featured snippets",
+    "CLAUDE.md as the tutorial — self-documenting project setup"
+  ],
+  "skill_created": "agentic-website-stack",
+  "tags": ["agentic-websites", "autonomous-publishing", "seo", "content-pipeline", "convex"]
+}
