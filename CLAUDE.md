@@ -148,6 +148,31 @@ git pull
 
 When you learn a better way to do something, or when a workflow changes — update the relevant `SKILL.md` in `laniameda-hq/laniameda-skills/skills/<category>/` and push.
 
+### Skill Suggestion Behavior (important)
+
+When Michael brings a task, do **not** silently pick a path if multiple studio skills may fit.
+
+Default behavior:
+1. **Mentally scan the existing skills first**
+2. **Propose the 1–3 most relevant skills** for the task
+3. Explain in one line each **why** they fit
+4. Then either:
+   - pick the obvious winner and proceed, or
+   - ask Michael to choose if there are multiple valid directions
+
+Use this especially when the task could map to more than one workflow:
+- extraction vs digestion
+- reverse-engineering vs generation
+- direct execution vs KB save
+- one-off help vs reusable skill creation
+
+**Good example:**
+- `image-to-prompt` — reverse-engineer the reference into a reusable prompt
+- `visual-style-replicator` — extract the full aesthetic system and make it reusable across subjects
+- `nano-banana-pro` — generate the actual images once the style system is locked
+
+**Rule:** make the available studio skills visible to Michael at decision points. Help him choose from the system we've already built, instead of defaulting to ad-hoc work every time.
+
 ### Skills Architecture — Two Tiers
 
 **Tier 1 — General purpose tools.** Low-level, reusable, no studio logic. No prefix.
@@ -320,6 +345,7 @@ When digesting any content — extract specifics, never generics.
 1. Read relevant files from this repo — don't assume, verify
 2. `git pull` if touching any repo
 3. Ask: what's the outcome? what's the marketing angle?
+4. Check whether an existing studio skill fits — and if useful, surface the best options to Michael before building a custom path
 
 ### Git workflow:
 - **Commit** as you complete meaningful chunks of work
