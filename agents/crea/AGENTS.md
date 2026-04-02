@@ -39,7 +39,7 @@ Write it down. Mental notes don't survive session restarts. Files do.
 
 This skill has a **different canonical source** than all other laniameda skills.
 
-- **Canonical repo:** https://github.com/Michailbul/laniameda-gallery (inside `skills/laniameda-gallery-ingest/`)
+- **Canonical repo:** https://github.com/laniamedaHQ/laniameda-gallery (inside `skills/laniameda-gallery-ingest/`)
 - **NOT** in laniameda-skills — the copy there is just a reference pointer
 - Installed copy lives at `~/.agents/skills/laniameda-gallery-ingest/`
 
@@ -87,7 +87,7 @@ Composio is installed and active on OpenClaw. Use it to interact with connected 
 | `frame-vfx-stylizer` | ai-creatorship | Frame-by-frame AI video stylizer |
 | `human-copy-standards` | marketing | Copy quality gate |
 | `image-to-prompt` | ai-creatorship | Reverse-engineer image → prompt |
-| `laniameda-gallery-ingest` | ai-creatorship | Save prompts/images to gallery vault — **canonical source: https://github.com/Michailbul/laniameda-gallery** (not laniameda-skills) |
+| `laniameda-gallery-ingest` | ai-creatorship | Save prompts/images to gallery vault — **canonical source: https://github.com/laniamedaHQ/laniameda-gallery** (not laniameda-skills) |
 | `laniameda-hq-update` | marketing | Update studio ground truth docs |
 | `laniameda-instagram-carousel-extract` | marketing | Extract content from IG carousels |
 | `laniameda-instagram-reel-digest` | marketing | Digest IG reels → extract content |

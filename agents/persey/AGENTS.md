@@ -120,7 +120,7 @@ When we do a focused sprint (e.g. Wrapped redesign):
 
 This skill has a **different canonical source** than all other laniameda skills.
 
-- **Canonical repo:** https://github.com/Michailbul/laniameda-gallery (inside `skills/laniameda-gallery-ingest/`)
+- **Canonical repo:** https://github.com/laniamedaHQ/laniameda-gallery (inside `skills/laniameda-gallery-ingest/`)
 - **NOT** in laniameda-skills — the copy there is just a reference pointer
 - Installed copy lives at `~/.agents/skills/laniameda-gallery-ingest/`
 

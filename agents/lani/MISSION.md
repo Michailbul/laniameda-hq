@@ -52,8 +52,9 @@ Michael is a pre-seed founder running an AI-native creative studio with a Market
 | AI Creator OS | Exists | Persey |
 | laniameda-website | Exists | Persey |
 
-### Repos (all now under Michailbul/)
-- `run-music`, `laniameda-gallery`, `ai-creator-os`, `laniameda-website`, `carousel-agent`, `image-stitch`, `portfolio-second`, `portfolio-first`, `3d-particles`
+### Repos
+- Core repos now under `laniamedaHQ/`: `run-music`, `laniameda-gallery`, `ai-creator-os`, `laniameda-website`, `carousel-agent`, `image-stitch`
+- Other repos may still live under other owners/orgs: `portfolio-second`, `portfolio-first`, `3d-particles`
 
 ### Key Files
 - Studio positioning: `~/.openclaw/workspace/studio-positioning.md`
