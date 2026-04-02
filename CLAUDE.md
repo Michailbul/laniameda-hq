@@ -43,12 +43,16 @@
 - Artists first. The work has emotional weight or it doesn't ship.
 - AI is how we build. Craft is the filter. The audience should feel something.
 
-**Brand design system:** See `studio/brand-guidelines.md` for the full locked system.
-- Anchor color: `#FF8C42` (Ember)
-- Dark theme (primary): `#0A0805` bg, `#F0EBE8` text
-- Light theme: `#FAF7F4` bg, `#1A1008` text
-- Display: Darker Grotesque (Black) — body: Inter — accent serif: Noto Serif Display italic — mono: JetBrains Mono
-- Dark mode is default. Warm tones everywhere. No pure black, no pure white.
+**Brand design system:** See `studio/brand-guidelines.md` for the full v2.0 locked system.
+- **Figma source:** [Design System v2.0](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=102-2) + [Carousel Components](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=204-2)
+- **Base 4 (untouchable):** Coral `#F26157` (anchor) · Carbon `#191919` · Teal `#79B791` · Linen `#FFF4EA`
+- **Brand mark:** Ember `#FF8C42` — sacred, used sparingly for brand signature moments
+- **Primary accents:** Amber `#E8A838` · Plum `#6B3A5E` (bg only) · Vermillion `#E23D28` (CTA only)
+- **Dark theme (default):** `#0A0805` bg, `#F0EBE8` text
+- **Light theme:** `#FAF7F4` bg, `#1A1008` text
+- **Display:** Darker Grotesque (Black/Bold/Medium/Light) — **body:** Inter — **mono:** JetBrains Mono
+- **Alt display fonts:** Fraunces, Syne, Cormorant, Chakra Petch (carousel variety)
+- Dark mode is default. Warm tones everywhere. No pure black, no pure white. Max 3 colors per slide.
 
 ---
 
