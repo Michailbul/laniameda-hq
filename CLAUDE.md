@@ -43,16 +43,18 @@
 - Artists first. The work has emotional weight or it doesn't ship.
 - AI is how we build. Craft is the filter. The audience should feel something.
 
-**Brand design system:** See `studio/brand-guidelines.md` for the full v2.0 locked system.
-- **Figma source:** [Design System v2.0](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=102-2) + [Carousel Components](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=204-2)
-- **Base 4 (untouchable):** Coral `#F26157` (anchor) · Carbon `#191919` · Teal `#79B791` · Linen `#FFF4EA`
-- **Brand mark:** Ember `#FF8C42` — sacred, used sparingly for brand signature moments
-- **Primary accents:** Amber `#E8A838` · Plum `#6B3A5E` (bg only) · Vermillion `#E23D28` (CTA only)
-- **Dark theme (default):** `#0A0805` bg, `#F0EBE8` text
-- **Light theme:** `#FAF7F4` bg, `#1A1008` text
-- **Display:** Darker Grotesque (Black/Bold/Medium/Light) — **body:** Inter — **mono:** JetBrains Mono
-- **Alt display fonts:** Fraunces, Syne, Cormorant, Chakra Petch (carousel variety)
-- Dark mode is default. Warm tones everywhere. No pure black, no pure white. Max 3 colors per slide.
+**Brand visual identity (ground truth):** `studio/brand/` — consolidated folder with:
+- `colors.md` — 5-tier color system, themes, gradients, combos
+- `typography.md` — 9 approved fonts, 7 Figma-verified pairings, type scale
+- `voice.md` — brand voice, copy standards, content pillars
+- `visual-language.md` — imagery, texture/grain, shape, motion
+- `identity.md` — brand core, personality, four principles
+- `logo.md` — wordmark, brand mark, chrome system
+- `tokens.css` — canonical CSS custom properties (import in any system)
+- **Figma source:** [Design System v2.0](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=102-2) + [FONTS board](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=48-21) + [Carousel Components](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=204-2)
+- **Quick ref:** Base 4 = Coral `#F26157` · Carbon `#191919` · Teal `#79B791` · Linen `#FFF4EA` · Ember `#FF8C42` (sacred)
+- **Core fonts:** DG (display) · Inter (body) · JB Mono (mono) · Alts: Fraunces, Syne, Cormorant, Chakra Petch, Geist, Space Mono
+- Dark mode default. No pure black/white. Max 3 colors per slide.
 
 ---
 
@@ -263,9 +265,10 @@ Also supports: **PDF/document generation** (HTML → PDF, text → structured do
 
 ```
 laniameda-hq/
-  studio/                   ← identity, vision, values, brand, design system
+  studio/                   ← identity, vision, values
+    brand/                  ← GROUND TRUTH: colors, typography, voice, visual language, identity, logo, tokens.css
   work/                     ← how we work, projects index, agent roster
-  brand/                    ← brand assets
+  brand/                    ← DEPRECATED brand assets (redirects to studio/brand/)
   content-kb/               ← knowledge base
     sources/
       youtube/              ← digested videos

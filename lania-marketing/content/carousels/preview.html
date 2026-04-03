@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carousel Preview — Laniameda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0805;
+    --surface: #131210;
+    --surface-raised: #1a1815;
+    --bone: #F0EBE8;
+    --coral: #F26157;
+    --amber: #E8A838;
+    --teal: #79B791;
+    --muted: rgba(240,235,232,0.4);
+    --border: rgba(240,235,232,0.08);
+    --font-display: 'Darker Grotesque', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--bone);
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+
+  /* ── Top bar ── */
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 56px;
+    background: rgba(10,8,5,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+  }
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  .topbar-brand .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--coral);
+  }
+  .topbar-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bone);
+    letter-spacing: -0.01em;
+  }
+  .topbar-meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ── Main layout ── */
+  main {
+    padding: 88px 32px 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── Carousel section ── */
+  .carousel-section {
+    margin-bottom: 80px;
+  }
+
+  .carousel-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .carousel-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .carousel-name {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+    line-height: 1;
+  }
+  .carousel-meta {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    gap: 16px;
+  }
+  .carousel-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .carousel-actions {
+    display: flex;
+    gap: 12px;
+  }
+  .btn {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--bone);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn:hover {
+    background: var(--surface-raised);
+    border-color: rgba(240,235,232,0.15);
+  }
+  .btn-primary {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: #e0544a;
+    border-color: #e0544a;
+  }
+
+  /* ── Viewer ── */
+  .viewer {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  /* Phone frame */
+  .phone-frame {
+    flex-shrink: 0;
+    width: 375px;
+    background: var(--surface);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: sticky;
+    top: 80px;
+  }
+  .phone-screen {
+    width: 375px;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+  }
+  .phone-screen:active { cursor: grabbing; }
+  .phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s;
+  }
+
+  /* Phone nav */
+  .phone-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .phone-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--bone);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.15s;
+  }
+  .phone-nav-btn:hover {
+    background: var(--surface-raised);
+    border-color: rgba(240,235,232,0.2);
+  }
+  .phone-nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+  .phone-counter {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bone);
+  }
+  .phone-counter .total {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* Filmstrip */
+  .filmstrip {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+  .filmstrip-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filmstrip-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+  .filmstrip-scroll::-webkit-scrollbar-track {
+    background: var(--surface);
+    border-radius: 2px;
+  }
+  .filmstrip-scroll::-webkit-scrollbar-thumb {
+    background: rgba(240,235,232,0.15);
+    border-radius: 2px;
+  }
+  .thumb {
+    flex-shrink: 0;
+    width: 120px;
+    aspect-ratio: 4/5;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+    opacity: 0.5;
+    position: relative;
+  }
+  .thumb:hover {
+    opacity: 0.8;
+    border-color: rgba(240,235,232,0.15);
+  }
+  .thumb.active {
+    opacity: 1;
+    border-color: var(--coral);
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb-num {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+
+  /* ── Keyboard hint ── */
+  .kbd-hint {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  kbd {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--bone);
+  }
+
+  /* ── Empty state ── */
+  .empty {
+    padding: 120px 40px;
+    text-align: center;
+    color: var(--muted);
+  }
+  .empty h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--bone);
+    margin-bottom: 12px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .viewer { flex-direction: column; }
+    .phone-frame { position: static; width: 100%; max-width: 375px; margin: 0 auto; }
+    .filmstrip-scroll { flex-wrap: nowrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand"><span class="dot"></span> LANIAMEDA</div>
+  <div class="topbar-title">Carousel Preview</div>
+  <div class="topbar-meta" id="topbar-meta"></div>
+</div>
+
+<main id="app"></main>
+
+<script>
+// ── Config: add carousels here ──────────────────────────────────────────
+const CAROUSELS = [
+  {
+    name: 'No-Video Content OS',
+    folder: 'exports/no-video-content-os/slides',
+    slides: 9,
+    date: '2026-04-02',
+    status: 'draft',
+  },
+  // Add more:
+  // { name: 'Next Carousel', folder: 'exports/next-one/slides', slides: 7, date: '2026-04-03', status: 'draft' },
+];
+
+// ── Build UI ────────────────────────────────────────────────────────────
+const app = document.getElementById('app');
+const meta = document.getElementById('topbar-meta');
+meta.textContent = `${CAROUSELS.length} carousel${CAROUSELS.length !== 1 ? 's' : ''}`;
+
+if (CAROUSELS.length === 0) {
+  app.innerHTML = `<div class="empty"><h2>No carousels yet</h2><p>Build one and add it to the CAROUSELS array in this file.</p></div>`;
+} else {
+  CAROUSELS.forEach((c, ci) => {
+    const section = document.createElement('div');
+    section.className = 'carousel-section';
+    section.id = `carousel-${ci}`;
+
+    const slideNums = Array.from({ length: c.slides }, (_, i) => String(i + 1).padStart(2, '0'));
+    const imgPath = (n) => `${c.folder}/${n}.png`;
+
+    section.innerHTML = `
+      <div class="carousel-header">
+        <div class="carousel-header-left">
+          <div class="carousel-name">${c.name}</div>
+          <div class="carousel-meta">
+            <span>${c.slides} slides</span>
+            <span>${c.date}</span>
+            <span style="color: ${c.status === 'published' ? 'var(--teal)' : 'var(--amber)'}">${c.status}</span>
+          </div>
+        </div>
+        <div class="carousel-actions">
+          <button class="btn" onclick="openPDF(${ci})">PDF</button>
+          <button class="btn" onclick="openFolder(${ci})">Open folder</button>
+        </div>
+      </div>
+      <div class="viewer">
+        <div class="phone-frame">
+          <div class="phone-screen" id="screen-${ci}">
+            <img src="${imgPath(slideNums[0])}" alt="Slide 1" id="main-img-${ci}" draggable="false">
+          </div>
+          <div class="phone-nav">
+            <button class="phone-nav-btn" id="prev-${ci}" onclick="nav(${ci},-1)">‹</button>
+            <div class="phone-counter">
+              <span id="current-${ci}">01</span><span class="total"> / ${slideNums.length.toString().padStart(2,'0')}</span>
+            </div>
+            <button class="phone-nav-btn" id="next-${ci}" onclick="nav(${ci},1)">›</button>
+          </div>
+        </div>
+        <div class="filmstrip">
+          <div class="filmstrip-scroll" id="strip-${ci}">
+            ${slideNums.map((n, si) => `
+              <div class="thumb ${si === 0 ? 'active' : ''}" id="thumb-${ci}-${si}" onclick="goTo(${ci},${si})">
+                <img src="${imgPath(n)}" alt="Slide ${si+1}" loading="lazy" draggable="false">
+                <div class="thumb-num">${n}</div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="kbd-hint">
+            <span><kbd>←</kbd> <kbd>→</kbd> navigate</span>
+            <span><kbd>1</kbd>–<kbd>9</kbd> jump</span>
+          </div>
+        </div>
+      </div>
+    `;
+    app.appendChild(section);
+  });
+}
+
+// ── State ───────────────────────────────────────────────────────────────
+const state = CAROUSELS.map(() => ({ current: 0 }));
+
+function goTo(ci, si) {
+  const c = CAROUSELS[ci];
+  if (si < 0 || si >= c.slides) return;
+  state[ci].current = si;
+
+  const num = String(si + 1).padStart(2, '0');
+  const img = document.getElementById(`main-img-${ci}`);
+  img.src = `${c.folder}/${num}.png`;
+
+  document.getElementById(`current-${ci}`).textContent = num;
+
+  // Update thumbs
+  for (let i = 0; i < c.slides; i++) {
+    const t = document.getElementById(`thumb-${ci}-${i}`);
+    t.classList.toggle('active', i === si);
+  }
+
+  // Scroll thumb into view
+  const activeThumb = document.getElementById(`thumb-${ci}-${si}`);
+  activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+  // Update nav buttons
+  document.getElementById(`prev-${ci}`).disabled = si === 0;
+  document.getElementById(`next-${ci}`).disabled = si === c.slides - 1;
+}
+
+function nav(ci, dir) {
+  goTo(ci, state[ci].current + dir);
+}
+
+// ── Keyboard ────────────────────────────────────────────────────────────
+document.addEventListener('keydown', (e) => {
+  // Use first carousel for keyboard nav (or whichever is in viewport)
+  const ci = getVisibleCarousel();
+  if (ci === -1) return;
+
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); nav(ci, -1); }
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); nav(ci, 1); }
+  if (e.key >= '1' && e.key <= '9') {
+    const si = parseInt(e.key) - 1;
+    if (si < CAROUSELS[ci].slides) goTo(ci, si);
+  }
+});
+
+function getVisibleCarousel() {
+  for (let i = 0; i < CAROUSELS.length; i++) {
+    const el = document.getElementById(`carousel-${i}`);
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.6 && rect.bottom > 100) return i;
+  }
+  return CAROUSELS.length > 0 ? 0 : -1;
+}
+
+// ── Swipe on phone screen ───────────────────────────────────────────────
+CAROUSELS.forEach((c, ci) => {
+  const screen = document.getElementById(`screen-${ci}`);
+  let startX = 0;
+  screen.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+  screen.addEventListener('pointerup', (e) => {
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 40) nav(ci, dx < 0 ? 1 : -1);
+  });
+});
+
+// ── Init nav button state ───────────────────────────────────────────────
+CAROUSELS.forEach((_, ci) => {
+  document.getElementById(`prev-${ci}`).disabled = true;
+});
+
+// ── Helpers ─────────────────────────────────────────────────────────────
+function openPDF(ci) {
+  const folder = CAROUSELS[ci].folder.replace('/slides', '');
+  window.open(`${folder}/carousel.pdf`, '_blank');
+}
+function openFolder(ci) {
+  alert(`Open in Finder:\n${CAROUSELS[ci].folder.replace('/slides', '')}`);
+}
+</script>
+</body>
+</html>

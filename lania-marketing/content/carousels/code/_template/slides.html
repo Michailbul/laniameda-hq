@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+
+<!-- ── Fonts ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;500;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Fraunces:ital,wght@0,400;0,900;1,400&family=Syne:wght@700;800&family=Cormorant:wght@700&family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   LANIAMEDA CAROUSEL — Base Template
+   Canvas: 1080×1350px · Exported via Playwright @2x
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Base 4 */
+  --coral: #F26157;
+  --carbon: #191919;
+  --teal: #79B791;
+  --linen: #FFF4EA;
+
+  /* Theme tokens */
+  --obsidian: #0A0805;
+  --bone: #F0EBE8;
+  --parchment: #FAF7F4;
+  --ink: #1A1008;
+
+  /* Primary accents */
+  --amber: #E8A838;
+  --plum: #6B3A5E;
+  --vermillion: #E23D28;
+
+  /* Supporting */
+  --charcoal-violet: #3D2E42;
+  --slate-blue: #4A5E7A;
+  --graphite: #3A3A3A;
+  --muted-teal: #5E8E7A;
+
+  /* Situational */
+  --electric-cream: #FFF0B3;
+  --ochre-gold: #D4A042;
+  --warm-white: #F5EDE4;
+
+  /* Brand mark */
+  --ember: #FF8C42;
+
+  /* Slide */
+  --slide-w: 1080px;
+  --slide-h: 1350px;
+  --margin: 80px;
+  --gap: 24px;
+  --section-gap: 40px;
+
+  /* Fonts */
+  --font-display: 'Darker Grotesque', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: 'Fraunces', serif;
+  --font-tech: 'Syne', sans-serif;
+  --font-elegant: 'Cormorant', serif;
+  --font-futuristic: 'Chakra Petch', sans-serif;
+}
+
+/* ── Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* ── Slide base ── */
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── Content zone ── */
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: var(--margin);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Brand watermark ── */
+.watermark {
+  position: absolute;
+  bottom: 32px;
+  left: var(--margin);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.watermark .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+/* ── Slide indicator dots ── */
+.dots {
+  position: absolute;
+  bottom: 36px;
+  right: var(--margin);
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+.dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bone);
+  opacity: 0.3;
+}
+.dots span.active {
+  background: var(--coral);
+  opacity: 1;
+}
+
+/* ── Grain overlay (opt-in: add class="slide has-grain") ── */
+.has-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.03;
+  filter: url(#grain);
+  background: white;
+  pointer-events: none;
+}
+
+/* ── SVG noise filter ── */
+</style>
+</head>
+<body>
+
+<!-- Reusable grain SVG filter -->
+<svg style="position:absolute;width:0;height:0" aria-hidden="true">
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</svg>
+
+<!-- ═══════════════ SLIDES START ═══════════════ -->
+
+<!-- SLIDE 1 — Hook -->
+<div class="slide" id="slide-01" style="background: var(--obsidian);">
+  <div class="content">
+    <!-- slide content here -->
+  </div>
+  <div class="watermark" style="color: var(--bone);"><span class="dot"></span> LANIAMEDA</div>
+  <div class="dots">
+    <span class="active"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- ═══════════════ SLIDES END ═══════════════ -->
+
+</body>
+</html>

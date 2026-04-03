@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════════════════════
+   LANIAMEDA — Canonical Brand Tokens (CSS Custom Properties)
+
+   Ground truth for all visual systems: carousels, reels,
+   website, product UI. Import this file as the base layer.
+
+   Source: studio/brand/ (colors.md + typography.md)
+   Figma:  Design System v2.0
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Tier 1: Base Palette (untouchable) ── */
+  --coral: #F26157;
+  --carbon: #191919;
+  --teal: #79B791;
+  --linen: #FFF4EA;
+
+  /* ── Tier 2: Theme Tokens ── */
+  --obsidian: #0A0805;
+  --bone: #F0EBE8;
+  --parchment: #FAF7F4;
+  --ink: #1A1008;
+
+  /* ── Tier 3: Primary Accents ── */
+  --amber: #E8A838;
+  --plum: #6B3A5E;
+  --vermillion: #E23D28;
+
+  /* ── Tier 4: Supporting Accents ── */
+  --charcoal-violet: #3D2E42;
+  --slate-blue: #4A5E7A;
+  --graphite: #3A3A3A;
+  --muted-teal: #5E8E7A;
+
+  /* ── Tier 5: Situational Accents ── */
+  --electric-cream: #FFF0B3;
+  --ochre-gold: #D4A042;
+  --warm-white: #F5EDE4;
+
+  /* ── Brand Mark ── */
+  --ember: #FF8C42;
+
+  /* ── Core Fonts ── */
+  --font-display: 'Darker Grotesque', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ── Alternate Display Fonts ── */
+  --font-serif: 'Fraunces', serif;
+  --font-tech: 'Syne', sans-serif;
+  --font-elegant: 'Cormorant', serif;
+  --font-futuristic: 'Chakra Petch', sans-serif;
+
+  /* ── Alternate Body/Mono Fonts ── */
+  --font-body-alt: 'Geist', sans-serif;
+  --font-mono-alt: 'Space Mono', monospace;
+
+  /* ── Approved Gradients ── */
+  --grad-cta: linear-gradient(160deg, var(--coral), var(--vermillion));
+  --grad-moody: linear-gradient(160deg, var(--plum), var(--charcoal-violet));
+  --grad-warm: linear-gradient(160deg, var(--carbon), var(--amber));
+  --grad-pro: linear-gradient(160deg, var(--slate-blue), var(--amber));
+  --grad-rich: linear-gradient(160deg, var(--plum), var(--amber));
+  --grad-contrast: linear-gradient(160deg, var(--slate-blue), var(--coral));
+  --grad-ember: linear-gradient(135deg, #FF6B35, #FF8C42, #FFAD6B);  /* Sacred — hero moments only */
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   THEME PRESETS — apply via class on container element
+   Sets semantic aliases: --bg, --text-primary, etc.
+   ═══════════════════════════════════════════════════════ */
+
+/* Dark (default) */
+.theme-dark {
+  --bg: var(--obsidian);
+  --text-primary: var(--bone);
+  --text-secondary: rgba(240, 235, 232, 0.7);
+  --text-muted: rgba(240, 235, 232, 0.4);
+  --headline-color: var(--coral);
+  --accent: var(--teal);
+}
+
+/* Light / Editorial */
+.theme-light {
+  --bg: var(--parchment);
+  --text-primary: var(--ink);
+  --text-secondary: rgba(26, 16, 8, 0.7);
+  --text-muted: rgba(26, 16, 8, 0.4);
+  --headline-color: var(--ink);
+  --accent: var(--coral);
+}
+
+/* Warm / Linen */
+.theme-warm {
+  --bg: var(--linen);
+  --text-primary: var(--ink);
+  --text-secondary: rgba(26, 16, 8, 0.65);
+  --text-muted: rgba(26, 16, 8, 0.35);
+  --headline-color: var(--carbon);
+  --accent: var(--coral);
+}
+
+/* Plum / Moody */
+.theme-plum {
+  --bg: var(--plum);
+  --text-primary: var(--electric-cream);
+  --text-secondary: rgba(255, 240, 179, 0.7);
+  --text-muted: rgba(255, 240, 179, 0.35);
+  --headline-color: var(--linen);
+  --accent: var(--amber);
+}
+
+/* Coral / Bold Statement */
+.theme-coral {
+  --bg: var(--coral);
+  --text-primary: var(--obsidian);
+  --text-secondary: rgba(10, 8, 5, 0.7);
+  --text-muted: rgba(10, 8, 5, 0.4);
+  --headline-color: var(--obsidian);
+  --accent: var(--linen);
+}
+
+/* Slate / Professional */
+.theme-slate {
+  --bg: var(--slate-blue);
+  --text-primary: var(--linen);
+  --text-secondary: rgba(255, 244, 234, 0.7);
+  --text-muted: rgba(255, 244, 234, 0.35);
+  --headline-color: var(--linen);
+  --accent: var(--amber);
+}
+
+/* Graphite / Technical */
+.theme-graphite {
+  --bg: var(--graphite);
+  --text-primary: var(--bone);
+  --text-secondary: rgba(240, 235, 232, 0.65);
+  --text-muted: rgba(240, 235, 232, 0.35);
+  --headline-color: var(--muted-teal);
+  --accent: var(--amber);
+}
+
+/* Charcoal Violet / Deep Moody */
+.theme-violet {
+  --bg: var(--charcoal-violet);
+  --text-primary: var(--electric-cream);
+  --text-secondary: rgba(255, 240, 179, 0.65);
+  --text-muted: rgba(255, 240, 179, 0.35);
+  --headline-color: var(--electric-cream);
+  --accent: var(--amber);
+}
