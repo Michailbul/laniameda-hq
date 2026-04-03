@@ -91,11 +91,30 @@ Max one per carousel. These are the sharp instruments.
 2. Coral is the anchor — headlines on dark, never as body text
 3. Amber for warm signals, highlights. Vermillion for CTAs only
 4. Plum for emotional depth backgrounds — never as text color
-5. Slate Blue for editorial/professional framing
+5. ~~Slate Blue for editorial/professional framing~~ — **NOT for carousel backgrounds** (see banned list below)
 6. Situational accents (Electric Cream, Ochre) max 1 per carousel
 7. Both Teals kept: `#79B791` (organic) + `#5E8E7A` (muted, dividers)
 8. Never pair Vermillion + Coral on the same slide — they compete
 9. Max 3 colors per slide: background + headline accent + body text
+
+### Banned as carousel backgrounds (validated 2026-04-03)
+
+| Color | Hex | Why banned |
+|---|---|---|
+| Charcoal Violet | `#3D2E42` | Reads as purple — off-brand feel, rejected immediately |
+| Slate Blue | `#4A5E7A` | Reads as blue-grey — off-brand feel, rejected immediately |
+| Pure black | `#000000` | No warmth — always use Obsidian `#0A0805` instead |
+| Pure white | `#FFFFFF` | No warmth — always use Linen `#FFF4EA` instead |
+
+### Approved carousel background rotation
+
+| Color | Hex | Mode |
+|---|---|---|
+| Obsidian | `#0A0805` | Dark (default) |
+| Carbon | `#191919` | Dark |
+| Graphite | `#3A3A3A` | Dark |
+| Linen | `#FFF4EA` | Light |
+| Amber | `#E8A838` | Light — use sparingly, strong signal |
 
 ### Gradients
 

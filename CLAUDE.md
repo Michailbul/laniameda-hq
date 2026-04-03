@@ -366,6 +366,50 @@ When digesting any content — extract specifics, never generics.
 
 ---
 
+## Carousel Design Standards (validated 2026-04-03)
+
+These are hard-won preferences from iterative production. Repeat violations = wasted cycles.
+
+### What always works
+- **Full-width images per slide** — one model/subject per slide at 1080px. Side-by-side at 540px kills the work.
+- **Text directly on images** — no boxes, no containers, no opaque panels over photos. Ever.
+- **Contrast via gradient** — radial vignette at center + top/bottom linear fades + heavy `text-shadow`.
+- **Bigger type by default** — when in doubt, go larger. Small text reads as weak.
+- **Chrome system on every slide** — `@misha.buloy` top-right · `● LANIAMEDA` bottom-left · counter bottom-right. Bottom elements always light — they sit over image gradients, not over bg color.
+
+### What to avoid (validated mistakes)
+- **No black containers or card overlays** on images — Michael rejects immediately
+- **No corner L-bracket accents** — removed on first feedback, don't bring back
+- **No leftover dividers or decorative lines** from previous layout iterations
+- **No purple or blue-grey backgrounds** — Charcoal Violet `#3D2E42` and Slate Blue `#4A5E7A` read as off-brand and were rejected. Use Obsidian, Carbon, Graphite instead.
+- **Never assume bottom-of-slide text should adapt to bg color** — it's always over the dark image gradient; keep it light regardless
+
+### Approved background rotation
+Obsidian `#0A0805` · Carbon `#191919` · Graphite `#3A3A3A` · Linen `#FFF4EA` · Amber `#E8A838`
+
+### Typography on carousels — what went wrong and how it was fixed
+- **Eyebrow text too small (12–14px)** — unreadable. Fix: use 28–36px DG Bold or 14–18px JB Mono bold at high opacity.
+- **Sub/body text too light (opacity 0.22–0.38)** — disappears against complex backgrounds. Fix: minimum 0.55 opacity, add text-shadow.
+- **Title not centered on hero slide** — text was top-anchored with `padding-top`. Fix: `position:absolute; top:50%; left:50%; transform:translate(-50%,-50%)` for true center.
+- **Model label inherited light bg color** — label sits over dark image gradient, not over bg. Fix: always force light (`BONE` or `CORAL`) for image-layer labels regardless of slide bg.
+- **VS badge misaligned with model names** — flex row with `align-items:center` fixes vertical alignment; badge needs `display:flex;align-items:center` internally too.
+
+### Slide 1 (Hook) — marketing requirements
+The first slide is the only one people decide to swipe on. Rules:
+- **The hook is about catching attention, not showcasing brand** — one clear statement, large enough to read in feed thumbnail
+- **"Model Battle" eyebrow must be at a size that reads** — 28–36px minimum, not 12px
+- **Do not bury the concept in small supporting text** — if the eyebrow, title and sub all read at similar size, there's no hierarchy and nothing to land on
+- **Strong contrast is mandatory** — the center of the image where text sits must be darkened, regardless of how bright the source photos are
+- **VS / comparison badge**: if used, must be visually aligned with the elements it separates. When it looks broken, remove it.
+
+### CTA slide — marketing requirements
+- **The CTA copy is the offer itself** — write the exact value exchange Michael provided. Never rewrite to a generic hook.
+- **Attribution (`made by OpenClaw & Claude`) must be prominent** — real type size (44px+), not footer ghost text
+- **Curiosity gap**: people want to learn how tools work and receive a guide. Structure: what was made → who made it → how to get the same capability.
+- **No background images on the CTA slide** — solid brand background only. No dividers from previous layouts.
+
+---
+
 ## Copy standards (non-negotiable)
 
 All written output — brand docs, social copy, marketing, even internal docs — must pass these filters. See `human-copy-standards` and `humanizer` skills for the full reference.
