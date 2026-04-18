@@ -1,0 +1,23 @@
+{
+  "url": "https://x.com/aimikoda/status/2041180971630833935",
+  "author": "Kōda",
+  "handle": "aimikoda",
+  "date": "2026-04-06",
+  "topic": "AI video — Seedance 2.0 prompt engineering",
+  "verdict": "JUICE",
+  "tools_mentioned": ["Seedance 2.0"],
+  "techniques": [
+    "strict overhead camera follow (bird's eye lock)",
+    "ceiling pass-through instruction",
+    "single continuous shot constraint",
+    "scene-numbered beats (vs timecodes)",
+    "Color Logic shorthand tag",
+    "isolated SFX block"
+  ],
+  "tags": ["seedance", "video-gen", "camera-technique", "overhead-shot", "continuous-shot", "prompt-engineering", "cars-applicable"],
+  "stats": {
+    "likes": 15,
+    "views": 1201,
+    "bookmarks": 15
+  }
+}

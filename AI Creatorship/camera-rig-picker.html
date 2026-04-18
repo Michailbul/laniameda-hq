@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camera Rig — AI Creatorship</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050505;--bg2:#0a0a0a;
+  --s1:#0e0e0e;--s2:#141414;--s3:#1a1a1a;--s4:#222;
+  --b1:rgba(255,255,255,.06);--b2:rgba(255,255,255,.1);--b3:rgba(255,255,255,.15);
+  --t1:#f5f5f5;--t2:#a0a0a0;--t3:#666;--t4:#444;
+  --red:#d92b3a;--red-s:rgba(217,43,58,.06);--red-s2:rgba(217,43,58,.12);
+  --r:2px;
+}
+html{font-size:15px;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+
+/* ═══ UTILITY ═══ */
+.container{max-width:1440px;margin:0 auto;padding:0 48px}
+@media(max-width:900px){.container{padding:0 24px}}
+.section{padding:48px 0}
+.divider{height:1px;background:var(--b1)}
+
+/* ═══ HEADER ═══ */
+.hdr{padding:28px 0;display:flex;align-items:center;justify-content:space-between}
+.hdr-left{display:flex;align-items:center;gap:14px}
+.hdr-mark{width:32px;height:32px;border:1.5px solid var(--b2);border-radius:50%;display:grid;place-items:center}
+.hdr-mark-dot{width:8px;height:8px;background:var(--red);border-radius:50%}
+.hdr h1{font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.hdr-sub{font-size:.7rem;color:var(--t3);letter-spacing:.05em}
+
+/* ═══ HERO ═══ */
+.hero{padding:64px 0 56px;text-align:center}
+.hero-overline{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:16px}
+.hero h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:16px}
+.hero p{font-size:.9rem;color:var(--t2);max-width:560px;margin:0 auto;line-height:1.7}
+
+/* ═══ PRESETS GRID ═══ */
+.presets-section{padding:0 0 64px}
+.presets-label{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--t3);font-weight:600;margin-bottom:24px}
+.presets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1)}
+.p-card{
+  background:var(--bg);padding:24px;cursor:pointer;transition:background .25s;
+  display:flex;flex-direction:column;gap:8px;min-height:120px;
+}
+.p-card:hover{background:var(--s2)}
+.p-card.active{background:var(--red-s)}
+.p-card .p-num{font-size:.55rem;letter-spacing:.2em;color:var(--t4);font-weight:600;font-variant-numeric:tabular-nums}
+.p-card .p-name{font-size:.85rem;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.p-card.active .p-name{color:var(--red)}
+.p-card .p-desc{font-size:.68rem;color:var(--t3);line-height:1.6;flex:1}
+.p-card .p-settings{font-size:.6rem;color:var(--t4);letter-spacing:.02em;margin-top:4px;font-family:'JetBrains Mono',monospace}
+
+@media(max-width:1100px){.presets-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.presets-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.presets-grid{grid-template-columns:1fr}}
+
+/* ═══ PRESET DETAIL ═══ */
+.preset-detail{padding:48px 0;display:none}
+.preset-detail.show{display:block}
+.pd-head{margin-bottom:40px}
+.pd-overline{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:8px}
+.pd-title{font-size:1.8rem;font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+.pd-why{font-size:.88rem;color:var(--t2);line-height:1.8;max-width:720px}
+.pd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1)}
+.pd-card{background:var(--bg);padding:28px 24px;cursor:pointer;transition:background .2s}
+.pd-card:hover{background:var(--s2)}
+.pd-card .pd-cat{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600;margin-bottom:8px}
+.pd-card .pd-val{font-size:.95rem;font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+.pd-card .pd-reason{font-size:.72rem;color:var(--t2);line-height:1.75}
+@media(max-width:900px){.pd-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.pd-grid{grid-template-columns:1fr}}
+
+/* ═══ PICKER SECTION ═══ */
+.picker-section{padding:48px 0}
+.picker-label{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--t3);font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.picker-label::after{content:'';flex:1;height:1px;background:var(--b1)}
+
+.picker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1)}
+.pk-col{background:var(--bg);display:flex;flex-direction:column}
+.pk-hdr{padding:16px 20px;border-bottom:1px solid var(--b1)}
+.pk-hdr h3{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600}
+.pk-body{max-height:380px;overflow-y:auto;padding:4px}
+.pk-body::-webkit-scrollbar{width:2px}
+.pk-body::-webkit-scrollbar-thumb{background:var(--s4)}
+
+.opt{padding:12px 16px;cursor:pointer;transition:background .15s;border-left:2px solid transparent;margin-bottom:0}
+.opt:hover{background:var(--s2)}
+.opt.sel{background:var(--red-s);border-left-color:var(--red)}
+.opt .o-nm{font-size:.78rem;font-weight:600;letter-spacing:-.01em;margin-bottom:2px}
+.opt .o-fl{font-size:.62rem;color:var(--t3);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+@media(max-width:900px){.picker{grid-template-columns:repeat(2,1fr)}.pk-body{max-height:260px}}
+@media(max-width:500px){.picker{grid-template-columns:1fr}}
+
+/* ═══ EDUCATION + OUTPUT ═══ */
+.learn-section{padding:48px 0}
+.learn-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:1px;background:var(--b1);border:1px solid var(--b1)}
+@media(max-width:900px){.learn-grid{grid-template-columns:1fr}}
+
+.edu{background:var(--bg);padding:40px 36px;min-height:300px}
+.edu .edu-ov{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:12px}
+.edu .edu-t{font-size:1.4rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+.edu .edu-d{font-size:.82rem;color:var(--t2);line-height:1.85;margin-bottom:24px}
+
+.look-block{margin-bottom:20px;padding:24px;background:var(--s1);border-left:2px solid var(--red)}
+.look-block .lb-l{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600;margin-bottom:10px}
+.look-block p{font-size:.78rem;line-height:1.8;color:var(--t1)}
+
+.tip-block{padding:24px;background:var(--s1);border-left:2px solid var(--t4)}
+.tip-block .tb-l{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600;margin-bottom:10px}
+.tip-block p{font-size:.75rem;line-height:1.75;color:var(--t2)}
+
+.dof-block{margin-bottom:20px;padding:20px 24px;background:var(--s1)}
+.dof-block .db-l{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600;margin-bottom:10px}
+.dof-track{height:3px;background:var(--s3);border-radius:0;overflow:hidden}
+.dof-fill{height:100%;transition:width .5s cubic-bezier(.4,0,.2,1),background .5s}
+.dof-txt{margin-top:8px;font-size:.65rem;color:var(--t3)}
+
+/* Output */
+.out{background:var(--bg);padding:40px 36px;display:flex;flex-direction:column}
+.out .out-l{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600;margin-bottom:16px}
+.json-box{
+  flex:1;background:var(--s1);padding:20px;font-family:'JetBrains Mono',monospace;
+  font-size:.65rem;line-height:1.8;color:var(--t2);overflow:auto;white-space:pre;min-height:120px;
+}
+.prompt-block{margin-top:16px;padding:16px 20px;background:var(--s1)}
+.prompt-block .prb-l{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--t4);font-weight:600;margin-bottom:8px}
+.prompt-block p{font-size:.72rem;color:var(--t1);line-height:1.6}
+.btn-row{display:flex;gap:1px;margin-top:16px}
+.btn-p{
+  flex:1;padding:14px 20px;font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:inherit;border:none;
+}
+.btn-p.main-b{background:var(--red);color:#fff}
+.btn-p.main-b:hover{filter:brightness(1.15)}
+.btn-p.main-b.ok{background:#22c55e}
+.btn-p.sec-b{background:var(--s2);color:var(--t2);border:1px solid var(--b1)}
+.btn-p.sec-b:hover{background:var(--s3);color:var(--t1)}
+.btn-p.sec-b.ok{border-color:#22c55e;color:#22c55e}
+
+/* ═══ FOOTER ═══ */
+.ftr{padding:32px 0;text-align:center}
+.ftr p{font-size:.6rem;color:var(--t4);letter-spacing:.08em}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.anim>*{animation:fadeIn .35s ease both}
+.anim>*:nth-child(2){animation-delay:.05s}
+.anim>*:nth-child(3){animation-delay:.1s}
+.anim>*:nth-child(4){animation-delay:.15s}
+.anim>*:nth-child(5){animation-delay:.2s}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="hdr">
+    <div class="hdr-left">
+      <div class="hdr-mark"><div class="hdr-mark-dot"></div></div>
+      <h1>Camera Rig</h1>
+    </div>
+    <span class="hdr-sub">AI Creatorship Tool</span>
+  </header>
+</div>
+<div class="divider"></div>
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero">
+    <div class="hero-overline">Virtual Camera System</div>
+    <h2>Build your shot.</h2>
+    <p>Select a use case to see why each setting matters — or go custom in the picker below. Copy the config for any AI model.</p>
+  </div>
+</div>
+
+<!-- PRESETS -->
+<div class="container">
+  <div class="presets-section">
+    <div class="presets-label">Use Cases</div>
+    <div class="presets-grid" id="presets-grid"></div>
+  </div>
+</div>
+
+<!-- PRESET DETAIL -->
+<div class="container">
+  <div class="preset-detail" id="preset-detail">
+    <div class="divider" style="margin-bottom:48px"></div>
+    <div class="pd-head">
+      <div class="pd-overline" id="pd-overline">Selected Use Case</div>
+      <div class="pd-title" id="pd-title"></div>
+      <div class="pd-why" id="pd-why"></div>
+    </div>
+    <div class="pd-grid" id="pd-grid"></div>
+  </div>
+</div>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- PICKER -->
+<div class="container">
+  <div class="picker-section">
+    <div class="picker-label">Custom Picker</div>
+    <div class="picker" id="picker">
+      <div class="pk-col"><div class="pk-hdr"><h3>Camera Body</h3></div><div class="pk-body" id="pk-camera"></div></div>
+      <div class="pk-col"><div class="pk-hdr"><h3>Lens</h3></div><div class="pk-body" id="pk-lens"></div></div>
+      <div class="pk-col"><div class="pk-hdr"><h3>Focal Length</h3></div><div class="pk-body" id="pk-focal"></div></div>
+      <div class="pk-col"><div class="pk-hdr"><h3>Aperture</h3></div><div class="pk-body" id="pk-aperture"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- LEARN + OUTPUT -->
+<div class="container">
+  <div class="learn-section">
+    <div class="learn-grid">
+      <div class="edu anim" id="edu">
+        <div class="edu-ov">Select a setting</div>
+        <div class="edu-t">Click any option above</div>
+        <div class="edu-d">Select a camera body, lens, focal length, or aperture from the picker — or click a use case preset card — to see a full breakdown of what it does to your car shots and when to use it.</div>
+      </div>
+      <div class="out">
+        <div class="out-l">Your Rig Config</div>
+        <div class="json-box" id="json-out"></div>
+        <div class="prompt-block">
+          <div class="prb-l">Prompt Text</div>
+          <p id="prompt-out"></p>
+        </div>
+        <div class="btn-row">
+          <button class="btn-p main-b" id="btnJ" onclick="copyJ()">Copy JSON</button>
+          <button class="btn-p sec-b" id="btnP" onclick="copyP()">Copy Prompt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container"><div class="divider"></div></div>
+<div class="container"><div class="ftr"><p>Camera Rig Picker — Built for AI image & video generation workflows</p></div></div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   DATA
+   ═══════════════════════════════════════════════════ */
+
+const D={
+camera:[
+{id:"standard",nm:"Standard",
+ feel:"Neutral — no sensor character",
+ desc:"No camera emulation. Default AI rendering. Clean, flat, honest — no grain, no color science, no highlight behavior. A blank canvas.",
+ look:"The car looks like a competent phone photo. No mood, no texture, no opinion. Colors are accurate but unromantic. Reflections are clean but lifeless. Fine for testing compositions.",
+ tip:"Start here when experimenting. Once your composition is locked, switch to a character camera for mood."},
+{id:"cinema-digital-35mm",nm:"Cinema Digital 35mm",
+ feel:"ARRI/RED color science — rich shadows, smooth highlight rolloff",
+ desc:"High-end digital cinema sensor (Super 35mm). Wide dynamic range: chrome reflections bloom gently instead of clipping white, dark wheel arches retain detail. Colors render with natural warmth and richness — the famous ARRI color science.",
+ look:"Paint has depth — layers visible in metallic finishes. Chrome glows instead of burning. Shadows under the body are dark but readable, not dead black. The image has that unmistakable 'this was expensive to produce' quality. It looks like a Super Bowl car ad.",
+ tip:"Your default for commercial car work. Pair with Anamorphic Classic for full Hollywood, or Modern Prime for clean precision."},
+{id:"clean-cinema-pro",nm:"Clean Cinema Pro",
+ feel:"Zero grain, max dynamic range, pixel-perfect",
+ desc:"The perfect sensor. No grain, no noise, no artifacts. Maximum dynamic range and color accuracy. A digital window with nothing between you and the subject.",
+ look:"Every panel gap visible. Every paint particle rendered. Metallic finishes sparkle without grain interference. Almost too perfect — clinical without good lighting. Great for design detail and surface quality.",
+ tip:"Studio configurator renders, spec-sheet imagery, detail callouts. Pair with wide apertures to blur everything except surgically sharp bodywork."},
+{id:"cinema-digital-70mm",nm:"Cinema Digital 70mm",
+ feel:"Large-format — extreme 3D pop, immersive depth separation",
+ desc:"Large-format sensor (ARRI 65 / Panavision DXL2). Bigger sensor = shallower DOF at any aperture, wider field of view at any focal length, and a unique 3D quality where subjects separate from backgrounds like collage layers. Dune, The Batman.",
+ look:"The car has sculptural, tactile presence — you could reach in and touch the fender. Even at moderate apertures, depth separation is dramatic. Mountains behind a highway car feel both distant and immersive. The car occupies space in a way smaller sensors can't.",
+ tip:"Hero beauty shots where the car needs to feel LARGE. Canyon drives, dramatic reveals, anything where scale matters."},
+{id:"cinema-70mm-film",nm:"Cinema 70mm Film",
+ feel:"IMAX — massive scale, fine grain, monumental weight",
+ desc:"65/70mm film stock (Christopher Nolan's format). Huge negative = extraordinary detail with fine organic grain. Incredible tonal range. Every frame feels like it weighs something.",
+ look:"The world around the car feels VAST. Mountain roads stretch to infinity. Grain adds textured-paper quality — paint looks like a fine art print. There's physical weight to the image. Even a small car in a big landscape feels important.",
+ tip:"Epic landscape drives — canyon runs, coastal highways, mountain passes. Reveal shots where the car emerges from fog or darkness."},
+{id:"lo-fi-toy-camera",nm:"Lo-Fi Toy Camera",
+ feel:"Plastic lens — vignetting, light leaks, soft edges, happy accidents",
+ desc:"Holga/Diana emulation. Heavy vignetting darkens corners. Edges go soft. Random light leaks wash warm streaks. Colors are punchy and oversaturated. Everything looks like a beautiful mistake.",
+ look:"Dark corners create a natural spotlight. Light leaks wash warm streaks across the body. Colors are amped and surreal. Edges melt. It doesn't look professional — it looks like someone's treasured personal photo.",
+ tip:"JDM meets, Cars & Coffee candids, build diary posts. Imperfection IS the aesthetic."},
+{id:"camcorder",nm:"Camcorder",
+ feel:"Raw consumer video — blown highlights, noise, unproduced immediacy",
+ desc:"VHS/Hi8/early DV aesthetic. Low dynamic range: highlights blow, shadows get noisy. Unmistakable 'video not film' quality. Warm color shift and immediacy that says 'captured, not produced.'",
+ look:"Chrome burns to white. Night scenes crackle. Colors shift warm. Looks like someone whipped out a camcorder at a midnight meet in 2003. Raw, immediate, unquestionably REAL.",
+ tip:"Street racing, underground car culture, found footage, drift events. The worse it looks technically, the more real it feels."},
+{id:"8mm-film",nm:"8mm Film",
+ feel:"Heavy grain, warm color shift, soft focus — pure memory",
+ desc:"Super 8 home movie. Heavy visible grain. Colors shift warm. Limited resolution = soft, fuzzy quality. Occasional light leaks and frame jitter. It's a time machine.",
+ look:"The car looks like a memory. Heavy grain coats everything. Colors are warm and faded — reds lean orange, blues lean teal. It's not a photograph — it's the feeling of seeing a car you loved when you were twelve.",
+ tip:"Flashbacks, classic car features, restoration stories. Pair with 50mm and f/2.8 for authentic home-movie depth."},
+{id:"35mm-film",nm:"35mm Film",
+ feel:"Organic grain, warm palette, filmic highlight bloom — timeless",
+ desc:"Classic 35mm motion picture stock. Natural grain like canvas texture. Highlights bloom organically. Shadows carry warmth. This is what cinema looked like for a century.",
+ look:"Paint has tangible, physical quality. Reflections glow instead of burning. Shadows have warmth. The grain gives everything a living, breathing texture — the car feels like it exists in a real, specific moment.",
+ tip:"Most versatile film look. Editorial, brand films, reviews. Adds soul without committing to an era. When in doubt, 35mm."},
+{id:"medium-format-film",nm:"Medium Format Film",
+ feel:"Extraordinary tonal depth, fine grain, sculptural surface rendering",
+ desc:"Hasselblad/Mamiya/Pentax 67 emulation. Larger negative = finer grain, more tonal gradation, extraordinary surface detail. Makes surfaces look three-dimensional.",
+ look:"Paint looks touchable. Every tonal transition rendered with near-infinite steps. Metallic shimmer. Matte reveals micro-texture. Grain is present but fine — like expensive paper. Magazine center spread quality.",
+ tip:"Studio beauty, editorial, any shot where surface finish IS the story. Wraps, matte, metallic, ceramic coat — all look extraordinary."},
+],
+
+lens:[
+{id:"standard",nm:"Standard",
+ feel:"Optically invisible — clean, corrected, no personality",
+ desc:"Default corrected optics. No flares, no bokeh character, no distortion. Clean rendering.",
+ look:"Straight lines stay straight. Reflections are clean. Bokeh is smooth and round. A clear window.",
+ tip:"Starting point. Switch to a character lens once you know the mood."},
+{id:"anamorphic-classic",nm:"Anamorphic Classic",
+ feel:"Horizontal blue flares, oval bokeh, edge stretch — THE cinema lens",
+ desc:"Specially shaped glass creating horizontal flares on bright lights, oval bokeh, subtle barrel distortion at edges, and widescreen feeling. Star Wars, Blade Runner, every car commercial you've loved.",
+ look:"Headlights streak horizontal flares. City lights become glowing ovals. Body catches edge distortion that wraps into the environment. Every light source becomes cinematic. Immediately says 'this is a MOVIE.'",
+ tip:"Night drives, rolling shots with city bokeh, hero reveals. #1 for 'make it look like a car commercial.'"},
+{id:"prime-lens-classic",nm:"Prime Lens Classic",
+ feel:"Sharp center, vintage edge softness, organic warmth",
+ desc:"Fixed focal with older character. Center sharp, edges soften. Round smooth bokeh. Slight glow wide open. Warmth from the glass itself.",
+ look:"Sharp where focused — badge, headlight — but surroundings go painterly soft. Reflections carry warmth. Background lights are smooth orbs. Handmade quality.",
+ tip:"Detail shots, badge close-ups, beauty angles. Edge softness adds speed feeling to rolling shots."},
+{id:"anamorphic",nm:"Anamorphic Modern",
+ feel:"Refined flares, tighter ovals, cleaner — anamorphic with polish",
+ desc:"Modern anamorphic. Same signatures but cleaner. Less distortion, better edge sharpness, subtler flares.",
+ look:"Flares are elegant. Oval bokeh is tighter. Body lines stay sharper edge-to-edge. 'This is a movie' — but the movie is 2025.",
+ tip:"EV launches, luxury marques, tech-forward content. Classic = cinema. Modern = premium brand film."},
+{id:"vintage-aspherical-lo",nm:"Vintage Aspherical I",
+ feel:"Swirly bokeh, dreamy glow — backgrounds rotate around the subject",
+ desc:"Early aspherical with swirling out-of-focus areas. Glow wraps highlights in halos. Sharp subject, rotating dreamlike background.",
+ look:"Car sits in swirling, Van Gogh-like background. Trees and lights curve around the vehicle. Chrome catches ethereal glow. Immediately artistic.",
+ tip:"Forest drives where foliage swirls, parking garage shots where lights spiral. Distinctive and polarizing — use intentionally."},
+{id:"prime-lens",nm:"Prime Lens Modern",
+ feel:"Razor sharp corner-to-corner — zero optical compromise",
+ desc:"State-of-the-art prime. Sharp everywhere. No chromatic aberration, distortion, or flaring. Perfect window.",
+ look:"Every panel gap, bolt, paint texture, tire letter rendered at full resolution. No mood from the lens. Mood comes from lighting.",
+ tip:"Configurator renders, spec sheets, studio shots where precision = luxury."},
+{id:"vintage-aspherical-hi",nm:"Vintage Aspherical II",
+ feel:"Heavy swirl, strong glow — the art house lens",
+ desc:"Extreme vintage aspherical. Aggressive swirl, pronounced glow, abrupt focus transitions. Objectively flawed. Alive.",
+ look:"Sharp car in psychedelic background swirl. Highlights halo aggressively. Less photograph, more fever dream.",
+ tip:"Maximum drama. Night drives with spiraling lights, single-bulb garage reveals, music video energy."},
+{id:"medium-format",nm:"Medium Format",
+ feel:"Background wraps the subject — 3D depth with creamy volume",
+ desc:"Larger image circle changes perspective: backgrounds wrap gently around the subject. DOF has volume and layers.",
+ look:"Three-dimensional car. Background curves around it. Bokeh has depth and layering. High fashion editorial quality.",
+ tip:"Hero beauty shots, concours presentation, magazine spreads."},
+{id:"dslr-full-frame",nm:"DSLR Full Frame",
+ feel:"Photographic standard — what real car photographers use",
+ desc:"Canon/Nikon/Sony full-frame. Clean, predictable, well-corrected. What most actual automotive photography looks like.",
+ look:"Well-executed photograph. Not cinematic, not artsy — properly captured. What your brain expects from 'car photography.'",
+ tip:"Real automotive photography: C&C coverage, dealer photos, reviews. Authentic, not dramatic."},
+{id:"classic-planar-prime",nm:"Classic Planar Prime",
+ feel:"High contrast, 3D pop, Zeiss authority",
+ desc:"Zeiss Planar formula. Exceptional contrast, 3D subject pop, smooth deliberate bokeh.",
+ look:"The car has PUNCH. Deep shadows, crisp highlights, carved from the scene. Chrome is brilliant. Everything has confident authority.",
+ tip:"Dramatic reveals, dark/moody, night shots. Great for B&W — tonal separation built in."},
+{id:"medium-format-planar",nm:"Medium Format Planar",
+ feel:"Fashion-grade — 3D pop meets medium format creaminess",
+ desc:"Planar rendering + medium format perspective. Punchy AND smooth. Highest-end commercial work.",
+ look:"Contrast and presence with silky depth. Vogue cover for cars. Punch AND depth, bright AND smooth.",
+ tip:"Premium brand imagery — Porsche, McLaren, Pagani tier."},
+{id:"medium-format-67",nm:"Medium Format 67",
+ feel:"Pentax 67 — legendary subject separation",
+ desc:"Extraordinary separation: focused car on one plane, everything else melts. Wide gradual transitions.",
+ look:"Car like sculpture on a pedestal of blur. Gradual melt from sharp to cream. Background lights become soft perfect orbs.",
+ tip:"Static beauty — single car against dissolved background. Showroom, studio."},
+{id:"medium-format-smooth",nm:"Medium Format Smooth",
+ feel:"Maximum creaminess — softest transitions, ethereal luxury",
+ desc:"Smoothest medium format rendering. Out-of-focus = silk. Imperceptible transitions. Forgiving. Makes everything expensive.",
+ look:"Focused detail is crisp, everything else is pure cream. No hard edges, just smooth gradients. Quiet, calm, expensive.",
+ tip:"Rolls-Royce-level elegance. Detail shots emerging from smooth blur."},
+],
+
+focal:[
+{id:"standard",nm:"Standard",feel:"AI decides",
+ desc:"Default. AI picks what fits. No perspective commitment.",
+ look:"Varies — usually 35-50mm equivalent.",tip:"Testing. Lock to a specific focal once you know the frame."},
+{id:"14mm",nm:"14mm",feel:"Ultra-wide 114° — dramatic distortion, world-building",
+ desc:"Extreme wide. Barrel distortion bows edges. Near objects appear huge. Interiors feel enormous, exteriors infinite.",
+ look:"Hood bulges, tail shrinks. Streets become canyons. Low camera angle = car looks massive and aggressive, like a bull charging. Body lines curve at edges.",
+ tip:"Low-angle hero shots, interior cabins, establishing shots. Warning: straight body lines distort at edges."},
+{id:"24mm",nm:"24mm",feel:"Wide 84° — car and environment share the frame",
+ desc:"Wide. Slight edge distortion. Car AND its world visible. Foreground stretches, depth feels exaggerated — roads look longer.",
+ look:"Car takes a third to half of frame. Road stretches ahead. Mountains loom. The car has a relationship with its world — going somewhere, existing in a place.",
+ tip:"Driving shots, chase-car rolling, car-in-landscape storytelling. The classic 'hero in landscape' focal length."},
+{id:"35mm",nm:"35mm",feel:"Versatile 63° — documentary intimacy, invisible lens",
+ desc:"Wider than eye but natural. Minimal distortion. Car in context without environment dominating. The 'truth' focal length.",
+ look:"Car fills half to two-thirds of frame. Proportions natural. Feels like someone walked up with a camera. Honest, direct, not glamorous.",
+ tip:"Car meets, BTS, build journals, walk-arounds. The authenticity focal length."},
+{id:"50mm",nm:"50mm",feel:"Natural 46° — zero distortion, pure honesty",
+ desc:"Closest to human vision. No distortion or compression. Objects at actual scale. Invisible — viewers see the car, not the lens.",
+ look:"Car looks exactly as it would standing there. Accurate proportions, natural distances. Most honest rendering.",
+ tip:"Safe default. Profiles, reviews, comparisons. When in doubt, 50mm."},
+{id:"85mm",nm:"85mm",feel:"Portrait 28° — flattering compression, the car at its best",
+ desc:"Mild telephoto. Compression flatters proportions. Background compresses and isolates. THE portrait lens.",
+ look:"Body proportions at their best. Background compresses into layered planes. With wide apertures, car POPS off creamy bokeh. Flattering like good lighting.",
+ tip:"3/4 beauty, front-end portraits, press images. THE focal length for making a car look its best."},
+{id:"135mm",nm:"135mm",feel:"Tight 18° — stacked backgrounds, intimate isolation",
+ desc:"Significant compression. Background stacks behind subject. Distance collapses. Very narrow DOF. Intimate.",
+ look:"Car fills most of frame. City skyline looks RIGHT THERE behind it. Space feels dense, tight, intimate. On track, speed feels urgent.",
+ tip:"Detail shots, compressed rolling shots, telephoto tracking. On track, barriers stack like walls."},
+{id:"200mm",nm:"200mm",feel:"Telephoto 12° — extreme compression, voyeuristic tension",
+ desc:"Maximum compression. Background flattened dramatically. Paper-thin focus. Narrow view. Tension and surveillance feeling.",
+ look:"Sharp car sliver in compressed, blurred planes. Heat shimmer boils. Buildings become abstract rectangles. Almost abstract space.",
+ tip:"Motorsport, highway compression, surveillance aesthetics, extreme detail punches."},
+],
+
+aperture:[
+{id:"f1.2",nm:"f/1.2",dof:5,dofL:"Paper thin",dofC:"#ef4444",
+ desc:"Maximum light, minimum focus. Inches sharp. Everything else = abstract color.",
+ look:"Focus on headlight, badge 6 inches behind is blurred. Car is a sharp fragment in creamy bokeh. Background lights = massive orbs. Overwhelming dream.",
+ tip:"Extreme detail isolation, night scenes, dreamlike content. Warning: cannot keep a whole car in focus."},
+{id:"f1.4",nm:"f/1.4",dof:10,dofL:"Very shallow",dofC:"#f97316",
+ desc:"Nearly as shallow. Few more inches in focus. Powerful isolation. Great low-light.",
+ look:"Front 3/4 on headlight: bumper sharp, rear quarter dissolving. City lights become soft ovals. Intimate and romantic.",
+ tip:"Cinematic night drive aperture. Anamorphic + 85mm + f/1.4 = ultimate rolling shot."},
+{id:"f2",nm:"f/2",dof:20,dofL:"Shallow",dofC:"#f59e0b",
+ desc:"Shallow but usable. Front end sharp, rear softens. Background blurred but recognizable. Cinematic meets readable.",
+ look:"Car mostly sharp wheel to wheel. Environment softens pleasantly. Buildings soft enough to not compete. Car is THE subject.",
+ tip:"Go-to for most cinematic car work. Beauty shots, rolling shots, hero angles. Default 'car commercial' aperture."},
+{id:"f2.8",nm:"f/2.8",dof:30,dofL:"Moderate shallow",dofC:"#eab308",
+ desc:"Workhorse. Whole car sharp, background separated. Cinema zoom standard. Lenses peak sharp here.",
+ look:"Sharp nose to tail. Background recognizably blurred. Clear layering. Professional and controlled.",
+ tip:"Safe pro choice for 90% of car content. 'Make it cinematic' = f/2.8 + 50-85mm."},
+{id:"f4",nm:"f/4",dof:45,dofL:"Moderate",dofC:"#84cc16",
+ desc:"More environment in focus. Background soft but readable. Peak sharpness. Setting matters.",
+ look:"Car sharp, background 'there.' Canyon road recognizable. Gentle separation. More real, less styled.",
+ tip:"Routes where location matters: PCH, Stelvio. When WHERE the car is matters as much as the car."},
+{id:"f5.6",nm:"f/5.6",dof:60,dofL:"Deep moderate",dofC:"#22c55e",
+ desc:"Deep. Most scene sharp. Photojournalistic territory.",
+ look:"Car and environment both sharp. 'Photo of car in place.' Both compete equally.",
+ tip:"Car-in-environment, group shots, road trip content. The whole scene matters."},
+{id:"f8",nm:"f/8",dof:75,dofL:"Deep",dofC:"#06b6d4",
+ desc:"Deep focus. Optical sweet spot. No DOF effect. Separation from lighting/composition.",
+ look:"Everything in focus. Every element demands equal attention. Complete image.",
+ tip:"Landscape drives, architecture + car, drone perspectives. 'f/8 and be there.'"},
+{id:"f11",nm:"f/11",dof:88,dofL:"Very deep",dofC:"#3b82f6",
+ desc:"Almost everything sharp. Every plane equal weight. Graphic quality.",
+ look:"Total clarity. Multiple cars at different distances — all sharp. Illustrative.",
+ tip:"Multi-car lineups, convoy shots, car meet overviews."},
+{id:"f16",nm:"f/16",dof:100,dofL:"Everything",dofC:"#6366f1",
+ desc:"Maximum. Everything sharp. Starburst on lights. Slight diffraction.",
+ look:"Diagrammatic clarity. Lights develop star rays. Hyper-detailed. Technical illustration.",
+ tip:"Starburst on headlights, build documentation, hyper-detailed environments."},
+]
+};
+
+/* ═══════════════════════════════════════════
+   PRESETS
+   ═══════════════════════════════════════════ */
+const PRESETS={
+'hero-reveal':{n:1,label:'Hero Reveal',sub:'Launch image, first look, press reveal',
+  camera:'clean-cinema-pro',lens:'anamorphic-classic',focal:'85mm',aperture:'f2',
+  why:"The definitive first-look image. The car emerges sharp and sculpted against dramatic cinematic bokeh — every surface detail visible, every background element dissolved.",
+  s:{
+    camera:"Clean Cinema Pro for surgical precision on every surface — you want viewers to see the design language clearly. No grain competing with bodywork.",
+    lens:"Anamorphic Classic adds horizontal flares on any rim light plus oval bokeh that screams 'cinematic event.' The reveal becomes a MOMENT.",
+    focal:"85mm flatters proportions — mild compression makes the body look balanced and sculpted. Not wide enough to distort, not tight enough to flatten.",
+    aperture:"f/2 keeps the entire car sharp while dissolving background into separation. The car IS the frame."
+  }},
+'canyon-drive':{n:2,label:'Canyon Drive',sub:'Mountain road, coastal highway, epic route',
+  camera:'cinema-digital-35mm',lens:'prime-lens-classic',focal:'24mm',aperture:'f4',
+  why:"Car and road share the story equally. You see where it's going and why the drive matters — the landscape is a co-star.",
+  s:{
+    camera:"Cinema Digital 35mm has color science to make both car and landscape rich — sunset on paint AND canyon walls both render beautifully.",
+    lens:"Prime Lens Classic adds slight edge softness that enhances speed in rolling shots. Warmer rendering makes landscapes inviting.",
+    focal:"24mm captures car AND sweeping road ahead — the viewer sees the journey. Wide enough for drama without warping body lines badly.",
+    aperture:"f/4 keeps road and landscape sharp enough to be meaningful while gently softening far background. Setting is part of the story."
+  }},
+'night-rolling':{n:3,label:'Night City',sub:'Midnight drive, neon streets, urban cinema',
+  camera:'cinema-digital-35mm',lens:'anamorphic-classic',focal:'85mm',aperture:'f1.4',
+  why:"Every light source becomes cinematic. The city dissolves into abstract color behind a sharp, compressed car — pure midnight energy.",
+  s:{
+    camera:"Cinema Digital 35mm handles low light beautifully — shadows stay detailed, neon and streetlights glow instead of clipping to white.",
+    lens:"Anamorphic Classic turns every light into horizontal flare streaks. City lights become glowing ovals. The city becomes a light show behind the car.",
+    focal:"85mm compresses the street — buildings stack, neon layers, the city feels dense and immersive. Car wrapped in urban light.",
+    aperture:"f/1.4 opens for darkness and melts the city into abstract color. Neon = soft washes. Traffic lights = orbs. Car sharp, everything else = light painting."
+  }},
+'studio-beauty':{n:4,label:'Studio Beauty',sub:'Showroom, magazine cover, configurator',
+  camera:'medium-format-film',lens:'medium-format-67',focal:'85mm',aperture:'f2.8',
+  why:"Magazine cover quality. Every surface rendered with extraordinary tonal depth against a perfectly dissolved background.",
+  s:{
+    camera:"Medium Format Film renders surfaces with more tonal steps — metallic paint has visible depth, matte reveals micro-texture. Fine grain adds print quality.",
+    lens:"Medium Format 67 melts backdrop into pure cream. The sharp-to-soft transition is wide and gradual — car floats on velvet.",
+    focal:"85mm flatters — body balanced, design reads clearly. Honest but flattering.",
+    aperture:"f/2.8 keeps entire car sharp headlight to taillight while dissolving background. Every surface detail visible, nothing competes."
+  }},
+'motorsport':{n:5,label:'Motorsport',sub:'Track day, time attack, race coverage',
+  camera:'cinema-digital-35mm',lens:'prime-lens',focal:'200mm',aperture:'f2.8',
+  why:"Speed, compression, intensity. The car is a bullet cutting through stacked space — barriers and heat shimmer packed tight.",
+  s:{
+    camera:"Cinema Digital 35mm tracks fast action cleanly. Highlight rolloff keeps brake lights and chrome from burning in harsh trackside sun.",
+    lens:"Modern Prime delivers surgical sharpness on a moving target. At 200mm, any optical softness would ruin the shot.",
+    focal:"200mm compresses the track — barriers, kerbs, heat shimmer stack tightly. Space feels dense. Speed feels dangerous.",
+    aperture:"f/2.8 isolates from visual chaos — tire walls, signage, other cars soften while hero stays sharp."
+  }},
+'jdm-meet':{n:6,label:'JDM Meet',sub:'Car meet culture, parking lot editorial',
+  camera:'35mm-film',lens:'vintage-aspherical-lo',focal:'35mm',aperture:'f2',
+  why:"Editorial authenticity. Film grain, swirly bokeh, warmth — feels like a page torn from a JDM magazine.",
+  s:{
+    camera:"35mm Film grain adds lived-in texture. Warm palette makes parking lot fluorescents and neon underglow both look good. Real, not commercial.",
+    lens:"Vintage Aspherical adds swirly bokeh on parking lot lights. Instantly artistic and 'not corporate.'",
+    focal:"35mm captures car and immediate context — lot, crowd, other builds. Documentary intimacy. You're there.",
+    aperture:"f/2 isolates hero from meet chaos while keeping enough depth for vibe. Background cars soft but present."
+  }},
+'drift-raw':{n:7,label:'Drift / Touge',sub:'Raw street, tire smoke, midnight footage',
+  camera:'camcorder',lens:'standard',focal:'24mm',aperture:'f4',
+  why:"Unproduced chaos. Someone grabbed a camera and hit record. The imperfection IS the credibility.",
+  s:{
+    camera:"Camcorder: blown highlights, noise, warm shift. Looks like someone was there with a $200 camera. Imperfection = credibility.",
+    lens:"Standard — no fancy effects. This isn't produced. It's captured. Lack of character IS the character.",
+    focal:"24mm captures the chaos — smoke, opposite lock, the wall. Wide enough to see action without panning.",
+    aperture:"f/4 keeps enough in focus for fast subjects. Too shallow = fake. Real handheld footage is stopped down."
+  }},
+'luxury-editorial':{n:8,label:'Luxury Editorial',sub:'High fashion, premium brand, prestige',
+  camera:'cinema-digital-70mm',lens:'medium-format-planar',focal:'85mm',aperture:'f2',
+  why:"Makes any car look like it costs ten million dollars. 3D separation, contrast authority, refined bokeh — quietly devastating.",
+  s:{
+    camera:"Large Format 70mm gives extreme 3D separation — car lifts off background like sculpture. Dramatic depth even at moderate apertures.",
+    lens:"Medium Format Planar combines high contrast (punch, authority) with creamy depth (smooth, luxurious). Presence AND refinement.",
+    focal:"85mm flatters. Proportions balanced. Design reads. Mild compression adds gravitas. Quietly confident.",
+    aperture:"f/2 gives luxury bokeh while keeping full body sharp. Background = soft context, not competition."
+  }},
+'classic-nostalgia':{n:9,label:'Classic Car',sub:'Vintage, restoration, father-son story',
+  camera:'8mm-film',lens:'prime-lens-classic',focal:'50mm',aperture:'f2.8',
+  why:"The car as memory. Warm, grainy, soft — like finding your dad's Super 8 reels in the attic.",
+  s:{
+    camera:"8mm Film: heavy grain, warm shifts. Not a photo — a memory. The car exists in the past.",
+    lens:"Prime Lens Classic adds period-correct softness. Modern razor glass would break the illusion — this feels like something from 1974.",
+    focal:"50mm — the home movie focal length. No drama. 'I'm standing here looking at this car.' Intimate.",
+    aperture:"f/2.8 — moderate depth. Home movies weren't f/1.4. Background visible: driveway, garage, street. Context makes the memory specific."
+  }},
+'detail-closeup':{n:10,label:'Detail / Badge',sub:'Macro, emblem, texture, material',
+  camera:'clean-cinema-pro',lens:'prime-lens',focal:'135mm',aperture:'f1.4',
+  why:"One detail dominates everything. Surgical precision on the hero element, everything else dissolves.",
+  s:{
+    camera:"Clean Cinema Pro: absolute precision on the focus area. Every machined edge, embossed letter, texture captured without grain interference.",
+    lens:"Modern Prime: max resolving power at the focus point. At 135mm f/1.4, any optical softness ruins the shot.",
+    focal:"135mm punches tight without going extreme. Mild compression adds premium quality — a badge at 135mm looks more important than at 50mm.",
+    aperture:"f/1.4 creates max isolation — detail is a sharp island in a sea of cream. Only inches in focus."
+  }},
+'epic-landscape':{n:11,label:'Epic Landscape',sub:'Drone, overview, the car in the world',
+  camera:'cinema-70mm-film',lens:'prime-lens',focal:'14mm',aperture:'f11',
+  why:"The car as a tiny jewel in an overwhelming, tack-sharp world. Everything matters equally.",
+  s:{
+    camera:"70mm IMAX film for monumental scale. Every rock, cloud, tree has weight. The world feels vast and real.",
+    lens:"Modern Prime: landscape as sharp as the sensor resolves. At f/11, every element must be equally detailed.",
+    focal:"14mm ultra-wide: the entire world in frame. Car is small but precisely placed in enormous composition.",
+    aperture:"f/11: tack-sharp front to horizon. No DOF effect. This is about environment. Everything documented."
+  }},
+'garage-moody':{n:12,label:'Garage Moody',sub:'Build story, workshop, one light',
+  camera:'35mm-film',lens:'classic-planar-prime',focal:'50mm',aperture:'f2',
+  why:"One light, one car, all drama. Film grain + high contrast + honest focal length. The build speaks for itself.",
+  s:{
+    camera:"35mm Film grain adds workshop texture. Warmth keeps shadows from going dead. It's a working garage, not a studio.",
+    lens:"Classic Planar: high contrast makes dramatic lighting SING. Lit areas POP against deep shadows. Drama amplified.",
+    focal:"50mm: honest. No perspective tricks. Let the LIGHTING be the drama. Proportions accurate.",
+    aperture:"f/2 isolates car from garage clutter — tools and shelves soften enough to not compete while staying present."
+  }},
+};
+
+/* ═══════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════ */
+let S={camera:'cinema-digital-35mm',lens:'anamorphic-classic',focal:'85mm',aperture:'f2'};
+let activePreset='hero-reveal';
+
+function gi(cat,id){return D[cat].find(i=>i.id===id)}
+
+/* ═══════════════════════════════════════════
+   RENDER
+   ═══════════════════════════════════════════ */
+function renderPresets(){
+  const g=document.getElementById('presets-grid');
+  g.innerHTML=Object.entries(PRESETS).map(([k,p])=>`
+    <div class="p-card${activePreset===k?' active':''}" data-k="${k}">
+      <div class="p-num">${String(p.n).padStart(2,'0')}</div>
+      <div class="p-name">${p.label}</div>
+      <div class="p-desc">${p.sub}</div>
+      <div class="p-settings">${gi('camera',p.camera).nm} · ${gi('focal',p.focal).nm} · ${gi('aperture',p.aperture).nm}</div>
+    </div>
+  `).join('');
+  g.querySelectorAll('.p-card').forEach(c=>c.addEventListener('click',()=>applyPreset(c.dataset.k)));
+}
+
+function renderCol(cat){
+  const c=document.getElementById('pk-'+cat);
+  c.innerHTML='';
+  D[cat].forEach(item=>{
+    const d=document.createElement('div');
+    d.className='opt'+(S[cat]===item.id?' sel':'');
+    d.innerHTML=`<div class="o-nm">${item.nm}</div><div class="o-fl">${item.feel}</div>`;
+    d.addEventListener('click',()=>{S[cat]=item.id;activePreset=null;renderAll();showItem(cat,item);});
+    c.appendChild(d);
+  });
+}
+
+function renderAll(){
+  renderPresets();
+  ['camera','lens','focal','aperture'].forEach(renderCol);
+  updateOut();
+}
+
+function showItem(cat,item){
+  const labels={camera:'Camera Body',lens:'Lens',focal:'Focal Length',aperture:'Aperture'};
+  let extra='';
+  if(cat==='aperture'){
+    extra=`<div class="dof-block"><div class="db-l">Depth of Field — ${item.dofL}</div><div class="dof-track"><div class="dof-fill" style="width:${item.dof}%;background:${item.dofC}"></div></div><div class="dof-txt">${item.dof<25?'Only a fragment of the car is in focus':item.dof<50?'Car sharp, background soft':item.dof<75?'Car and near environment sharp':'Everything sharp, front to back'}</div></div>`;
+  }
+  const el=document.getElementById('edu');
+  el.innerHTML=`
+    <div class="edu-ov">${labels[cat]}</div>
+    <div class="edu-t">${item.nm}</div>
+    <div class="edu-d">${item.desc}</div>
+    <div class="look-block"><div class="lb-l">What your car shot looks like</div><p>${item.look}</p></div>
+    ${extra}
+    <div class="tip-block"><div class="tb-l">When to use this</div><p>${item.tip}</p></div>
+  `;
+  el.classList.remove('anim');void el.offsetWidth;el.classList.add('anim');
+  document.getElementById('preset-detail').classList.remove('show');
+}
+
+function showPreset(k){
+  const p=PRESETS[k];
+  const cats=[['camera','Camera Body'],['lens','Lens'],['focal','Focal Length'],['aperture','Aperture']];
+  document.getElementById('pd-overline').textContent=`Use Case ${String(p.n).padStart(2,'0')}`;
+  document.getElementById('pd-title').textContent=p.label;
+  document.getElementById('pd-why').textContent=p.why;
+  document.getElementById('pd-grid').innerHTML=cats.map(([c,label])=>`
+    <div class="pd-card" onclick="showItem('${c}',gi('${c}','${p[c]}'))">
+      <div class="pd-cat">${label}</div>
+      <div class="pd-val">${gi(c,p[c]).nm}</div>
+      <div class="pd-reason">${p.s[c]}</div>
+    </div>
+  `).join('');
+  document.getElementById('preset-detail').classList.add('show');
+
+  const el=document.getElementById('edu');
+  el.innerHTML=`
+    <div class="edu-ov">Use Case ${String(p.n).padStart(2,'0')}</div>
+    <div class="edu-t">${p.label}</div>
+    <div class="edu-d">${p.why}</div>
+    <div class="tip-block"><div class="tb-l">How to use</div><p>Click any of the four setting cards above to learn why that specific choice matters for this use case — and what it does to your car shot.</p></div>
+  `;
+  el.classList.remove('anim');void el.offsetWidth;el.classList.add('anim');
+}
+
+function applyPreset(k){
+  const p=PRESETS[k];
+  S={camera:p.camera,lens:p.lens,focal:p.focal,aperture:p.aperture};
+  activePreset=k;
+  renderAll();
+  showPreset(k);
+  document.getElementById('preset-detail').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function buildPrompt(){
+  return `Shot on ${gi('camera',S.camera).nm} with ${gi('lens',S.lens).nm} lens, ${gi('focal',S.focal).nm}, ${gi('aperture',S.aperture).nm}`;
+}
+
+function updateOut(){
+  const c=gi('camera',S.camera),l=gi('lens',S.lens),f=gi('focal',S.focal),a=gi('aperture',S.aperture);
+  document.getElementById('json-out').textContent=JSON.stringify({
+    camera:{type:c.nm,character:c.feel},
+    lens:{type:l.nm,character:l.feel},
+    focal_length:f.nm,
+    aperture:a.nm,
+    prompt_text:buildPrompt()
+  },null,2);
+  document.getElementById('prompt-out').textContent=buildPrompt();
+}
+
+function flash(btn,cls){btn.classList.add(cls);setTimeout(()=>btn.classList.remove(cls),1500)}
+function copyJ(){
+  navigator.clipboard.writeText(document.getElementById('json-out').textContent);
+  const b=document.getElementById('btnJ');b.textContent='Copied';flash(b,'ok');setTimeout(()=>b.textContent='Copy JSON',1500);
+}
+function copyP(){
+  navigator.clipboard.writeText(buildPrompt());
+  const b=document.getElementById('btnP');b.textContent='Copied';flash(b,'ok');setTimeout(()=>b.textContent='Copy Prompt',1500);
+}
+
+// INIT
+renderAll();
+applyPreset('hero-reveal');
+</script>
+</body>
+</html>
