@@ -1,3 +1,10 @@
+---
+kind: workflow
+id: chinese-ferrari-perfume-locks
+title: Chinese Ferrari Perfume Locks
+applies_to: image,video
+model: all
+---
 # Identity Locks
 
 Copy-paste these verbatim into every prompt. Do not paraphrase.

@@ -1,6 +1,15 @@
-# Ice Queen × F40 — Tokyo Edit
+---
+kind: workflow
+id: chinese-ferrari-perfume-navigation
+title: Chinese Ferrari Perfume Navigation
+applies_to: project
+model: filesystem
+---
+# Chinese Ferrari Perfume — F40 Tokyo Edit
 
-**Concept:** Cinematic fashion/automotive jump-cut edit. Black Ferrari F40, arrogant East Asian ice queen in all black. Two visual modes alternating: red elevator B-roll (interior) + gray daylight Tokyo street (exterior). Perfume-commercial emotional register, Requiem-style cut cadence.
+**Concept:** Brand video — cinematic fashion/automotive jump-cut edit. Black Ferrari F40, controlled East Asian woman in all black, anonymous perfume ritual. Two visual modes alternating: red elevator B-roll (interior) + gray daylight Tokyo street (exterior). Perfume-ad-adjacent emotional register, Black Opium / Paco Rabanne cut cadence.
+
+**Brand-video DNA:** The woman, the F40, and the anonymous perfume bottle are the brand carriers. Camera obsessions land on signature pieces: silver chest clasp + chain, silver drip earrings, talon nails, perfume mist, matte-black bottle, silhouette, F40 details. Ritualistic and observational beats. Final beats land clean for brand-mark reveal.
 
 **Output:** 15-20s final, stitched in post from a library of 4-8s Seedance clips.
 
@@ -8,6 +17,9 @@
 
 ## Files
 
+- `project.md` — current project brief and constraints
+- `directions/chinese-ferrari-perfume.md` — active visual direction
+- `scenes/01-luxury-teaser-collage/` — consolidated 12-panel Chinese Ferrari perfume storyboard prompt
 - `locks.md` — character, F40, and environment identity locks (copy-paste into every prompt)
 - `shot-list.md` — 10 core stills to generate (5 red elevator, 5 gray exterior)
 - `nb2-prompts.md` — all 10 Nano Banana Pro prompts

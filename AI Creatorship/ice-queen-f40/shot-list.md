@@ -1,3 +1,10 @@
+---
+kind: workflow
+id: chinese-ferrari-perfume-shot-list
+title: Chinese Ferrari Perfume Shot List
+applies_to: image,video
+model: all
+---
 # Shot List — 10 Core Stills
 
 Each still is a motion-ready start frame for Seedance. Design them as keyframes pulled from motion, not static portraits.
