@@ -1,0 +1,23 @@
+{
+  "id": "shot_008_taillights",
+  "name": "Rear tail lights in rain",
+  "purpose": "Mood beat. F40 as architecture — the departing signature. Pairs with shot_010 as an opening/closing bookend of the exterior.",
+  "category": "mood_beat",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "2.39:1",
+  "reference_images": [],
+  "midjourney_prompt": "rear three-quarter shot of a black Ferrari F40 on wet Tokyo asphalt at night, twin round red tail lights glowing through rain mist, oxblood reflections on the pavement, distant neon signage out of focus, anamorphic 2.39:1, crushed blacks, fine grain, cinematic stillness --ar 21:9 --style raw",
+  "nano_banana_2_prompt": "Subject: a black Ferrari F40 shot from the rear three-quarter angle, parked or stationary on wet Tokyo asphalt at night. Twin round red tail lights glowing through light rain mist. No character visible.\n\nStyle: mood beat, cinematic exterior still, anamorphic 2.39:1, fine grain, crushed blacks.\n\nComposition: horizontal framing, car positioned in the left half of the frame with the tail lights as the focal anchor, the right half of the frame receding into wet asphalt with neon reflections, low camera height close to the ground.\n\nLighting: ambient Tokyo neon (cool blue-magenta mix) from signage off-frame, sodium warm wash from a street lamp slightly above, strong specular reflection of tail lights on the wet pavement, shadow rolloff crushed into black.\n\nBackground: wet asphalt extending to vanishing point, distant neon signage heavily out of focus (bokeh).\n\nColor palette: crushed black (F40 body, sky, street), oxblood red (tail lights + pavement reflection), cool neon bokeh (blue and magenta), warm sodium rim.\n\nAvoid: any modern Ferrari (458, 488, F8, SF90), chrome wheels (F40 has specific five-spoke wheels), any character, rain streaks overexposed, HDR glow, license plate visible.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft."
+    }
+  ]
+}

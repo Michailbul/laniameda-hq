@@ -1,0 +1,106 @@
+[
+  {
+    "ingestKey": "pack-character-sheet-v1-human",
+    "promptIngestKey": "pack-character-sheet-v1-human",
+    "allowPromptOnly": true,
+    "pillar": "creators",
+    "title": "Character Sheet — Human (7-view turnaround)",
+    "description": "Professional character reference sheet: 4 full-body views (front, L profile, R profile, back) + 3 close-up portraits (front, L, R). Identity-lock anchor for downstream generation.",
+    "promptSections": {
+      "finalPrompt": "Create a professional character reference sheet based strictly on the uploaded reference image. Use a clean, neutral plain background and present the sheet as a technical model turnaround while matching the exact visual style of the reference (same realism level, rendering approach, texture, color treatment, and overall aesthetic). Arrange the composition into two horizontal rows. Top row: four full-body standing views placed side-by-side in this order: front view, left profile view (facing left), right profile view (facing right), back view. Bottom row: three highly detailed close-up portraits aligned beneath the full-body row in this order: front portrait, left profile portrait (facing left), right profile portrait (facing right). Maintain perfect identity consistency across every panel. Keep the subject in a relaxed A-pose and with consistent scale and alignment between views, accurate anatomy, and clear silhouette; ensure even spacing and clean panel separation, with uniform framing and consistent head height across the full-body lineup and consistent facial scale across the portraits. Lighting should be consistent across all panels (same direction, intensity, and softness), with natural, controlled shadows that preserve detail without dramatic mood shifts. Output a crisp, print-ready reference sheet look, sharp details."
+    },
+    "modelProvider": "google",
+    "workflowType": "asset_recipe",
+    "typedTags": [
+      { "category": "model_name", "value": "nano-banana-pro", "source": "manual" },
+      { "category": "workflow_type", "value": "reference-sheet", "source": "manual" },
+      { "category": "content_type", "value": "character", "source": "manual" },
+      { "category": "custom", "value": "pack:character-sheet", "source": "manual" },
+      { "category": "custom", "value": "identity-lock", "source": "manual" }
+    ]
+  },
+  {
+    "ingestKey": "pack-character-sheet-v2-car-medium",
+    "promptIngestKey": "pack-character-sheet-v2-car-medium",
+    "allowPromptOnly": true,
+    "pillar": "creators",
+    "title": "Car Sheet — Medium (4 full views + 4 medium details)",
+    "description": "Automotive reference turnaround. Top row: front 3/4, profile, rear 3/4, rear. Bottom row: front fascia, wheel+brake, side body, rear detail. Studio cyclorama, consistent lighting.",
+    "promptSections": {
+      "finalPrompt": "Create a professional automotive reference sheet based strictly on the uploaded reference image. Use a clean, neutral seamless studio background (soft light grey, cyclorama). Match the exact visual style of the reference — same realism level, rendering approach, paint treatment, reflectivity, and overall aesthetic. Arrange the composition into two horizontal rows. Top row: four full vehicle views placed side-by-side, centered and evenly spaced, in this order: 1) front 3/4 hero angle (front-left), 2) pure side profile (driver side), 3) rear 3/4 angle (rear-right), 4) pure rear view. Bottom row: four tight detail close-ups aligned beneath the top row in this order: 1) front fascia close-up (headlight, grille, bumper), 2) wheel + brake caliper close-up (driver side front), 3) side body detail (door handle, character line, badge), 4) rear detail (taillight, diffuser, exhaust). Maintain perfect identity consistency across every panel: identical paint color, wheel design, badge placement, ride height, trim, and proportions. Keep the car stationary with wheels pointing straight. Consistent scale and alignment between views, uniform framing, consistent vehicle height across the top row, consistent focal scale across the close-ups. Lighting is consistent across all panels — soft overhead key with gentle fill, clean controlled reflections on the paint, natural contact shadows, no dramatic mood shifts. Output a crisp, print-ready automotive reference sheet, sharp details, production-grade."
+    },
+    "modelProvider": "google",
+    "workflowType": "asset_recipe",
+    "typedTags": [
+      { "category": "model_name", "value": "nano-banana-pro", "source": "manual" },
+      { "category": "workflow_type", "value": "reference-sheet", "source": "manual" },
+      { "category": "content_type", "value": "car", "source": "manual" },
+      { "category": "custom", "value": "pack:character-sheet", "source": "manual" },
+      { "category": "custom", "value": "zoom:medium", "source": "manual" },
+      { "category": "custom", "value": "identity-lock", "source": "manual" }
+    ]
+  },
+  {
+    "ingestKey": "pack-character-sheet-v3-car-macro",
+    "promptIngestKey": "pack-character-sheet-v3-car-macro",
+    "allowPromptOnly": true,
+    "pillar": "creators",
+    "title": "Car Sheet — Macro (8 extreme close-ups)",
+    "description": "Macro detail sheet: headlight, badge, intake, mirror, wheel spoke, brake caliper, taillight, exhaust tip. Hero detail fills 90% of every panel. No full-car views.",
+    "promptSections": {
+      "finalPrompt": "Create a professional automotive MACRO DETAIL sheet based strictly on the uploaded reference image. Use a clean neutral seamless studio background (soft light grey cyclorama) matching the reference. Match the exact visual style — same realism level, paint reflectivity, lighting behavior, and overall aesthetic. Every panel is an EXTREME CLOSE-UP, tightly cropped, filling 90% of the frame with the detail itself. No full-car views. No medium shots. Arrange the composition into TWO horizontal rows of FOUR panels each, evenly spaced with clean panel separation. Top row (front-half details): 1) Headlight macro — lens, housing, internal structure, surrounding bodywork. 2) Front badge macro — manufacturer emblem filling frame, paint texture around it visible. 3) Front bumper intake / air duct macro — mesh pattern, splitter edge, shadow inside the duct. 4) Side mirror macro — mirror cap form, mounting stalk, reflection on the glass. Bottom row (rear-half + mechanical details): 5) Wheel spoke + center cap macro — spoke profile, hub detail, lug pattern. 6) Brake caliper + rotor macro — caliper logo, rotor slots, dust shield, tire sidewall text partially visible. 7) Taillight macro — lens segmentation, internal reflectors, seal against bodywork. 8) Exhaust tip macro — pipe outlet, heat coloration, diffuser slats surrounding it. Maintain perfect identity consistency across every panel: identical paint color, same finish, same trim, same wheel design, same badge style — all matching the reference exactly. Uniform crop tightness across all panels. Consistent lighting across the full sheet — soft overhead key with subtle fill, clean controlled reflections on paint, crisp contact shadows, no dramatic mood shifts. Shallow depth of field, razor-sharp focus on the hero detail, slight soft falloff at panel edges. Output a crisp, print-ready automotive macro detail sheet, production-grade, sharp textures, visible material quality (paint depth, metal grain, carbon weave where applicable, rubber tread, glass clarity)."
+    },
+    "modelProvider": "google",
+    "workflowType": "asset_recipe",
+    "typedTags": [
+      { "category": "model_name", "value": "nano-banana-pro", "source": "manual" },
+      { "category": "workflow_type", "value": "reference-sheet", "source": "manual" },
+      { "category": "content_type", "value": "car", "source": "manual" },
+      { "category": "custom", "value": "pack:character-sheet", "source": "manual" },
+      { "category": "custom", "value": "zoom:macro", "source": "manual" },
+      { "category": "custom", "value": "identity-lock", "source": "manual" }
+    ]
+  },
+  {
+    "ingestKey": "pack-character-sheet-v4-car-context",
+    "promptIngestKey": "pack-character-sheet-v4-car-context",
+    "allowPromptOnly": true,
+    "pillar": "creators",
+    "title": "Car Sheet — Close-up with Context (8 grounded details)",
+    "description": "Middle ground between the medium sheet and the macro sheet. Each panel shows a detail plus 20–30% surrounding bodywork so the viewer reads WHAT part of the car it is and HOW it sits on the vehicle.",
+    "promptSections": {
+      "finalPrompt": "Create a professional automotive CLOSE-UP DETAIL sheet based strictly on the uploaded reference image. Use a clean neutral seamless studio background (soft light grey cyclorama) matching the reference. Match the exact visual style — realism level, paint reflectivity, lighting, aesthetic. Every panel is a CLOSE-UP WITH CONTEXT — tighter than a medium shot, wider than a macro. The hero detail dominates the frame but is grounded by the surrounding bodywork so the viewer can read WHAT part of the car it is and HOW it sits on the vehicle. Include roughly 20–30% of adjacent body panel, line, or shadow around each detail. Arrange the composition into TWO horizontal rows of FOUR panels each, evenly spaced with clean panel separation. Top row (front + side details, in context): 1) Front fascia close-up — headlight area with hood line and front fender curve visible framing it. 2) Front 3/4 corner detail — headlight, turn signal, bumper intake, and leading fender edge together as one tight composition. 3) Side profile wheel arch — front wheel + caliper + wheel arch flare + door-to-fender shut line visible. 4) Side body detail — badge on front fender with door cut-line, character line, and side air intake framing it. Bottom row (rear + mechanical details, in context): 5) Rear 3/4 corner — rear fender flare, rear wheel, rear quarter window, rear bumper edge in one frame. 6) Engine cover + rear wing — deck surface, slats, and rear wing visible together. 7) Taillight cluster — full taillight unit with surrounding body cut-lines, rear bumper edge, and a hint of the diffuser below. 8) Exhaust + diffuser — exhaust tips with rear diffuser slats, license-plate recess, and lower bumper edge framing them. Maintain perfect identity consistency across every panel: identical paint color, same finish, same trim, same wheel design, same badge style — all matching the reference exactly. Uniform crop tightness across all eight panels — consistent close-up-with-context framing, nothing too tight, nothing too wide. Consistent lighting across the full sheet: soft overhead key with subtle fill, clean controlled reflections on paint, crisp contact shadows, no dramatic mood shifts. Medium-shallow depth of field — hero detail razor sharp, context softly present but readable. Output a crisp, print-ready automotive detail sheet, production-grade, sharp textures, visible material quality (paint depth, rubber tread, glass clarity, panel gap precision)."
+    },
+    "modelProvider": "google",
+    "workflowType": "asset_recipe",
+    "typedTags": [
+      { "category": "model_name", "value": "nano-banana-pro", "source": "manual" },
+      { "category": "workflow_type", "value": "reference-sheet", "source": "manual" },
+      { "category": "content_type", "value": "car", "source": "manual" },
+      { "category": "custom", "value": "pack:character-sheet", "source": "manual" },
+      { "category": "custom", "value": "zoom:close-up-with-context", "source": "manual" },
+      { "category": "custom", "value": "identity-lock", "source": "manual" }
+    ]
+  },
+  {
+    "ingestKey": "pack-character-sheet-v5-environment-city",
+    "promptIngestKey": "pack-character-sheet-v5-environment-city",
+    "allowPromptOnly": true,
+    "pillar": "creators",
+    "title": "Environment Sheet — City (location identity turnaround)",
+    "description": "City reference sheet: 4 establishing wides (skyline, avenue, alley, signature infrastructure) + 4 context close-ups (facade, architectural pattern, street furniture, ground texture). Locks time of day, weather, palette across all panels.",
+    "promptSections": {
+      "finalPrompt": "Create a professional environment reference sheet based strictly on the uploaded reference image. Treat this as a location identity turnaround — the city is the \"character\". Match the exact visual style of the reference: same realism level, time of day, weather, atmospheric density, color grade, and overall aesthetic. Do not shift season, light, or mood across panels. Arrange the composition into TWO horizontal rows of FOUR panels each, evenly spaced with clean panel separation. Top row (establishing views — wide framings that define the city's silhouette and scale): 1) High aerial skyline — the signature skyline silhouette of this city, wide establishing shot showing the overall urban profile. 2) Main street / avenue wide — eye-level wide shot looking down a hero street, strong one-point perspective, architecture flanking both sides. 3) Side street / alley wide — narrower secondary street, more intimate scale, showing the quieter urban grain. 4) Signature infrastructure — distinctive landmark of this city (bridge, waterfront, plaza, transit entrance, iconic tower base — whichever matches the reference), wide frame. Bottom row (context close-ups — tighter shots that define the city's material and street DNA): 5) Facade detail — ground-floor storefront / doorway / window composition, readable but contextual crop. 6) Architectural pattern — characteristic building detail of this city (cornice, balcony, rooftop, column, ornament), tight framing with context. 7) Street furniture — signature lamp post, street sign, traffic light, fire hydrant, bollard — whatever defines this city's street layer. 8) Ground texture — pavement / cobblestone / asphalt / curb / road markings — the tactile base layer. Maintain perfect identity consistency across every panel: identical time of day, identical weather, identical atmospheric haze density, identical color grade, identical palette, identical sun direction if visible. Lighting is consistent across all panels — same key direction, same softness, same shadow length. No dramatic mood shifts between panels. Uniform panel proportions and spacing, consistent horizon logic across the top row, consistent crop tightness across the bottom row. Output a crisp, print-ready environment reference sheet, production-grade, cinematic realism, sharp architectural detail, readable urban textures (stone grain, glass reflection, metal patina, road surface)."
+    },
+    "modelProvider": "google",
+    "workflowType": "asset_recipe",
+    "typedTags": [
+      { "category": "model_name", "value": "nano-banana-pro", "source": "manual" },
+      { "category": "workflow_type", "value": "reference-sheet", "source": "manual" },
+      { "category": "content_type", "value": "environment", "source": "manual" },
+      { "category": "environment", "value": "city", "source": "manual" },
+      { "category": "custom", "value": "pack:character-sheet", "source": "manual" },
+      { "category": "custom", "value": "identity-lock", "source": "manual" }
+    ]
+  }
+]

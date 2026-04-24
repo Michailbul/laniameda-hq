@@ -1,0 +1,121 @@
+---
+kind: character
+id: f40-driver
+schema_version: 1.0
+project: F40 Driver — Tokyo
+last_updated: 2026-04-18
+---
+# unnamed driver
+## Identity
+- **name**: unnamed driver
+- **age_range**: 24-27
+- **ethnicity**: East Asian
+- **height**: 168-172cm
+- **build**: lean, athletic, long-limbed
+## Face
+- **shape**: oval with defined cheekbones and a sharp jawline
+- **skin**: porcelain cool-toned, matte finish with soft highlight on cheekbones
+- **brows**: natural dark, low-arched, softly feathered
+- **eyes**: almond-shaped, dark brown nearly black, calm steady gaze, no smile reaching the eyes
+- **nose**: straight narrow bridge with a slightly rounded tip
+- **lips**: neutral resting pose, full lower lip, nude-mauve matte
+- **expression_rule**: never smiles. micro-expression only. composure above all.
+## Hair
+- **color**: jet black with cool undertones, no warm highlights
+- **length**: collarbone
+- **texture**: straight with a soft center parting
+- **locked_detail**: two asymmetric face-framing strands — one longer on the left falling past the jaw, one shorter on the right brushing the cheekbone
+- **finish**: high-gloss, editorial, no flyaways
+## Wardrobe
+- **driving_mode**: black fine-merino turtleneck, matte black leather driving gloves REMOVED — bare hands only, black tailored trousers
+- **editorial_mode**: floor-length oxblood silk slip dress with bias cut, no jewellery except a thin silver ear cuff on the left ear
+- **footwear**: pointed black leather flats or heeled boots depending on mode
+## Manicure
+
+- **shape**: almond, medium length
+- **color**: glossy oxblood (#6b0f1a)
+- **finish**: high-shine gel
+- **rule**: manicure is the ONLY red note on the hand. no rings. no polish chips.
+
+## Psychotype
+
+quiet commander — aristocratic detachment fused with predator composure. she holds emotion rather than performing it. suppressed sensuality. authority without effort.
+
+## Visual Style DNA
+
+anamorphic 2.39:1, crushed blacks, cool Tokyo exterior resolving into warm cabin interior, dominated by black, oxblood red, and silver. fine grain. low-contrast shadow rolloff. no HDR look.
+
+## Environment Context
+
+Tokyo at night and blue hour — wet asphalt, neon reflections, rain mist, tunnel sodium, shibuya crossing bokeh. cabin interior is the Ferrari F40 — black leather, red stitching, exposed carbon, gated chrome shifter.
+
+## Universal Negative Prompt
+
+```
+no smile, no teeth showing, no jewellery other than ear cuff, no claw gloves, no silver gloves, no rings, no visible tattoos, no heavy makeup, no glossy skin, no HDR glow, no color shift to warm orange on skin, no symmetrical bangs, no blunt fringe
+```
+
+## Slugs (copy-paste ready)
+### identity_short
+
+```
+mid-20s East Asian woman, jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, almond dark eyes, nude-mauve matte lips, quiet commander expression
+```
+
+### identity_long
+
+```
+mid-20s East Asian woman, 168-172cm lean build, jet black collarbone-length straight hair with cool undertones, soft center parting, two locked asymmetric face-framing strands (longer left past the jaw, shorter right at the cheekbone), porcelain cool matte skin, oval face, sharp jawline, almond dark-brown eyes with steady unsmiling gaze, straight nose, full lower lip in nude-mauve matte, composure of aristocratic detachment
+```
+
+### wardrobe_driving
+
+```
+black fine-merino turtleneck, bare hands, glossy oxblood almond manicure, black tailored trousers
+```
+
+### wardrobe_editorial
+
+```
+floor-length oxblood silk bias-cut slip dress, thin silver ear cuff on left ear, glossy oxblood almond manicure
+```
+
+### psychotype
+
+```
+quiet commander. does not smile. holds emotion. aristocratic detachment, predator composure, suppressed sensuality
+```
+
+### style_dna
+
+```
+anamorphic 2.39:1, crushed blacks, cool-to-warm Tokyo palette (black + oxblood + silver), fine grain, low-contrast shadow rolloff, no HDR
+```
+## Context recipes
+### turnaround_sheet
+
+identity_long + wardrobe_driving + psychotype + style_dna + four-panel turnaround composition
+
+### editorial_hero
+
+identity_long + wardrobe_editorial + psychotype + style_dna + full-body portrait on oxblood seamless backdrop
+
+### beauty_insert_hands
+
+identity_short (face not shown) + wardrobe_driving + manicure locked + style_dna
+
+### rearview_eyes
+
+identity_short + eyes-only framing + psychotype + style_dna
+
+### silhouette_rear_window
+
+identity_short + silhouette framing against Tokyo neon + style_dna
+
+### driving_mid_shot
+
+identity_long + wardrobe_driving + psychotype + style_dna + F40 cabin context
+
+### no_character_car
+
+style_dna + environment_context only — character not present

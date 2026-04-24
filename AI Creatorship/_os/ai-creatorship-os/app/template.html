@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ai-creatorship-os</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>__STYLES__</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">ai-creatorship<em>-</em>os</div>
+  <span id="modeBadge" class="mode-badge">detecting…</span>
+  <button id="btnProjects" class="ghost topbar-projects" style="display:none;" title="Back to all projects">← projects</button>
+  <div id="projectTitle" class="project-title" style="display:none;"></div>
+  <div class="spacer"></div>
+  <button id="btnTheme" class="ghost icon-btn" aria-label="Toggle theme"></button>
+  <button id="btnOpen" class="ghost" title="Grant access to the AI Creatorship/ workspace folder.">Open workspace</button>
+  <button id="btnReload" class="ghost" style="display:none;" disabled title="Re-read the active project from disk.">Reload</button>
+  <button id="btnSave" class="primary" style="display:none;" disabled title="Save + auto-commit.">Save  ⌘S</button>
+</header>
+
+<main>
+  <div id="emptyState" style="display:none;"></div>
+  <div id="content"></div>
+</main>
+
+<script>__SCRIPT__</script>
+</body>
+</html>

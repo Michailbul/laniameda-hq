@@ -1,0 +1,28 @@
+{
+  "name": "ai-creatorship-os",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "ai-creatorship-os — a filesystem-first storyboard app for AI creative iteration, paired with Claude Code.",
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p 5173",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 5173",
+    "typecheck": "tsc --noEmit",
+    "legacy:build": "node build.mjs",
+    "legacy:dev": "node dev.mjs",
+    "legacy:start": "node server.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "esbuild": "^0.28.0",
+    "typescript": "5.6.3"
+  },
+  "dependencies": {
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}

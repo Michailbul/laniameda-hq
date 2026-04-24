@@ -1,0 +1,28 @@
+{
+  "source_url": "https://x.com/AmirMushich/status/2039795056085721112",
+  "parent_tweet_url": "https://x.com/AmirMushich/status/2039795053237858362",
+  "author": "AmirMušić",
+  "handle": "@AmirMushich",
+  "date": "2026-04-02",
+  "topic": "ai-image-gen / brand-campaign-prompt",
+  "verdict": "JUICE",
+  "tools_mentioned": ["Nano Banana 2", "LTX Studio (sponsored link)"],
+  "linked_resources": [
+    {
+      "url": "https://amirmushich.link/LTX26",
+      "resolves_to": "https://ltx.studio",
+      "type": "sponsored_affiliate",
+      "note": "UTM: utm_campaign=amir_music — paid placement for LTX Studio, not Nano Banana 2"
+    }
+  ],
+  "stats": {
+    "likes": 21,
+    "bookmarks": 30,
+    "views": 1251,
+    "replies": 3
+  },
+  "tags": ["nano-banana", "brand-campaign", "street-culture", "image-gen", "prompt-template", "editorial-design", "magazine-cover"],
+  "prompt_type": "long-form note tweet",
+  "is_template": true,
+  "blank_slot": "[BRAND NAME]"
+}

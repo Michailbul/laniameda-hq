@@ -1,0 +1,25 @@
+{
+  "id": "shot_002_hero_editorial",
+  "name": "Hero editorial portrait — oxblood backdrop",
+  "purpose": "Marketing hero still. Full-body editorial portrait confirming identity lock holds under a different wardrobe (editorial mode). The closing image of the short.",
+  "category": "marketing_hero",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "3:4",
+  "reference_images": [
+    "shot_001_turnaround"
+  ],
+  "midjourney_prompt": "editorial full-body portrait, mid-20s East Asian woman in floor-length oxblood silk bias-cut slip dress, thin silver ear cuff on left ear, jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, glossy oxblood almond manicure, unsmiling composed gaze, oxblood seamless backdrop, single soft key from camera left, anamorphic 2.39:1 fine grain, cinematic editorial --ar 3:4 --style raw",
+  "nano_banana_2_prompt": "Subject: same mid-20s East Asian woman as reference turnaround — jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, almond dark eyes, nude-mauve matte lips, glossy oxblood almond manicure. Wearing a floor-length oxblood silk bias-cut slip dress, thin silver ear cuff on her left ear only, no other jewellery, bare feet.\n\nStyle: editorial fashion portrait, Vogue Italia register, anamorphic 2.39:1 feel, fine grain.\n\nComposition: full-body, head to floor, subject centered, slight weight on left leg, right hand loosely at hip, left arm relaxed, unsmiling direct gaze to camera.\n\nLighting: single large soft key from camera-left at 45 degrees, subtle silver bounce from camera-right, cool-to-neutral temperature, shadow rolloff soft and controlled.\n\nBackground: seamless oxblood #6b0f1a paper, evenly lit, no texture.\n\nColor palette: oxblood dress on oxblood ground, porcelain skin, black hair, silver ear cuff, oxblood nails — monochromatic red with porcelain break.\n\nAvoid: smiling, teeth showing, extra jewellery, warm orange skin tone, HDR glow, props, background gradient, lens flare.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft."
+    }
+  ]
+}

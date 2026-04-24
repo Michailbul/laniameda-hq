@@ -1,0 +1,18 @@
+{
+  "tweet_url": "https://x.com/AmirMushich/status/2037967998565089736",
+  "author": "AmirMušić",
+  "handle": "@AmirMushich",
+  "date": "2026-03-28",
+  "topic": "AI image generation — Nano Banana Pro prompt template",
+  "verdict": "JUICE",
+  "tools_mentioned": ["Nano Banana Pro", "Nano Banana 2"],
+  "tags": ["nano-banana", "print-campaign", "product-photography", "luxury", "prompt-template", "smart-prompt", "automotive"],
+  "stats": {
+    "likes": 114,
+    "bookmarks": 119,
+    "retweets": 12,
+    "views": 13502
+  },
+  "example_outputs": ["Gucci Dionysus bag", "Porsche 911 Carrera"],
+  "key_mechanic": "Change [BRAND NAME] + [PRODUCT] → unlimited luxury print campaign assets"
+}

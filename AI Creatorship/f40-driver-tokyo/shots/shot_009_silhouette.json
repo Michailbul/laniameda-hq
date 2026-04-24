@@ -1,0 +1,25 @@
+{
+  "id": "shot_009_silhouette",
+  "name": "Silhouette through rear window",
+  "purpose": "Mood beat. Character implied rather than shown — the shape of authority against Tokyo neon, read through the glass.",
+  "category": "mood_beat",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "2.39:1",
+  "reference_images": [
+    "shot_001_turnaround"
+  ],
+  "midjourney_prompt": "silhouette of a mid-20s East Asian woman's head and shoulders seen through the rear window of a black Ferrari F40 from outside the car, Tokyo neon reflections on the glass, jet black collarbone hair with asymmetric strands visible as pure silhouette, no facial detail, anamorphic 2.39:1, crushed blacks, fine grain --ar 21:9 --style raw",
+  "nano_banana_2_prompt": "Subject: the silhouette of the same mid-20s East Asian woman from the reference turnaround, seen from outside the car through the rear window of a black Ferrari F40. Only the head and upper shoulders are visible. The distinct collarbone-length jet black hair with two asymmetric face-framing strands is readable as pure silhouette. No facial detail discernible.\n\nStyle: mood beat, silhouette cinematography, anamorphic 2.39:1, crushed blacks, fine grain.\n\nComposition: horizontal framing, rear window fills the central two-thirds of the frame, silhouette centered inside the window, F40 rear bodywork visible at bottom edge, engine bay carbon grille visible just below the window.\n\nLighting: cool Tokyo neon from behind the camera lighting the rear glass with magenta-blue reflections, warm tungsten cabin glow behind the silhouette providing rim light on the hair strands, no direct light on the face.\n\nBackground: wet asphalt and neon bokeh reflecting on the rear glass surface, superimposed on the silhouette inside the cabin.\n\nColor palette: silhouette pure black, rear-glass reflections cool magenta-blue, cabin rim light warm tungsten, F40 bodywork crushed black.\n\nAvoid: any facial feature being readable, any brand logo other than the Ferrari crest on the rear grille, any modern Ferrari silhouette, HDR glow.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft."
+    }
+  ]
+}

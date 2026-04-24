@@ -27,15 +27,6 @@
 
 ---
 
-## The Four Principles (non-negotiable)
-
-1. **Marketing First** — every build, feature, experiment has a content angle. Before building: what's the story? How does this ship?
-2. **Begin with the end in mind** — know the feeling you're creating before touching a tool
-3. **Never settle for mediocrity** — quality is non-negotiable. Good enough isn't.
-4. **Approach everything as art** — craft, intention, emotional depth in all work
-
----
-
 ## Studio Identity
 
 **Laniameda** = AI-native creative studio. We solve for resonance over volume.
@@ -43,16 +34,18 @@
 - Artists first. The work has emotional weight or it doesn't ship.
 - AI is how we build. Craft is the filter. The audience should feel something.
 
-**Brand design system:** See `studio/brand-guidelines.md` for the full v2.0 locked system.
-- **Figma source:** [Design System v2.0](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=102-2) + [Carousel Components](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=204-2)
-- **Base 4 (untouchable):** Coral `#F26157` (anchor) · Carbon `#191919` · Teal `#79B791` · Linen `#FFF4EA`
-- **Brand mark:** Ember `#FF8C42` — sacred, used sparingly for brand signature moments
-- **Primary accents:** Amber `#E8A838` · Plum `#6B3A5E` (bg only) · Vermillion `#E23D28` (CTA only)
-- **Dark theme (default):** `#0A0805` bg, `#F0EBE8` text
-- **Light theme:** `#FAF7F4` bg, `#1A1008` text
-- **Display:** Darker Grotesque (Black/Bold/Medium/Light) — **body:** Inter — **mono:** JetBrains Mono
-- **Alt display fonts:** Fraunces, Syne, Cormorant, Chakra Petch (carousel variety)
-- Dark mode is default. Warm tones everywhere. No pure black, no pure white. Max 3 colors per slide.
+**Brand visual identity (ground truth):** `studio/brand/` — consolidated folder with:
+- `colors.md` — 5-tier color system, themes, gradients, combos
+- `typography.md` — 9 approved fonts, 7 Figma-verified pairings, type scale
+- `voice.md` — brand voice, copy standards, content pillars
+- `visual-language.md` — imagery, texture/grain, shape, motion
+- `identity.md` — brand core, personality, four principles
+- `logo.md` — wordmark, brand mark, chrome system
+- `tokens.css` — canonical CSS custom properties (import in any system)
+- **Figma source:** [Design System v2.0](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=102-2) + [FONTS board](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=48-21) + [Carousel Components](https://www.figma.com/design/03Csu4502y33VuA1TzbtZX/carousels-references?node-id=204-2)
+- **Quick ref:** Base 4 = Coral `#F26157` · Carbon `#191919` · Teal `#79B791` · Linen `#FFF4EA` · Ember `#FF8C42` (sacred)
+- **Core fonts:** DG (display) · Inter (body) · JB Mono (mono) · Alts: Fraunces, Syne, Cormorant, Chakra Petch, Geist, Space Mono
+- Dark mode default. No pure black/white. Max 3 colors per slide.
 
 ---
 
@@ -61,67 +54,18 @@
 | Project | Path | Stack | Status |
 |---|---|---|---|
 | **laniameda.gallery** | `~/work/laniameda/laniameda.gallery/` | Next.js + Convex + Tailwind | ✅ Active — Phase 1 personal vault |
-| **RunMusic** | `~/work/runmusic/` | React Native + Expo + Convex | ✅ Active — AI dynamic theming in progress |
-| **lania-marketing** | `~/work/lania-marketing/` | Node + browser-use + Playwright | 🔄 Building — content automation pipeline |
-| **AI Creator OS** | `~/work/ai-creator-os/` | Convex + CLI | ✅ Active — UGC prompt storage |
-| **laniameda-website** | `~/work/laniameda/laniameda-website/` | — | 🔲 Parked |
+
+
 
 All repos: https://github.com/Michailbul
 
 ### laniameda.gallery — Key Details
 
-Personal AI creatorship vault. Prompts, images, references, workflows — organized into 4 pillars:
+Personal AI creatorship vault. User uses it to save and revisti the assets/prompts/workflows that are useful for his creative work.
+When user wants to "save" something - this is the place.
+Read the laniameda-gallery skill when you are tasked with saving something to the gallery, to follow the instructions.
 
-| Pillar | What goes here |
-|---|---|
-| `creators` | AI influencer, fashion, portrait prompts; people, faces, editorial |
-| `cars` | Cinematic automotive references and prompts |
-| `designs` | Website, UI, mobile, component, app designs |
-| `dump` | Catch-all — anything useful that doesn't fit above |
 
-When classifying: **when in doubt → `dump`**. Never leave pillar empty.
-
-**Key fields when saving:**
-- `promptText` — the prompt
-- `pillar` — one of the four above
-- `modelName` — `"Midjourney"`, `"FLUX"`, `"Nano Banana Pro"`, `"Runway"`, `"Kling"`, `"Sora"`, etc.
-- `generationType` — `"image_gen"` | `"video_gen"` | `"ui_design"` | `"other"`
-- `tagNames` — always include pillar + category (`prompts`, `tutorials`, `resources`, `ideas`)
-
-Phase 1 = personal vault only. Phase 2 = productize for other creators. **Do not let Phase 2 complexity creep into Phase 1.**
-
-**Gallery ingest rule — images are mandatory:**
-- When saving prompts from any source (PDF, doc, website, video), **always extract and attach the associated images**. Prompts without images are the exception, not the default.
-- If images exist in the source material, extract them before ingesting. If images are >5MB, compress to JPEG first.
-- **Never silently save prompt-only when images were available.** If images can't be fetched, tell Michael explicitly before proceeding with prompt-only saves.
-- `allowPromptOnly: true` is a last resort — not a convenience shortcut.
-
----
-
-## OpenClaw — The Agent Infrastructure
-
-Michael runs **OpenClaw** on a VPS (Linux server). This is the always-on studio backbone.
-
-**What it does:**
-- Runs AI agents 24/7 — Lani (chief of staff), Meda (marketing), Persey (CTO), Crea (creative)
-- Each agent has its own Telegram bot
-- Manages cron jobs, webhooks, heartbeats, memory, sub-agent orchestration
-- Agents share the same git repos and skills registry
-
-**What this means for you (Claude on Mac):**
-- You're Claude Code / Claude — running locally on Michael's Mac
-- OpenClaw agents run on VPS separately, handle async background work
-- You handle interactive coding and Mac-local sessions
-- You share the same skills and repos — the work is coordinated, not duplicated
-
-**Common OpenClaw operations:**
-- Ingesting videos/reels → transcripts → knowledge base
-- Saving prompts and assets to laniameda.gallery KB
-- Generating carousels and marketing content
-- Monitoring Telegram, running scheduled tasks
-- Multi-agent coordination for complex tasks
-
----
 
 ## Skills System
 
@@ -189,29 +133,6 @@ Naming: `laniameda-<source>-<purpose>`
 - `laniameda-x-post-extract`
 - `laniameda-article-digest`
 
-Never create a master router skill. Keep each skill focused with precise, non-overlapping trigger descriptions.
-
-**Active skills:**
-
-| Skill | Trigger | What it does |
-|---|---|---|
-| `supadata` | Any video URL + "transcript/transcribe/watch/digest" | Transcript + metadata from YouTube, Instagram, TikTok, X, Facebook. **Always try first before any browser automation.** |
-| `youtube-digest` | "digest this video", video URL + digestion intent | Full video digestion → extract tools, prompts, workflows → save to content-kb |
-| `laniameda-kb` | "save this", "add to KB", sends a prompt or image | Save to laniameda.gallery Convex KB. Auto-classifies into pillar. |
-| `laniameda-brand-design` | "design a landing page", "use our brand system" | Full brand design system + Pencil MCP workflow |
-| `image-to-prompt` | Sends image + "give me a prompt", "reverse engineer this" | Reverse-engineer image into structured text-to-image prompt |
-| `browser-use-cloud` | Authenticated web extraction after Supadata fails | Cloud browser with stealth mode, CAPTCHA solving, residential proxies |
-| `frame-vfx-stylizer` | "stylize this video frame by frame", "stop-motion effect" | Frame-by-frame AI graphic overlay on video |
-| `carousel-designer` | "build a carousel", "LinkedIn carousel" | Branded 7-slide carousel → HTML + PDF |
-| `deepgram-transcribe` | Voice message, "transcribe this audio" | Audio transcription via Deepgram Nova-2 |
-| `nano-banana-pro` | "generate an image", "edit this image" | Image gen/edit via Nano Banana Pro (Gemini 3) |
-| `instagram-extract` | Instagram/Threads post URL | Extract text, links, key takeaways from posts and carousels |
-| `ai-video-prompting` | Writing AI video prompts | From simple idea prompts to multi-shot cinematic sequences |
-
-**Skill fallback chain for video/social content:**
-```
-supadata transcript → supadata AI extract → browser-use-cloud → manual
-```
 
 ---
 
@@ -222,7 +143,9 @@ When Michael sends a video link, reel, X post, or article and says things like:
 
 **The intent is always:** extract the useful content so he doesn't have to watch it himself — save him time, surface the value, optionally turn it into a skill or KB entry.
 
-**Default approach:**
+Use Laniameda-* skills to fulfill the request, based on the platform of the source: X/Linkedin/Youtube/Instagram
+
+**Default fallback approach:**
 1. Fetch transcript/metadata via `supadata`
 2. Extract what's actionable: prompts, tools, workflows, techniques, "if X then Y" mappings
 3. Summarize concisely — fast verdict first, then specifics
@@ -231,22 +154,6 @@ When Michael sends a video link, reel, X post, or article and says things like:
 
 **Never:** summarize generically, describe what the video "is about", or pad with context that adds no value.
 
----
-
-## Notion — Project & Task Tracking
-
-We keep a **Notion database** as the live view of all studio work.
-
-When creating or completing meaningful tasks, log them to Notion. Keep it current — Michael uses it as his kanban.
-
-**Databases:**
-- **Tasks** — all studio tasks across agents, with status, priority, department, owner
-- Statuses: `Idea → Research → In Progress → Review → Done`
-- Departments (priority order): Marketing → Dev → Operations
-
-Use whatever Notion connector/integration is available. The point is: when work happens, Notion should reflect it.
-
----
 
 ## Tools & APIs in Use
 
@@ -288,9 +195,10 @@ Also supports: **PDF/document generation** (HTML → PDF, text → structured do
 
 ```
 laniameda-hq/
-  studio/                   ← identity, vision, values, brand, design system
+  studio/                   ← identity, vision, values
+    brand/                  ← GROUND TRUTH: colors, typography, voice, visual language, identity, logo, tokens.css
   work/                     ← how we work, projects index, agent roster
-  brand/                    ← brand assets
+  brand/                    ← DEPRECATED brand assets (redirects to studio/brand/)
   content-kb/               ← knowledge base
     sources/
       youtube/              ← digested videos
@@ -346,11 +254,6 @@ When digesting any content — extract specifics, never generics.
 2. `git pull` if touching any repo
 3. Ask: what's the outcome? what's the marketing angle?
 4. Check whether an existing studio skill fits — and if useful, surface the best options to Michael before building a custom path
-
-### Git workflow:
-- **Commit** as you complete meaningful chunks of work
-- **Push only when** explicitly asked, or when handed a full self-contained task to complete
-- When working iteratively with Michael — commit locally, don't push until done or asked
 
 ### Execution standard:
 - Do not stop at blockers and return only reasons

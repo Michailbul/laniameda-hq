@@ -2,3 +2,41 @@
 *.tar.gz
 *.env
 secrets/
+node_modules
+
+# Local caches / build artifacts
+.agents/
+dist/
+*.plugin
+*.zip
+zikpdC8R
+
+# Media — never commit (text/docs/CLAUDE.md only)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.tiff
+*.tif
+*.svg
+*.bmp
+*.ico
+*.psd
+*.ai
+*.sketch
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.pdf
+
+# Exports / renders
+**/exports/
+**/renders/
+cars/

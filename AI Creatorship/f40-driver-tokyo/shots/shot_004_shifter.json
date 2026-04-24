@@ -1,0 +1,25 @@
+{
+  "id": "shot_004_shifter",
+  "name": "Hand on gated chrome shifter",
+  "purpose": "Beauty insert. Machinery-as-character beat. The gated F40 shifter is an iconic object — the hand-on-shifter composition carries both mechanical reverence and character authority.",
+  "category": "beauty_insert",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "2.39:1",
+  "reference_images": [
+    "shot_001_turnaround"
+  ],
+  "midjourney_prompt": "close-up, East Asian woman's bare hand with glossy oxblood almond manicure resting on a polished chrome Ferrari F40 gated shifter with exposed H-pattern gate, black leather cabin, red stitching on the shift boot, warm dashboard glow, cool exterior neon spill, anamorphic 2.39:1 shallow depth of field, fine grain --ar 21:9 --style raw",
+  "nano_banana_2_prompt": "Subject: a bare right hand (no gloves, no rings) with glossy oxblood almond manicure resting lightly on a polished chrome Ferrari F40 gated shifter, fingers curved around the shift ball, wrist relaxed. The exposed chrome H-pattern gate is fully visible and in sharp focus below the ball. Shift boot in black leather with red contrast stitching.\n\nStyle: beauty insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, editorial restraint, engineering reverence.\n\nComposition: horizontal framing, shifter and gate centered, hand entering from right, focus locked on the H-pattern gate with the hand slightly soft.\n\nLighting: warm tungsten dashboard glow from upper-right, cool neon fill from left windshield, specular highlights on chrome shift ball and gate, shadow rolloff soft.\n\nBackground: F40 cabin — exposed carbon tunnel, black leather, red stitching, out of focus.\n\nColor palette: chrome silver (dominant), black leather, red stitching, oxblood nails, warm tungsten + cool neon mix.\n\nAvoid: any ring, bracelet, gloves of any kind, visible face, second hand in frame, modern touchscreen elements, any non-F40 shifter design.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft."
+    }
+  ]
+}

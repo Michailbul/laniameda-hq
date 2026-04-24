@@ -1,0 +1,3 @@
+.usage.json
+assets/generated/*
+!assets/generated/.gitkeep

@@ -1,0 +1,25 @@
+{
+  "id": "shot_003_manicure_wheel",
+  "name": "Manicure on Momo wheel",
+  "purpose": "Beauty insert. Locks the oxblood manicure as a recurring visual motif. Establishes the hand-on-machinery register.",
+  "category": "beauty_insert",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "2.39:1",
+  "reference_images": [
+    "shot_001_turnaround"
+  ],
+  "midjourney_prompt": "extreme close-up beauty insert, East Asian woman's bare hand with glossy oxblood almond manicure gripping the top arc of a black suede Momo steering wheel, yellow Ferrari prancing horse badge visible slightly out of focus behind the hand, cabin interior of a black Ferrari F40, warm tungsten key from dashboard, cool neon spill from windshield, anamorphic 2.39:1 shallow depth of field, fine grain --ar 21:9 --style raw",
+  "nano_banana_2_prompt": "Subject: a bare right hand (no gloves, no rings) with glossy oxblood almond manicure, wrist extending from a black fine-merino turtleneck cuff, fingers loosely gripping the top arc of a black suede Momo steering wheel. The Ferrari prancing horse badge is visible on the wheel hub slightly out of focus behind the hand.\n\nStyle: beauty insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, editorial restraint.\n\nComposition: horizontal framing, hand occupies the left two-thirds of the frame, wheel hub with badge in the right third falling out of focus, shallow depth of field with focus locked on the middle knuckle of the index finger.\n\nLighting: warm tungsten key spilling up from the dashboard at the bottom of the frame hitting the underside of the hand, cool neon fill from the windshield above the hand, gentle rim on the wrist, shadow rolloff cool-to-warm, no HDR.\n\nBackground: cabin interior of a black Ferrari F40, out of focus — black leather, red stitching, exposed carbon hints.\n\nColor palette: oxblood nails dominant, black suede wheel, warm tungsten underlight, cool neon top light, Ferrari yellow badge as a single accent note.\n\nAvoid: any ring, any bracelet, gloves of any kind, visible face, smiling, second hand in frame, visible brand logos other than the Ferrari badge.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft — gloves explicitly removed per character lock."
+    }
+  ]
+}

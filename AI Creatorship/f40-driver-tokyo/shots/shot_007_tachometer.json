@@ -1,0 +1,23 @@
+{
+  "id": "shot_007_tachometer",
+  "name": "Tachometer needle at redline",
+  "purpose": "Kinetic insert. The machine reaching threshold — the character's composure confirmed by what she is demanding of the car.",
+  "category": "kinetic_insert",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "2.39:1",
+  "reference_images": [],
+  "midjourney_prompt": "macro close-up of a vintage Ferrari F40 analog tachometer gauge, white numerals on a black face, thin orange needle climbing past 7000 rpm into the red zone near 8000 rpm, yellow Ferrari logo at the bottom of the dial, chrome bezel, motion vibration in the needle, warm tungsten glow inside the gauge housing, anamorphic 2.39:1 fine grain --ar 21:9 --style raw",
+  "nano_banana_2_prompt": "Subject: the analog tachometer of a vintage Ferrari F40. Black gauge face with white numerals (0 to 10 at intervals of one thousand rpm), a thin orange needle swept past 7000 rpm and climbing into the red zone near 8000 rpm, a small yellow Ferrari shield at the bottom of the dial, polished chrome bezel around the face.\n\nStyle: kinetic insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, slight motion-blur on the needle tip to suggest vibration.\n\nComposition: the tachometer fills the right 60 percent of the frame, slightly canted 5 degrees clockwise, focus locked on the needle tip inside the red zone. The speedometer is partially visible in the left 40 percent of the frame, falling out of focus.\n\nLighting: warm tungsten glow emitted from inside the gauge housing (backlit dial), cool ambient fill from the windshield, specular highlight on the chrome bezel, shadow rolloff warm-to-cool.\n\nBackground: out-of-focus F40 dashboard carbon panel and leather.\n\nColor palette: black dial face, white numerals, orange needle, red redline zone, yellow Ferrari shield, chrome bezel, warm tungsten glow.\n\nAvoid: digital gauges, modern cluster, excessive lens flare, HDR glow, visible hand, visible face.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft."
+    }
+  ]
+}
