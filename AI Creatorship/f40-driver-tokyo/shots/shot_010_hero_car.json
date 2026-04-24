@@ -1,0 +1,23 @@
+{
+  "id": "shot_010_hero_car",
+  "name": "F40 front three-quarter at wet blue hour",
+  "purpose": "Hero car. Architectural portrait of the F40 as object. Opens the short — establishes the machine before the character.",
+  "category": "hero_car",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "2.39:1",
+  "reference_images": [],
+  "midjourney_prompt": "front three-quarter hero shot of a black Ferrari F40 on wet empty Tokyo street at blue hour, five-spoke Speedline wheels, pop-up headlights down, rear wing iconic silhouette, neon signage reflections on the hood and windshield, fine mist in the air, anamorphic 2.39:1, crushed blacks, editorial car photography, fine grain --ar 21:9 --style raw",
+  "nano_banana_2_prompt": "Subject: a black Ferrari F40 in pristine condition, shot from front three-quarter angle (roughly 30 degrees off the centerline, car pointing slightly camera-left). Five-spoke Speedline wheels, pop-up headlights in the down position, iconic rear wing visible in profile. No character visible, stationary on wet empty Tokyo street.\n\nStyle: hero car portrait, editorial automotive photography, anamorphic 2.39:1, fine grain, crushed blacks, cinematic blue-hour register.\n\nComposition: horizontal framing, car centered slightly low in the frame with negative space above for the dusk sky, low camera height at wheel-arch level.\n\nLighting: blue-hour ambient (deep teal sky) as key, warm sodium street lamp from camera-right skimming the flank of the car, neon magenta-blue reflections in the wet pavement under the car, specular highlights on the hood and windshield, shadow rolloff crushed into black.\n\nBackground: wet empty Tokyo street, distant neon signage heavily out of focus, no other vehicles, no pedestrians.\n\nColor palette: crushed black (car body), deep teal sky, oxblood red Ferrari logo accents, warm sodium rim, cool neon reflections in pavement.\n\nAvoid: any modern Ferrari (458, 488, F8, SF90), chrome wheels, aftermarket body kit, visible license plate, any character, rain streaks overexposed, HDR glow, lens flare across the lens.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft."
+    }
+  ]
+}

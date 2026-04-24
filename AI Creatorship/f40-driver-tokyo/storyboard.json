@@ -1,0 +1,263 @@
+{
+  "project": {
+    "name": "f40-driver-tokyo",
+    "working_title": "F40 Driver — Tokyo",
+    "version": "1.0",
+    "last_updated": "2026-04-18",
+    "owner": "Michael / laniameda"
+  },
+  "brief": "A cinematic fashion-automotive hybrid short centered on a single character — a mid-20s East Asian woman piloting a black Ferrari F40 through Tokyo. The register is quiet command, aristocratic detachment, and latent power. Functions simultaneously as a hero creative project (1-2 hero video clips + 10 B-roll stills + editorial hero portrait) and as a teaching artifact for multi-input AI video generation and character consistency across models.",
+  "treatment": "Anamorphic 2.39:1. Crushed blacks. Cool Tokyo exterior (wet asphalt, neon reflections, rain mist, sodium tunnel light) resolving into warm cabin interior (black leather, red stitching, exposed carbon, chrome gate). Color palette is black, oxblood red, and silver — no warm orange on skin. Fine grain. Low-contrast shadow rolloff. Zero HDR glow. Editing cadence alternates between one extended-single-take dolly-through-glass shot and a Requiem-style jump-cut beauty/fury montage with SFX-per-cut. The character never smiles. Every beat is carried by micro-expression, posture, breath, and the machinery she commands.",
+  "overview": {
+    "act_1": "Exterior Tokyo night. Wet streets, neon, distant traffic. The F40 appears as architecture in motion — front three-quarter at wet blue hour, tail lights in rain, silhouette through rear window. Mood: aristocratic machine at rest in a restless city.",
+    "act_2": "Cabin interior. Beauty inserts in rapid cadence — oxblood manicure on the Momo wheel, hand on the gated chrome shifter, F40 key in hand, tachometer needle climbing to redline, eyes in rearview mirror. The character arrives in fragments.",
+    "act_3": "Hero continuous shot — orbiting exterior track dollies forward, passes through the windshield, lands on the character's face. Hero editorial portrait closes the short — full-body on oxblood seamless, composure intact."
+  },
+  "reference_keywords": [
+    "anamorphic",
+    "crushed blacks",
+    "oxblood",
+    "Tokyo night",
+    "wet asphalt",
+    "Ferrari F40",
+    "quiet commander",
+    "micro-expression",
+    "fine grain",
+    "chrome gate shifter",
+    "Momo wheel",
+    "editorial portrait",
+    "blue hour",
+    "neon bokeh",
+    "Requiem cadence"
+  ],
+  "reference_vibes": [
+    "A woman who has already won and does not need to announce it — every frame carries withheld power instead of performed power.",
+    "The car and the character occupy the same aesthetic register: low-slung, precise, minimal, dangerous when provoked.",
+    "Light should feel located — a specific neon sign, a specific sodium tunnel, a specific rearview reflection — never generic mood lighting.",
+    "Sound design precedes image in editing logic. Every cut hits on an engine note, a fabric rustle, a shifter click, a rain tick.",
+    "The Requiem-cadence montage conveys elegance, fury, power, femininity — explicitly not drug-themed. The cadence is borrowed, the register is our own."
+  ],
+  "reference_works": [
+    { "title": "Requiem for a Dream", "year": "2000", "director": "Darren Aronofsky", "use": "SFX-per-cut rapid beauty/fury montage cadence — cadence only, not subject matter." },
+    { "title": "Drive", "year": "2011", "director": "Nicolas Winding Refn", "use": "Neon Tokyo palette translation. Patient tempo punctuated by violence of machinery. Silence between beats." },
+    { "title": "In the Mood for Love", "year": "2000", "director": "Wong Kar-wai", "use": "Withheld emotion rendered through composition and costume. Color-as-mood (reds, blacks)." },
+    { "title": "Ferrari (2023)", "year": "2023", "director": "Michael Mann", "use": "Machinery as character. Engineering reverence. Unromantic speed." },
+    { "title": "Blade Runner 2049", "year": "2017", "director": "Denis Villeneuve", "use": "Anamorphic Tokyo-coded neon reference. Atmospheric density." }
+  ],
+  "character_lock_file": "character-lock-f40-driver.json",
+  "character_summary": "Mid-20s East Asian woman, jet black collarbone-length straight hair with two locked asymmetric face-framing strands, porcelain cool matte skin, almond dark eyes with steady unsmiling gaze, nude-mauve matte lips, oxblood glossy almond manicure as the only red note on the hand. Psychotype: quiet commander — aristocratic detachment fused with predator composure. She does not smile. Every beat is micro-expression, posture, breath, and the machinery she commands.",
+  "shots": [
+    {
+      "id": "shot_001_turnaround",
+      "name": "Character turnaround sheet",
+      "purpose": "Identity anchor. Universal reference fed into every downstream character generation across NB2, Midjourney, and Seedance to lock face, hair, wardrobe, manicure, and psychotype.",
+      "category": "identity_anchor",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "16:9",
+      "reference_images": [],
+      "midjourney_prompt": "four panel character turnaround sheet, mid-20s East Asian woman, jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, black fine-merino turtleneck, black tailored trousers, bare hands with glossy oxblood almond manicure, unsmiling composed gaze, studio seamless charcoal backdrop, even softbox light, cinematic anamorphic reference sheet, fine grain --ar 16:9 --style raw",
+      "nano_banana_2_prompt": "Subject: mid-20s East Asian woman, 170cm lean build, jet black collarbone-length straight hair with cool undertones and a soft center parting, two locked asymmetric face-framing strands (longer left past the jaw, shorter right at the cheekbone), porcelain cool matte skin, oval face with sharp jawline, almond dark-brown eyes with steady unsmiling gaze, straight nose, full lower lip in nude-mauve matte. Wearing black fine-merino turtleneck, black tailored trousers, bare hands with glossy oxblood almond manicure.\n\nStyle: editorial character reference sheet, four panels side by side (front / three-quarter left / profile left / back), consistent identity across all four panels.\n\nComposition: full-body framing in each panel, feet to head, even spacing, subject centered in each panel, neutral standing pose with arms relaxed at sides.\n\nLighting: large softbox overhead and slight fill from camera-left, even exposure across all panels, low-contrast, no dramatic shadows, shadow rolloff soft and cool.\n\nBackground: seamless charcoal #1a1a1a paper, no texture, no gradient.\n\nColor palette: black wardrobe, oxblood nails, charcoal background, porcelain skin — no warm orange.\n\nAvoid: smiling, teeth showing, jewellery, claw gloves, silver gloves, rings, heavy makeup, HDR glow, symmetric bangs, blunt fringe, color shift to warm orange on skin.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft from character lock + art direction." }
+      ]
+    },
+    {
+      "id": "shot_002_hero_editorial",
+      "name": "Hero editorial portrait — oxblood backdrop",
+      "purpose": "Marketing hero still. Full-body editorial portrait confirming identity lock holds under a different wardrobe (editorial mode). The closing image of the short.",
+      "category": "marketing_hero",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "3:4",
+      "reference_images": ["shot_001_turnaround"],
+      "midjourney_prompt": "editorial full-body portrait, mid-20s East Asian woman in floor-length oxblood silk bias-cut slip dress, thin silver ear cuff on left ear, jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, glossy oxblood almond manicure, unsmiling composed gaze, oxblood seamless backdrop, single soft key from camera left, anamorphic 2.39:1 fine grain, cinematic editorial --ar 3:4 --style raw",
+      "nano_banana_2_prompt": "Subject: same mid-20s East Asian woman as reference turnaround — jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, almond dark eyes, nude-mauve matte lips, glossy oxblood almond manicure. Wearing a floor-length oxblood silk bias-cut slip dress, thin silver ear cuff on her left ear only, no other jewellery, bare feet.\n\nStyle: editorial fashion portrait, Vogue Italia register, anamorphic 2.39:1 feel, fine grain.\n\nComposition: full-body, head to floor, subject centered, slight weight on left leg, right hand loosely at hip, left arm relaxed, unsmiling direct gaze to camera.\n\nLighting: single large soft key from camera-left at 45 degrees, subtle silver bounce from camera-right, cool-to-neutral temperature, shadow rolloff soft and controlled.\n\nBackground: seamless oxblood #6b0f1a paper, evenly lit, no texture.\n\nColor palette: oxblood dress on oxblood ground, porcelain skin, black hair, silver ear cuff, oxblood nails — monochromatic red with porcelain break.\n\nAvoid: smiling, teeth showing, extra jewellery, warm orange skin tone, HDR glow, props, background gradient, lens flare.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_003_manicure_wheel",
+      "name": "Manicure on Momo wheel",
+      "purpose": "Beauty insert. Locks the oxblood manicure as a recurring visual motif. Establishes the hand-on-machinery register.",
+      "category": "beauty_insert",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": ["shot_001_turnaround"],
+      "midjourney_prompt": "extreme close-up beauty insert, East Asian woman's bare hand with glossy oxblood almond manicure gripping the top arc of a black suede Momo steering wheel, yellow Ferrari prancing horse badge visible slightly out of focus behind the hand, cabin interior of a black Ferrari F40, warm tungsten key from dashboard, cool neon spill from windshield, anamorphic 2.39:1 shallow depth of field, fine grain --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: a bare right hand (no gloves, no rings) with glossy oxblood almond manicure, wrist extending from a black fine-merino turtleneck cuff, fingers loosely gripping the top arc of a black suede Momo steering wheel. The Ferrari prancing horse badge is visible on the wheel hub slightly out of focus behind the hand.\n\nStyle: beauty insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, editorial restraint.\n\nComposition: horizontal framing, hand occupies the left two-thirds of the frame, wheel hub with badge in the right third falling out of focus, shallow depth of field with focus locked on the middle knuckle of the index finger.\n\nLighting: warm tungsten key spilling up from the dashboard at the bottom of the frame hitting the underside of the hand, cool neon fill from the windshield above the hand, gentle rim on the wrist, shadow rolloff cool-to-warm, no HDR.\n\nBackground: cabin interior of a black Ferrari F40, out of focus — black leather, red stitching, exposed carbon hints.\n\nColor palette: oxblood nails dominant, black suede wheel, warm tungsten underlight, cool neon top light, Ferrari yellow badge as a single accent note.\n\nAvoid: any ring, any bracelet, gloves of any kind, visible face, smiling, second hand in frame, visible brand logos other than the Ferrari badge.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft — gloves explicitly removed per character lock." }
+      ]
+    },
+    {
+      "id": "shot_004_shifter",
+      "name": "Hand on gated chrome shifter",
+      "purpose": "Beauty insert. Machinery-as-character beat. The gated F40 shifter is an iconic object — the hand-on-shifter composition carries both mechanical reverence and character authority.",
+      "category": "beauty_insert",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": ["shot_001_turnaround"],
+      "midjourney_prompt": "close-up, East Asian woman's bare hand with glossy oxblood almond manicure resting on a polished chrome Ferrari F40 gated shifter with exposed H-pattern gate, black leather cabin, red stitching on the shift boot, warm dashboard glow, cool exterior neon spill, anamorphic 2.39:1 shallow depth of field, fine grain --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: a bare right hand (no gloves, no rings) with glossy oxblood almond manicure resting lightly on a polished chrome Ferrari F40 gated shifter, fingers curved around the shift ball, wrist relaxed. The exposed chrome H-pattern gate is fully visible and in sharp focus below the ball. Shift boot in black leather with red contrast stitching.\n\nStyle: beauty insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, editorial restraint, engineering reverence.\n\nComposition: horizontal framing, shifter and gate centered, hand entering from right, focus locked on the H-pattern gate with the hand slightly soft.\n\nLighting: warm tungsten dashboard glow from upper-right, cool neon fill from left windshield, specular highlights on chrome shift ball and gate, shadow rolloff soft.\n\nBackground: F40 cabin — exposed carbon tunnel, black leather, red stitching, out of focus.\n\nColor palette: chrome silver (dominant), black leather, red stitching, oxblood nails, warm tungsten + cool neon mix.\n\nAvoid: any ring, bracelet, gloves of any kind, visible face, second hand in frame, modern touchscreen elements, any non-F40 shifter design.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_005_key",
+      "name": "F40 key in hand",
+      "purpose": "Beauty insert / interaction beat. Opening gesture of the short — the character taking ownership of the machine.",
+      "category": "interaction_beat",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": ["shot_001_turnaround"],
+      "midjourney_prompt": "overhead close-up, East Asian woman's open palm with glossy oxblood almond manicure holding a vintage Ferrari F40 valet key with yellow prancing horse crest on the keyring, black leather surface beneath, single warm practical light above, cool neon spill from left, anamorphic 2.39:1 shallow depth of field, fine grain --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: an open right palm (no rings, no gloves) with glossy oxblood almond manicure cupping a vintage Ferrari F40 valet key with the yellow prancing horse crest on a small black leather keyring. Fingers relaxed, palm centered.\n\nStyle: beauty insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, editorial product-register.\n\nComposition: overhead top-down angle, palm centered in frame, key diagonally across the palm at 30 degrees, focus locked on the Ferrari crest.\n\nLighting: single warm practical from above (tungsten) casting a soft-edged shadow of the key onto the palm, cool neon fill from left, gentle rim on the fingers, shadow rolloff warm-to-cool.\n\nBackground: black leather surface (car seat or console) extending to all edges, soft texture visible but not distracting.\n\nColor palette: porcelain skin, oxblood nails, yellow Ferrari crest as the only warm accent, black leather ground.\n\nAvoid: any ring, bracelet, watch, gloves, second hand in frame, modern car key fob, any logo other than the Ferrari crest.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_006_rearview_eyes",
+      "name": "Eyes in rearview mirror",
+      "purpose": "Emotional insert. Single most psychological frame of the short — the unsmiling steady gaze delivered through a mirror surface. Earns the psychotype.",
+      "category": "emotional_insert",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": ["shot_001_turnaround"],
+      "midjourney_prompt": "extreme close-up, East Asian woman's almond dark eyes reflected in a rectangular rearview mirror inside a Ferrari F40 cabin, asymmetric jet black face-framing strands partially visible at mirror edges, neon Tokyo bokeh reflected in the mirror behind the eyes, anamorphic 2.39:1, fine grain, crushed blacks, unsmiling steady gaze --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: the same East Asian woman's almond dark-brown eyes as the reference turnaround, reflected in a rectangular rearview mirror inside the Ferrari F40 cabin. Only the strip of the face from mid-brow to upper-cheek is visible — the rest cropped by the mirror frame. Two asymmetric jet-black face-framing strands at the outer edges of the mirror.\n\nStyle: emotional insert, anamorphic 2.39:1, fine grain, crushed blacks, shadow-rolloff cinematography.\n\nComposition: the rearview mirror occupies roughly the middle 70 percent of the horizontal frame, eyes centered in the mirror, slight downward tilt of the mirror so the road behind is not dominant, shallow depth of field with focus locked on the right iris.\n\nLighting: cool blue-magenta neon spill from behind (through the rear windshield reflected in the mirror) lighting the far side of the eyes, warm tungsten dashboard glow from below lifting the lower lid on the camera side, shadow rolloff crushed into pure black.\n\nBackground: dark cabin ceiling above, chrome mirror housing visible, out-of-focus Tokyo neon bokeh inside the mirror reflection.\n\nColor palette: crushed black (dominant), oxblood highlights in the neon bokeh, tungsten warm lift on lower lids, silver on the chrome mirror frame.\n\nAvoid: full face in frame, any smile, eye contact with camera (she is watching the road behind, not the viewer), jewellery, mascara clumps, HDR glow.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_007_tachometer",
+      "name": "Tachometer needle at redline",
+      "purpose": "Kinetic insert. The machine reaching threshold — the character's composure confirmed by what she is demanding of the car.",
+      "category": "kinetic_insert",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": [],
+      "midjourney_prompt": "macro close-up of a vintage Ferrari F40 analog tachometer gauge, white numerals on a black face, thin orange needle climbing past 7000 rpm into the red zone near 8000 rpm, yellow Ferrari logo at the bottom of the dial, chrome bezel, motion vibration in the needle, warm tungsten glow inside the gauge housing, anamorphic 2.39:1 fine grain --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: the analog tachometer of a vintage Ferrari F40. Black gauge face with white numerals (0 to 10 at intervals of one thousand rpm), a thin orange needle swept past 7000 rpm and climbing into the red zone near 8000 rpm, a small yellow Ferrari shield at the bottom of the dial, polished chrome bezel around the face.\n\nStyle: kinetic insert, macro cinematography, anamorphic 2.39:1 feel, fine grain, slight motion-blur on the needle tip to suggest vibration.\n\nComposition: the tachometer fills the right 60 percent of the frame, slightly canted 5 degrees clockwise, focus locked on the needle tip inside the red zone. The speedometer is partially visible in the left 40 percent of the frame, falling out of focus.\n\nLighting: warm tungsten glow emitted from inside the gauge housing (backlit dial), cool ambient fill from the windshield, specular highlight on the chrome bezel, shadow rolloff warm-to-cool.\n\nBackground: out-of-focus F40 dashboard carbon panel and leather.\n\nColor palette: black dial face, white numerals, orange needle, red redline zone, yellow Ferrari shield, chrome bezel, warm tungsten glow.\n\nAvoid: digital gauges, modern cluster, excessive lens flare, HDR glow, visible hand, visible face.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_008_taillights",
+      "name": "Rear tail lights in rain",
+      "purpose": "Mood beat. F40 as architecture — the departing signature. Pairs with shot_010 as an opening/closing bookend of the exterior.",
+      "category": "mood_beat",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": [],
+      "midjourney_prompt": "rear three-quarter shot of a black Ferrari F40 on wet Tokyo asphalt at night, twin round red tail lights glowing through rain mist, oxblood reflections on the pavement, distant neon signage out of focus, anamorphic 2.39:1, crushed blacks, fine grain, cinematic stillness --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: a black Ferrari F40 shot from the rear three-quarter angle, parked or stationary on wet Tokyo asphalt at night. Twin round red tail lights glowing through light rain mist. No character visible.\n\nStyle: mood beat, cinematic exterior still, anamorphic 2.39:1, fine grain, crushed blacks.\n\nComposition: horizontal framing, car positioned in the left half of the frame with the tail lights as the focal anchor, the right half of the frame receding into wet asphalt with neon reflections, low camera height close to the ground.\n\nLighting: ambient Tokyo neon (cool blue-magenta mix) from signage off-frame, sodium warm wash from a street lamp slightly above, strong specular reflection of tail lights on the wet pavement, shadow rolloff crushed into black.\n\nBackground: wet asphalt extending to vanishing point, distant neon signage heavily out of focus (bokeh).\n\nColor palette: crushed black (F40 body, sky, street), oxblood red (tail lights + pavement reflection), cool neon bokeh (blue and magenta), warm sodium rim.\n\nAvoid: any modern Ferrari (458, 488, F8, SF90), chrome wheels (F40 has specific five-spoke wheels), any character, rain streaks overexposed, HDR glow, license plate visible.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_009_silhouette",
+      "name": "Silhouette through rear window",
+      "purpose": "Mood beat. Character implied rather than shown — the shape of authority against Tokyo neon, read through the glass.",
+      "category": "mood_beat",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": ["shot_001_turnaround"],
+      "midjourney_prompt": "silhouette of a mid-20s East Asian woman's head and shoulders seen through the rear window of a black Ferrari F40 from outside the car, Tokyo neon reflections on the glass, jet black collarbone hair with asymmetric strands visible as pure silhouette, no facial detail, anamorphic 2.39:1, crushed blacks, fine grain --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: the silhouette of the same mid-20s East Asian woman from the reference turnaround, seen from outside the car through the rear window of a black Ferrari F40. Only the head and upper shoulders are visible. The distinct collarbone-length jet black hair with two asymmetric face-framing strands is readable as pure silhouette. No facial detail discernible.\n\nStyle: mood beat, silhouette cinematography, anamorphic 2.39:1, crushed blacks, fine grain.\n\nComposition: horizontal framing, rear window fills the central two-thirds of the frame, silhouette centered inside the window, F40 rear bodywork visible at bottom edge, engine bay carbon grille visible just below the window.\n\nLighting: cool Tokyo neon from behind the camera lighting the rear glass with magenta-blue reflections, warm tungsten cabin glow behind the silhouette providing rim light on the hair strands, no direct light on the face.\n\nBackground: wet asphalt and neon bokeh reflecting on the rear glass surface, superimposed on the silhouette inside the cabin.\n\nColor palette: silhouette pure black, rear-glass reflections cool magenta-blue, cabin rim light warm tungsten, F40 bodywork crushed black.\n\nAvoid: any facial feature being readable, any brand logo other than the Ferrari crest on the rear grille, any modern Ferrari silhouette, HDR glow.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    },
+    {
+      "id": "shot_010_hero_car",
+      "name": "F40 front three-quarter at wet blue hour",
+      "purpose": "Hero car. Architectural portrait of the F40 as object. Opens the short — establishes the machine before the character.",
+      "category": "hero_car",
+      "status": "draft",
+      "primary_model": "nano_banana_2",
+      "secondary_model": "midjourney",
+      "version": 1,
+      "created": "2026-04-18",
+      "aspect_ratio": "2.39:1",
+      "reference_images": [],
+      "midjourney_prompt": "front three-quarter hero shot of a black Ferrari F40 on wet empty Tokyo street at blue hour, five-spoke Speedline wheels, pop-up headlights down, rear wing iconic silhouette, neon signage reflections on the hood and windshield, fine mist in the air, anamorphic 2.39:1, crushed blacks, editorial car photography, fine grain --ar 21:9 --style raw",
+      "nano_banana_2_prompt": "Subject: a black Ferrari F40 in pristine condition, shot from front three-quarter angle (roughly 30 degrees off the centerline, car pointing slightly camera-left). Five-spoke Speedline wheels, pop-up headlights in the down position, iconic rear wing visible in profile. No character visible, stationary on wet empty Tokyo street.\n\nStyle: hero car portrait, editorial automotive photography, anamorphic 2.39:1, fine grain, crushed blacks, cinematic blue-hour register.\n\nComposition: horizontal framing, car centered slightly low in the frame with negative space above for the dusk sky, low camera height at wheel-arch level.\n\nLighting: blue-hour ambient (deep teal sky) as key, warm sodium street lamp from camera-right skimming the flank of the car, neon magenta-blue reflections in the wet pavement under the car, specular highlights on the hood and windshield, shadow rolloff crushed into black.\n\nBackground: wet empty Tokyo street, distant neon signage heavily out of focus, no other vehicles, no pedestrians.\n\nColor palette: crushed black (car body), deep teal sky, oxblood red Ferrari logo accents, warm sodium rim, cool neon reflections in pavement.\n\nAvoid: any modern Ferrari (458, 488, F8, SF90), chrome wheels, aftermarket body kit, visible license plate, any character, rain streaks overexposed, HDR glow, lens flare across the lens.",
+      "notes_from_user": "",
+      "edits_history": [
+        { "version": 1, "date": "2026-04-18", "change": "Initial draft." }
+      ]
+    }
+  ],
+  "communication": {
+    "user_to_claude": [],
+    "claude_to_user": [
+      {
+        "date": "2026-04-18",
+        "message": "Storyboard v1 seeded with 10 shots and full character lock. Run order per pipeline: shot_001 first to lock identity, then shots 8/10 (no character) in parallel, then 2/3/4/5/6/9 with shot_001 as reference. Drop revision notes here and I'll fold them in next turn."
+      }
+    ]
+  },
+  "workflow_notes": {
+    "sequence_recommendation": [
+      "1. Generate shot_001 (turnaround sheet) in Nano Banana Pro at 1K. Iterate until the face, hair strands, and manicure are locked.",
+      "2. Upscale shot_001 to 4K. This becomes the universal character reference for all subsequent generations.",
+      "3. Generate shot_002 (hero editorial) using shot_001 as reference input. Confirms identity holds under editorial wardrobe.",
+      "4. Generate shot_008 and shot_010 (car-only, no character) in parallel — they do not need identity references.",
+      "5. Generate shots 003, 004, 005, 006, 009 (character × car beauty inserts) using shot_001 as reference.",
+      "6. Generate shot_007 (tachometer, no character) last or alongside the car-only batch.",
+      "7. Feed approved stills into Seedance V2 as image references for the hero continuous dolly-through-glass shot and the Requiem-cadence montage.",
+      "8. Edit: one extended single-take (dolly-through-glass) interleaved with the Requiem-cadence beauty/fury montage."
+    ],
+    "pipeline_notes": "Nano Banana Pro is the identity-locked reference generator — draft at 1K, lock at 4K. Midjourney is the fast ideator for compositional alternatives. Seedance V2 is the motion extender — one job per reference (video = motion/rhythm, image = identity). Continuity lock strings to reuse across all Seedance prompts: 'same character throughout all shots', 'same car throughout all shots'. Override conflicting reference attributes in both subject block AND constraints block — once is not enough."
+  }
+}

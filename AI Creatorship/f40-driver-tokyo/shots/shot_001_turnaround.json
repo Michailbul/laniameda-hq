@@ -1,0 +1,23 @@
+{
+  "id": "shot_001_turnaround",
+  "name": "Character turnaround sheet",
+  "purpose": "Identity anchor. Universal reference fed into every downstream character generation across NB2, Midjourney, and Seedance to lock face, hair, wardrobe, manicure, and psychotype.",
+  "category": "identity_anchor",
+  "status": "draft",
+  "primary_model": "nano_banana_2",
+  "secondary_model": "midjourney",
+  "version": 1,
+  "created": "2026-04-18",
+  "aspect_ratio": "16:9",
+  "reference_images": [],
+  "midjourney_prompt": "four panel character turnaround sheet, mid-20s East Asian woman, jet black collarbone hair with two asymmetric face-framing strands, porcelain matte skin, black fine-merino turtleneck, black tailored trousers, bare hands with glossy oxblood almond manicure, unsmiling composed gaze, studio seamless charcoal backdrop, even softbox light, cinematic anamorphic reference sheet, fine grain --ar 16:9 --style raw",
+  "nano_banana_2_prompt": "Subject: mid-20s East Asian woman, 170cm lean build, jet black collarbone-length straight hair with cool undertones and a soft center parting, two locked asymmetric face-framing strands (longer left past the jaw, shorter right at the cheekbone), porcelain cool matte skin, oval face with sharp jawline, almond dark-brown eyes with steady unsmiling gaze, straight nose, full lower lip in nude-mauve matte. Wearing black fine-merino turtleneck, black tailored trousers, bare hands with glossy oxblood almond manicure.\n\nStyle: editorial character reference sheet, four panels side by side (front / three-quarter left / profile left / back), consistent identity across all four panels.\n\nComposition: full-body framing in each panel, feet to head, even spacing, subject centered in each panel, neutral standing pose with arms relaxed at sides.\n\nLighting: large softbox overhead and slight fill from camera-left, even exposure across all panels, low-contrast, no dramatic shadows, shadow rolloff soft and cool.\n\nBackground: seamless charcoal #1a1a1a paper, no texture, no gradient.\n\nColor palette: black wardrobe, oxblood nails, charcoal background, porcelain skin — no warm orange.\n\nAvoid: smiling, teeth showing, jewellery, claw gloves, silver gloves, rings, heavy makeup, HDR glow, symmetric bangs, blunt fringe, color shift to warm orange on skin.",
+  "notes_from_user": "",
+  "edits_history": [
+    {
+      "version": 1,
+      "date": "2026-04-18",
+      "change": "Initial draft from character lock + art direction."
+    }
+  ]
+}

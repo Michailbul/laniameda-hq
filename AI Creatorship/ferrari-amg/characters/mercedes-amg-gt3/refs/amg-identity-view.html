@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMG GT3 — Identity Lock</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #e0e0e0; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; padding: 40px; line-height: 1.6; }
+  h1 { font-size: 28px; color: #ff3333; margin-bottom: 8px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 40px; }
+  .section { margin-bottom: 32px; border-left: 3px solid #222; padding-left: 20px; }
+  .section-title { font-size: 13px; color: #ff3333; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: 160px 1fr; gap: 6px 16px; }
+  .label { color: #555; font-size: 13px; }
+  .value { color: #ccc; font-size: 13px; }
+  .value.highlight { color: #ff6644; font-weight: 600; }
+  .value.green { color: #44aa66; }
+  .value.yellow { color: #ccaa22; }
+  .value.red { color: #ff3333; }
+  .value.clean { color: #44aa66; font-style: italic; }
+  .divider { border: none; border-top: 1px solid #1a1a1a; margin: 32px 0; }
+  .prompt-block { background: #111; border: 1px solid #222; border-radius: 6px; padding: 20px; margin-top: 12px; font-size: 13px; color: #bbb; line-height: 1.7; white-space: pre-wrap; }
+  .warning { background: #1a1111; border: 1px solid #331111; border-radius: 6px; padding: 16px; margin-top: 12px; }
+  .warning-title { color: #ff3333; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+  .warning-text { color: #aa6666; font-size: 13px; }
+  .asymmetry { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+  .side-card { border-radius: 6px; padding: 16px; }
+  .side-left { background: #1a1511; border: 1px solid #332a11; }
+  .side-right { background: #111a14; border: 1px solid #112a18; }
+  .side-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; font-weight: 600; }
+  .side-left .side-label { color: #ccaa22; }
+  .side-right .side-label { color: #44aa66; }
+  .side-items { font-size: 13px; color: #999; }
+  .notes { margin-top: 12px; }
+  .note { background: #111; border-left: 2px solid #333; padding: 8px 14px; margin-bottom: 6px; font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+
+<h1>Mercedes-AMG GT3</h1>
+<div class="subtitle">Identity Lock — Ferrari + AMG Project</div>
+
+<div class="section">
+  <div class="section-title">Vehicle</div>
+  <div class="grid">
+    <div class="label">Make</div><div class="value">Mercedes-AMG</div>
+    <div class="label">Model</div><div class="value">GT3</div>
+    <div class="label">Variant</div><div class="value highlight">Full GT3 race spec, not street-legal</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Body</div>
+  <div class="grid">
+    <div class="label">Silhouette</div><div class="value">Wide-body race car, long hood, low roofline, aggressive stance</div>
+    <div class="label">Fenders</div><div class="value">Massively flared front and rear with exposed carbon fiber edges</div>
+    <div class="label">Splitter</div><div class="value">Deep carbon fiber, black mesh intake beneath, dive planes on outer edges</div>
+    <div class="label">Diffuser</div><div class="value">Large carbon fiber, 5–6 vertical fins, center-mounted dual round exhaust tips</div>
+    <div class="label">Side</div><div class="value">Deep side skirts, cooling vents behind rear wheels with vertical louvers</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Paint</div>
+  <div class="grid">
+    <div class="label">Color</div><div class="value highlight">Matte dark charcoal grey, satin finish</div>
+    <div class="label">Behavior</div><div class="value">Absorbs light — no sharp reflections, only soft ambient gradients</div>
+    <div class="label">Carbon accents</div><div class="value">Exposed matte carbon weave on splitter, diffuser, wing, fender edges</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Wing</div>
+  <div class="grid">
+    <div class="label">Type</div><div class="value">Massive GT3, full-width, extends beyond body edges</div>
+    <div class="label">Material</div><div class="value">Carbon fiber with visible weave pattern</div>
+    <div class="label">Mounting</div><div class="value">Angular geometric swan-neck pylons × 2, black</div>
+    <div class="label">Branding</div><div class="value red">Red AMG striped emblem on underside/rear face, large, spanning wing width</div>
+    <div class="label">Endplates</div><div class="value">Large carbon fiber with cutout slots</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Front Face</div>
+  <div class="grid">
+    <div class="label">Grille</div><div class="value">Panamericana vertical slats, black chrome, three-pointed star at center</div>
+    <div class="label">Headlights</div><div class="value">Slim aggressive LEDs with bright white DRL strips, angular contour</div>
+    <div class="label">Hood</div><div class="value">Small German flag tri-stripe (black-red-gold) on upper left edge near fender</div>
+    <div class="label">Splitter detail</div><div class="value">Vertical dive planes on outer edges</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Rear Face</div>
+  <div class="grid">
+    <div class="label">Taillights</div><div class="value">Center high-mount LED brake strip + two wide horizontal LEDs, red-orange glow</div>
+    <div class="label">Trunk</div><div class="value">Small Mercedes three-pointed star emblem, center between taillights</div>
+    <div class="label">Bumper upper</div><div class="value yellow">Two yellow Pirelli logo rectangles, one each side</div>
+    <div class="label">Bumper lower</div><div class="value red">Two red Motul logo rectangles, one each corner</div>
+    <div class="label">Exhaust</div><div class="value">Dual round tips, center-mounted, visible through diffuser fins</div>
+    <div class="label">Plates</div><div class="value highlight">None</div>
+    <div class="label">Race number</div><div class="value highlight">None</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Wheels</div>
+  <div class="grid">
+    <div class="label">Design</div><div class="value">Matte black mesh-pattern — dense multi-spoke web, not simple spokes</div>
+    <div class="label">Center lock</div><div class="value">Silver single nut, flush-mounted</div>
+    <div class="label">Tires</div><div class="value">Pirelli slick racing, no tread pattern, smooth black rubber</div>
+    <div class="label">Brakes</div><div class="value red">Large red AMG-branded calipers visible through mesh, cross-drilled rotors</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Details</div>
+  <div class="grid">
+    <div class="label">Mirrors</div><div class="value">Carbon fiber housings with red accent tips</div>
+    <div class="label">Antenna</div><div class="value">Thin black roof antenna, centered</div>
+    <div class="label">Plates</div><div class="value highlight">None — front or rear</div>
+    <div class="label">Race number</div><div class="value highlight">None — no panel, anywhere</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-title">Side Asymmetry</div>
+  <div class="asymmetry">
+    <div class="side-card side-left">
+      <div class="side-label">Left (Driver) — Minimal Branding</div>
+      <div class="side-items">
+        Vertical German flag stripe (black-yellow-red) on rear pillar, roofline to skirt<br>
+        Small AMG striped emblem + "AMG" text in subtle grey-white on lower door<br>
+        Nothing else on the side panels
+      </div>
+    </div>
+    <div class="side-card side-right">
+      <div class="side-label">Right (Passenger) — Clean</div>
+      <div class="side-items">
+        No text. No logos. No decals.<br>
+        Plain matte charcoal grey body only.
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-title">Prompt-Ready Description</div>
+  <div class="prompt-block">A Mercedes-AMG GT3 race car in matte dark charcoal grey with a satin finish that absorbs light — no sharp reflections, only soft ambient gradients across the panels. Full GT3 spec with massively flared fenders exposing carbon fiber edges, a deep carbon front splitter with black mesh intake and dive planes, and a large carbon rear diffuser with vertical fins housing center-mounted dual round exhaust tips. A massive full-width carbon fiber rear wing with visible weave pattern sits on angular swan-neck pylons, carrying a large red AMG striped emblem on the wing's rear face. Front face: Panamericana vertical slat grille with a three-pointed star at center, slim LED headlights with bright white DRL strips, small German flag tri-stripe on the upper left hood edge. Rear face: center high-mount LED brake strip, two wide horizontal taillights glowing red-orange, small Mercedes star emblem on the trunk, two yellow Pirelli rectangles on the upper bumper, two red Motul rectangles on the lower bumper corners. Driver side (left) carries only two elements: a vertical German flag stripe (black-yellow-red) on the rear pillar from roofline to skirt, and a small AMG striped emblem with "AMG" text in subtle grey-white on the lower door near the side skirt. Passenger side (right) is completely clean — no text, no logos, no decals. Matte black mesh-pattern racing wheels with silver center-lock nuts, large red AMG brake calipers visible through the mesh, Pirelli slick tires. Carbon mirrors with red accent tips. Thin black roof antenna. No license plates. No race number anywhere.</div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-title">Rules</div>
+  <div class="notes">
+    <div class="note">This is a RACE CAR. Wing, splitter, diffuser, wide body, carbon elements are mandatory. Never simplify to "an AMG GT."</div>
+    <div class="note">Wing branding is RED AMG on the WING ELEMENT itself (carbon surface), not on the rear trunk deck.</div>
+    <div class="note">Taillights are horizontal LED strips, NOT round.</div>
+    <div class="note">Exhaust is CENTER through the diffuser, NOT side-exit.</div>
+    <div class="note">Pirelli = yellow rectangles. Motul = red rectangles.</div>
+    <div class="note">Matte finish vs Ferrari's gloss = core visual contrast of this project.</div>
+    <div class="note">No plates. No race number. Explicitly negate both in every prompt.</div>
+  </div>
+</div>
+
+</body>
+</html>

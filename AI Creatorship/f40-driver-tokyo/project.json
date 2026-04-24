@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.1",
+  "name": "f40-driver-tokyo",
+  "working_title": "F40 Driver — Tokyo",
+  "owner": "Michael / laniameda",
+  "version": "1.0",
+  "last_updated": "2026-04-18",
+  "models": {
+    "nbp": "nano-banana-pro",
+    "mj": "midjourney",
+    "sd": "seedance",
+    "kl": "kling",
+    "lu": "luma"
+  }
+}

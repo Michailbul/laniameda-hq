@@ -1,0 +1,100 @@
+{
+  "packName": "IMG Ferrari Drivers - Character Pack",
+  "pillar": "creators",
+  "notes": "Prepared locally because the live laniameda.gallery Convex deployment does not currently expose ingest/folder functions. Save these into a gallery folder with the same name once backend deployment is fixed.",
+  "items": [
+    {
+      "operation": "create",
+      "ingestKey": "creators:img-driver:male-editorial:v1",
+      "promptText": "YOUNG MALE DRIVER (AGE 23), LEAN ATHLETIC BUILD, HANDSOME FASHION-EDITORIAL FACE, CLEAN SKIN, DEFINED JAWLINE, STRONG CHEEKBONES, EXPRESSIVE EYES, STRAIGHT NOSE, COOL RELAXED RACER ENERGY. SHORT SLIGHTLY TOUSLED HAIR, MODERN STYLISH CUT, EFFORTLESS BUT PRECISE.\n\nOUTFIT: FUTURISTIC MECHANIC TECHWEAR WITH MOTORSPORT INFLUENCE — LIGHTWEIGHT TECH JACKET, LAYERED FABRICS, UTILITY STRAPS, SUBTLE HARNESS DETAILS, MODIFIED SHORTS OR TECH PANTS, SMALL PATCHES, STICKERS, HAND-DRAWN DOODLE DETAILS, SLIGHTLY WORN PREMIUM MATERIALS. CLEAN WHITE STUDIO BACKGROUND, SOFT CINEMATIC STUDIO LIGHTING, REALISTIC PHOTOGRAPHY, HIGH-END FASHION EDITORIAL, SHARP DETAIL, PREMIUM TEXTURE.",
+      "allowPromptOnly": true,
+      "promptType": "image_gen",
+      "modelName": "Nano Banana Pro/2",
+      "modelProvider": "google",
+      "workflowType": "asset_recipe",
+      "domain": "img-ferrari-series",
+      "promptSections": {
+        "finalPrompt": "YOUNG MALE DRIVER (AGE 23), LEAN ATHLETIC BUILD, HANDSOME FASHION-EDITORIAL FACE, CLEAN SKIN, DEFINED JAWLINE, STRONG CHEEKBONES, EXPRESSIVE EYES, STRAIGHT NOSE, COOL RELAXED RACER ENERGY. SHORT SLIGHTLY TOUSLED HAIR, MODERN STYLISH CUT, EFFORTLESS BUT PRECISE.\n\nOUTFIT: FUTURISTIC MECHANIC TECHWEAR WITH MOTORSPORT INFLUENCE — LIGHTWEIGHT TECH JACKET, LAYERED FABRICS, UTILITY STRAPS, SUBTLE HARNESS DETAILS, MODIFIED SHORTS OR TECH PANTS, SMALL PATCHES, STICKERS, HAND-DRAWN DOODLE DETAILS, SLIGHTLY WORN PREMIUM MATERIALS. CLEAN WHITE STUDIO BACKGROUND, SOFT CINEMATIC STUDIO LIGHTING, REALISTIC PHOTOGRAPHY, HIGH-END FASHION EDITORIAL, SHARP DETAIL, PREMIUM TEXTURE.",
+        "generationNotes": "Base IMG driver prompt. Non-ethnicity-specific male lead for character exploration."
+      },
+      "promptProfile": {
+        "pillar": "creators",
+        "subjectType": "character",
+        "lighting": "studio",
+        "mood": "editorial",
+        "framing": "full_body",
+        "cameraAngle": "eye_level"
+      },
+      "typedTags": [
+        { "name": "driver character", "category": "content_type", "pillar": "creators", "source": "agent" },
+        { "name": "editorial", "category": "style", "pillar": "creators", "source": "agent" },
+        { "name": "motorsport", "category": "custom", "pillar": "creators", "source": "agent" },
+        { "name": "techwear", "category": "style", "pillar": "creators", "source": "agent" },
+        { "name": "white studio", "category": "lighting", "pillar": "creators", "source": "agent" },
+        { "name": "img ferrari", "category": "custom", "pillar": "creators", "source": "agent" }
+      ]
+    },
+    {
+      "operation": "create",
+      "ingestKey": "creators:img-driver:male-intense:v1",
+      "promptText": "YOUNG MALE DRIVER (AGE 24), LEAN ATHLETIC BUILD, STRIKING MASCULINE FACE, DEFINED JAWLINE, STRONG BROW, EXPRESSIVE EYES, CLEAN SKIN, MODERN HEARTTHROB ENERGY, CALM CONFIDENT PRESENCE.\n\nOUTFIT: FUTURISTIC MECHANIC TECHWEAR WITH MOTORSPORT INFLUENCE — LIGHTWEIGHT TECH JACKET, LAYERED FABRICS, UTILITY STRAPS, SUBTLE HARNESS DETAILS, MODIFIED SHORTS OR TECH PANTS, SMALL PATCHES, STICKERS, HAND-DRAWN DOODLE DETAILS, SLIGHTLY WORN PREMIUM MATERIALS. CLEAN WHITE STUDIO BACKGROUND, SOFT CINEMATIC STUDIO LIGHTING, REALISTIC PHOTOGRAPHY, HIGH-END FASHION EDITORIAL, SHARP DETAIL, PREMIUM TEXTURE.",
+      "allowPromptOnly": true,
+      "promptType": "image_gen",
+      "modelName": "Nano Banana Pro/2",
+      "modelProvider": "google",
+      "workflowType": "asset_recipe",
+      "domain": "img-ferrari-series",
+      "promptSections": {
+        "finalPrompt": "YOUNG MALE DRIVER (AGE 24), LEAN ATHLETIC BUILD, STRIKING MASCULINE FACE, DEFINED JAWLINE, STRONG BROW, EXPRESSIVE EYES, CLEAN SKIN, MODERN HEARTTHROB ENERGY, CALM CONFIDENT PRESENCE.\n\nOUTFIT: FUTURISTIC MECHANIC TECHWEAR WITH MOTORSPORT INFLUENCE — LIGHTWEIGHT TECH JACKET, LAYERED FABRICS, UTILITY STRAPS, SUBTLE HARNESS DETAILS, MODIFIED SHORTS OR TECH PANTS, SMALL PATCHES, STICKERS, HAND-DRAWN DOODLE DETAILS, SLIGHTLY WORN PREMIUM MATERIALS. CLEAN WHITE STUDIO BACKGROUND, SOFT CINEMATIC STUDIO LIGHTING, REALISTIC PHOTOGRAPHY, HIGH-END FASHION EDITORIAL, SHARP DETAIL, PREMIUM TEXTURE.",
+        "generationNotes": "Harder masculine variant of the base IMG driver."
+      },
+      "promptProfile": {
+        "pillar": "creators",
+        "subjectType": "character",
+        "lighting": "studio",
+        "mood": "editorial",
+        "framing": "full_body",
+        "cameraAngle": "eye_level"
+      },
+      "typedTags": [
+        { "name": "driver character", "category": "content_type", "pillar": "creators", "source": "agent" },
+        { "name": "editorial", "category": "style", "pillar": "creators", "source": "agent" },
+        { "name": "masculine", "category": "custom", "pillar": "creators", "source": "agent" },
+        { "name": "motorsport", "category": "custom", "pillar": "creators", "source": "agent" },
+        { "name": "techwear", "category": "style", "pillar": "creators", "source": "agent" },
+        { "name": "img ferrari", "category": "custom", "pillar": "creators", "source": "agent" }
+      ]
+    },
+    {
+      "operation": "create",
+      "ingestKey": "creators:img-driver:ferrari-slavic:v1",
+      "promptText": "YOUNG SLAVIC MALE DRIVER (AGE 24-27), LEAN ATHLETIC BUILD, STRIKING HANDSOME FACE, SHARP JAWLINE, STRONG CHEEKBONES, STRAIGHT NOSE, DEEP-SET LIGHT EYES, CLEAN PALE SKIN, THICK DARK-BLOND TO LIGHT-BROWN HAIR, SHORT MODERN CUT WITH SLIGHT NATURAL MESSINESS. COOL CONFIDENT PRESENCE, QUIET CHARISMA, EFFORTLESS FERRARI-GUY ENERGY, REFINED BUT DANGEROUS.\n\nOUTFIT: LUXURY MOTORSPORT TECHWEAR WITH FERRARI ATTITUDE — FITTED LIGHTWEIGHT RACING JACKET OR TECHNICAL LEATHER LAYER, SUBTLE PERFORMANCE DETAILS, CLEAN LINES, PREMIUM MATERIALS, RESTRAINED STRAPS, MINIMAL BRANDING, DARK TROUSERS OR TECH PANTS, ELEVATED AUTOMOTIVE FASHION STYLING. WHITE STUDIO BACKGROUND, SOFT CINEMATIC STUDIO LIGHTING, REALISTIC PHOTOGRAPHY, HIGH-END FASHION EDITORIAL, PREMIUM TEXTURE, SHARP DETAIL.",
+      "allowPromptOnly": true,
+      "promptType": "image_gen",
+      "modelName": "Nano Banana Pro/2",
+      "modelProvider": "google",
+      "workflowType": "asset_recipe",
+      "domain": "img-ferrari-series",
+      "promptSections": {
+        "finalPrompt": "YOUNG SLAVIC MALE DRIVER (AGE 24-27), LEAN ATHLETIC BUILD, STRIKING HANDSOME FACE, SHARP JAWLINE, STRONG CHEEKBONES, STRAIGHT NOSE, DEEP-SET LIGHT EYES, CLEAN PALE SKIN, THICK DARK-BLOND TO LIGHT-BROWN HAIR, SHORT MODERN CUT WITH SLIGHT NATURAL MESSINESS. COOL CONFIDENT PRESENCE, QUIET CHARISMA, EFFORTLESS FERRARI-GUY ENERGY, REFINED BUT DANGEROUS.\n\nOUTFIT: LUXURY MOTORSPORT TECHWEAR WITH FERRARI ATTITUDE — FITTED LIGHTWEIGHT RACING JACKET OR TECHNICAL LEATHER LAYER, SUBTLE PERFORMANCE DETAILS, CLEAN LINES, PREMIUM MATERIALS, RESTRAINED STRAPS, MINIMAL BRANDING, DARK TROUSERS OR TECH PANTS, ELEVATED AUTOMOTIVE FASHION STYLING. WHITE STUDIO BACKGROUND, SOFT CINEMATIC STUDIO LIGHTING, REALISTIC PHOTOGRAPHY, HIGH-END FASHION EDITORIAL, PREMIUM TEXTURE, SHARP DETAIL.",
+        "generationNotes": "Ferrari-specific lead driver. Slavic look, luxury-racing tone."
+      },
+      "promptProfile": {
+        "pillar": "creators",
+        "subjectType": "character",
+        "lighting": "studio",
+        "mood": "luxury",
+        "framing": "full_body",
+        "cameraAngle": "eye_level"
+      },
+      "typedTags": [
+        { "name": "driver character", "category": "content_type", "pillar": "creators", "source": "agent" },
+        { "name": "ferrari", "category": "custom", "pillar": "creators", "source": "agent" },
+        { "name": "slavic male", "category": "custom", "pillar": "creators", "source": "agent" },
+        { "name": "luxury", "category": "style", "pillar": "creators", "source": "agent" },
+        { "name": "motorsport", "category": "custom", "pillar": "creators", "source": "agent" },
+        { "name": "white studio", "category": "lighting", "pillar": "creators", "source": "agent" }
+      ]
+    }
+  ]
+}
