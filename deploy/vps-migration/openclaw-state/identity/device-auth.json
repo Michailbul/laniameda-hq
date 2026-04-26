@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "deviceId": "<REDACTED>",
+  "tokens": {
+    "operator": {
+      "token": "<REDACTED>",
+      "role": "operator",
+      "scopes": [
+        "operator.admin",
+        "operator.approvals",
+        "operator.pairing",
+        "operator.read",
+        "operator.write"
+      ],
+      "updatedAtMs": 0
+    }
+  }
+}

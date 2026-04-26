@@ -1,0 +1,42 @@
+=== OpenClaw State Directory Inventory ===
+Generated: 2026-04-26T16:29:03Z
+
+8.0K	/root/.openclaw/acpx/
+8.0K	/root/.openclaw/agent-hub/
+119M	/root/.openclaw/agents/
+414M	/root/.openclaw/browser/
+8.0K	/root/.openclaw/canvas/
+456K	/root/.openclaw/completions/
+72K	/root/.openclaw/credentials/
+432K	/root/.openclaw/cron/
+72K	/root/.openclaw/delivery-queue/
+12K	/root/.openclaw/devices/
+26M	/root/.openclaw/extensions/
+80K	/root/.openclaw/flows/
+12K	/root/.openclaw/identity/
+8.0K	/root/.openclaw/locks/
+84K	/root/.openclaw/logs/
+111M	/root/.openclaw/media/
+234M	/root/.openclaw/memory/
+12K	/root/.openclaw/nodes/
+8.0K	/root/.openclaw/qqbot/
+8.0K	/root/.openclaw/settings/
+2.4M	/root/.openclaw/skills/
+8.0K	/root/.openclaw/subagents/
+4.4M	/root/.openclaw/tasks/
+52K	/root/.openclaw/telegram/
+568K	/root/.openclaw/workspace-ann/
+516K	/root/.openclaw/workspace-apex/
+164K	/root/.openclaw/workspace-codex/
+284M	/root/.openclaw/workspace-crea/
+1.5M	/root/.openclaw/workspace-desi/
+106M	/root/.openclaw/workspace-meda/
+1.2M	/root/.openclaw/workspace-persey/
+168K	/root/.openclaw/workspace-pm/
+214M	/root/.openclaw/workspace/
+
+=== Top-level files ===
+-rw-r--r-- 1 root root  1318 Apr  9 23:42 /root/.openclaw/.env
+-rw------- 1 root root   814 Apr 25 13:00 /root/.openclaw/exec-approvals.json
+-rw------- 1 root root 31248 Apr 24 19:10 /root/.openclaw/openclaw.json
+-rw------- 1 root root   189 Apr 26 19:10 /root/.openclaw/update-check.json

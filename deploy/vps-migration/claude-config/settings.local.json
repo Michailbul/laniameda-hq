@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which openclaw 2>/dev/null || command -v openclaw 2>/dev/null || echo \"not found in PATH\")",
+      "Bash(openclaw doctor 2>&1)",
+      "Bash(openclaw docs bindings 2>&1 | head -80)",
+      "Bash(journalctl --user -u openclaw-gateway.service -n 50 --no-pager 2>&1)",
+      "Bash(ps aux | grep -i openclaw | grep -v grep; echo \"---\"; systemctl status openclaw 2>/dev/null || echo \"No systemctl service\"; echo \"---\"; docker ps 2>/dev/null | grep -i openclaw; echo \"---\"; pm2 list 2>/dev/null | grep -i openclaw)",
+      "Bash(id michael:*)",
+      "Bash(su - michael -c \"claude --dangerously-skip-permissions --version 2>&1\")"
+    ]
+  }
+}

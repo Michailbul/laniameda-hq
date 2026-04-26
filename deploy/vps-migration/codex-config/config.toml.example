@@ -1,0 +1,14 @@
+personality =
+model =
+
+[projects."/root"]
+trust_level =
+
+[notice.model_migrations]
+"gpt-5.3-codex" =
+
+[plugins."gmail@openai-curated"]
+enabled =
+
+[plugins."github@openai-curated"]
+enabled =

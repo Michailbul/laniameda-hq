@@ -1,0 +1,3 @@
+gsd-check-update.js
+gsd-context-monitor.js
+gsd-statusline.js

@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "skills": {
+    "Agentic Website Stack": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "d3ea7f14a1eff6b4a5406c9e8d172387a89e0ec0a986779f38620e3333a780f7"
+    },
+    "Laniameda Brand Design": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "c0d2d3426b124f02d0d86dda14b0b66bffedfc880fa358889681cda29b1d3202"
+    },
+    "ai-avatar-realistic": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "5ee09d389249ba6abf5ae12586691f93c09695a960ded6544054879c9206ead5"
+    },
+    "ai-typography": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "1fe122cc354eeb44b438296eb2523e14b765f1d59fbae11fb7e2c9bb2790fa7c"
+    },
+    "ai-video-prompting": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "dd7833f6fc7466e2d01d2ca7342b65dc178d472f65dad72d3537e5f0818e3ee0"
+    },
+    "andromeda-messages": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "2ad962b6158333380cd3b4a56a69cb3e8e9ca12383b717f396bc8448c0513236"
+    },
+    "async-page-transitions": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "5763c142cb453d787c716247e5a8048813821b847daf53da40fd532f271058e5"
+    },
+    "brand-guidelines-builder": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "8c40b7439a8cac521d51d064ea69d7cce44c7eb1ad530d5362352b10ddb59ef7"
+    },
+    "brand-visuals-ai": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "a9ce797b869f2b3de6d2343555339265a30222406ba370433b1be3fdf06d368a"
+    },
+    "browser-use-cloud": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "0e0a4435a7a4438537eeeb13a134eb0425d295e1186776b078e94b72485793ec"
+    },
+    "burst-frame-cars": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "d61be30cdbf2e9034cee5b1bd4bb61165982bb492c2847aaf865611732f20532"
+    },
+    "carousel-brand-system": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "7fab1b5a1086ee1423db0e85d29ece98c9243c85cd0560f97f3b136ff8cdbb9d"
+    },
+    "carousel-designer": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "f7b9bc0ae055f5efc1ce8259a550806c52d2784c582deace2c068d62323c8a07"
+    },
+    "carousel-orchestrator": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "09cd3634e69a5de874390077a894bf9fc3b2f46d767734f64ec7057d96b38c3e"
+    },
+    "character-consistency-character-sheet": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "2a170b879a67861808eafe107db3a8a9e9cba133133a84ec81bd4f5d239df6c2"
+    },
+    "color-grade-transfer": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "18166abba923e004f42a15d8614eee279dac13823fd48163bea750abb37bbc19"
+    },
+    "deepgram-transcribe": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "b2512b158c4e5ed4c1cde9c6c6675a70f6b206f4a3669be80c486c3b1144e287"
+    },
+    "desi-webdesign-practicies-extraction": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "dbfd1d79a3eca70c29203dbbe8982ef3883925e6bf4ab09b7bffff8f867bf244"
+    },
+    "design-inspiration": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "abbf4b170a2b2faa4ce35a8943f8742349b2ac2feb2efb64e6a287db23842e54"
+    },
+    "design-playground": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "eb44ac79a42b87301708f88ccb318bcc63a1240520646806b93540b7d9ef2583"
+    },
+    "frame-vfx-stylizer": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "38f251fe350df4273ddd0dbc7da684cede477aaf927ff5b55613db30cfcd4ff6"
+    },
+    "human-copy-standards": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "6e474b429b53cb5baa506dd969c795b9a740cd42ee365790adb4f20eb4bf47db"
+    },
+    "image-to-prompt": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "af101b73c781b34e82ea135fb78ae7d9c9f9454b4c62244193c98a9f409d0b08"
+    },
+    "instagram-extract": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "60d5df8679eeebea12dac3d6b4a869d5dde0f4ce199e38fc46be40718bc83d69"
+    },
+    "laniameda-carousel-copy": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "f7c944f7d01d2adcd4c3978977489247d69728f3e68e7bc3860218b20c9a4423"
+    },
+    "laniameda-gallery-ingest": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "a72f1627ecde69e42a60c164f4c174105e29754a5c8316758e218bf5be2cd751"
+    },
+    "laniameda-gallery-query": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "ffbd6c42021e8c71dfefc93b282582f6322a586f2a70cd132fb836400743800a"
+    },
+    "laniameda-instagram-carousel-extract": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "a7eb6adc3d03083477dc6b4980c0bed5324ef1bc64f3a301c9cd8d70c7d1b277"
+    },
+    "laniameda-instagram-reel-digest": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "e06f9a60194e34aef91328a7321e8fa454a43a9d55e295596a5206f719e4dbc0"
+    },
+    "laniameda-kb": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "103c29987469fd31ce03659996fae333a1a20b36c366b12cc611807969f1e31a"
+    },
+    "laniameda-storage": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "2c7d4759ea8f62deed71badc8e78cd02d29a9a8b84299776d41f973846895f2d"
+    },
+    "laniameda-x-post": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "6ae6451610898d42bbe09c09fd67717326442697acf1eedaf47187bda85dfdc4"
+    },
+    "laniameda-youtube-digest": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "5222ad374d4d2cc225c43d9edf79030faea142c72eb20878713ee0db46077077"
+    },
+    "mac-disk-cleanup": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "125097b5a5b8ddd50a4de268e03346c1a714fa46522267c4c8b8795473ddc469"
+    },
+    "magnetic-dots-background": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "dcf103ed9c75efd5468a6c06451a96619dcb9727a16d871cbdfac0e10153b98e"
+    },
+    "mj-nb2-pipeline": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "9ac14bb1ab743364510cf6bc4c4f712dfdc6d5916cf1c7e81404f46d19ed6157"
+    },
+    "nano-banana-pro": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "df9c96fd071c235a4e92ccfa1a04fc45920d97096667967b1ae8cc40ae08415e"
+    },
+    "notion-sync": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "f32484afe177f6f0a68ebf31f182899d571103350536979bcb05bfd87807e1d2"
+    },
+    "parallel-deep-research": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "bfda8aa18ce76846a4e8f443b93f3c56f162dd6db00cf7f2aa46a0ba03e5cfea"
+    },
+    "parallel-web-search": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "bd0762a1b57e3fef94175e289a73619c6b62a0213a3964eb2892f382c6f22a96"
+    },
+    "product-visual-generator": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "454daaf040c89637dcfdb1164e3ccd30276a8ed8ba7bf718f9db5aa396330932"
+    },
+    "repo-kanban-pm": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "d0f82361c1b8551ff1bac52c9f1df3fa9b65596cbc6d8f85ecb0b30c12a07693"
+    },
+    "scroll-framer-motion": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "18deb9e5a75d10cf2a7cdb80b5778daa8ab6c8470949d202b802f1f003701b6e"
+    },
+    "scroll-gsap-engine": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "7b3b2ea7f9554190bc30e2a36e4b166b7e822ad986d370e53a0e102ef18bb04e"
+    },
+    "scroll-storytelling": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "c6d15d9435c54dd5e7db48c7bf77c55f7345747e7061644b564810d8225d1f75"
+    },
+    "seedance-director": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "e8e0090ca3b5391f2b3e0928ca459905f6f6f279c1a8ca451d0f4db7df3e9909"
+    },
+    "seedance-prompting": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "21027b18ac8f743e3c3d60986cd23ebc3930cc63d543059c88f95b6bddf9f4d4"
+    },
+    "shader-landing-v0-reference": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "14533c4b0a48a89bdd349b60e4155c9b87f1cbcbb344e1b4f66fe9b0745b6dac"
+    },
+    "supadata": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "1beeca2dfd69c9f3c434cf5115e8fd393897f80acd2123076786dc63bf81e383"
+    },
+    "sync-plugin-skills": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "9c6d1f51738dd880845e04b6f1ac99c76284b3bd411e67eb0555c44ea7f8ca6c"
+    },
+    "typography-master": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "06408ad491d0b049a3d09fb3b6e7e5b074063b94995ab3cdb174b795fd74ebfd"
+    },
+    "viral-psychology-hooks": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "fc351742c38f9f89e0372f95014f7b9e1bfa21161d8c6ccd43b3b2816f8d73c3"
+    },
+    "visual-style-replicator": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "131aff489e850ca82c3cf91d54cb8593d01a987ae9dde587bec4c8846ff00ec5"
+    },
+    "x-tweet-fetcher": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "104c1d662698c99fffc9d7f0a3ef9b56186996c9c07e57bd0cdbbbbdb9867040"
+    },
+    "youtube-digest": {
+      "source": "Michailbul/laniameda-skills",
+      "sourceType": "github",
+      "computedHash": "91c9d1b2d5748a53abff3ff86c85f76596d61bdb7c1f7c0b341bce2aeb4b975f"
+    }
+  }
+}

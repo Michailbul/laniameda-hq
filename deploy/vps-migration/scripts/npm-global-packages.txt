@@ -1,0 +1,18 @@
+/usr/lib
+├── @anthropic-ai/claude-code@2.1.119
+├── @composio/openclaw-plugin@0.0.8
+├── @openai/codex@0.125.0
+├── @playwright/cli@0.1.1
+├── @railway/cli@4.30.5
+├── @xdevplatform/xurl@1.0.3
+├── browser-use-sdk@3.3.0
+├── bun@1.3.10
+├── corepack@0.34.0
+├── mcporter@0.7.3
+├── npm@10.9.4
+├── openclaw@2026.4.23
+├── pm2@6.0.14
+├── tsup@8.5.1
+├── typescript@5.9.3
+└── vercel@50.25.4
+

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "lastTouchedVersion": "str",
+    "lastTouchedAt": "str"
+  },
+  "env": {
+    "shellEnv": "dict",
+    "vars": "dict",
+    "DEEPGRAM_API_KEY": "str"
+  },
+  "wizard": {
+    "lastRunAt": "str",
+    "lastRunVersion": "str",
+    "lastRunCommand": "str",
+    "lastRunMode": "str"
+  },
+  "browser": {
+    "enabled": "bool",
+    "executablePath": "str",
+    "headless": "bool",
+    "noSandbox": "bool",
+    "defaultProfile": "str"
+  },
+  "auth": {
+    "profiles": "dict"
+  },
+  "acp": {
+    "enabled": "bool",
+    "dispatch": "dict",
+    "backend": "str",
+    "defaultAgent": "str",
+    "allowedAgents": "list"
+  },
+  "models": {
+    "mode": "str",
+    "providers": "dict"
+  },
+  "agents": {
+    "defaults": "dict",
+    "list": "list"
+  },
+  "tools": {
+    "profile": "str",
+    "alsoAllow": "list",
+    "web": "dict",
+    "agentToAgent": "dict",
+    "elevated": "dict",
+    "exec": "dict"
+  },
+  "bindings": "list[8]",
+  "messages": {
+    "ackReactionScope": "str"
+  },
+  "commands": {
+    "native": "str",
+    "nativeSkills": "str",
+    "restart": "bool",
+    "ownerDisplay": "str"
+  },
+  "session": {
+    "dmScope": "str"
+  },
+  "hooks": {
+    "enabled": "bool",
+    "path": "str",
+    "token": "str",
+    "allowedAgentIds": "list",
+    "internal": "dict"
+  },
+  "channels": {
+    "telegram": "dict"
+  },
+  "gateway": {
+    "port": "int",
+    "mode": "str",
+    "bind": "str",
+    "controlUi": "dict",
+    "auth": "dict",
+    "tailscale": "dict",
+    "nodes": "dict"
+  },
+  "skills": {
+    "install": "dict",
+    "entries": "dict"
+  },
+  "plugins": {
+    "allow": "list",
+    "entries": "dict",
+    "installs": "dict"
+  }
+}

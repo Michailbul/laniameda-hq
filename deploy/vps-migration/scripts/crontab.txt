@@ -1,0 +1,14 @@
+0 9 */2 * * /usr/bin/python3 /root/.openclaw/workspace/automation/cli_update/check_update_report.py >> /root/.openclaw/workspace/reports/cli-updates/cron.log 2>&1
+
+# Sleep reminder — 10 PM Prague CET (21:00 UTC)
+0 21 * * * curl -s -X POST http://localhost:18789/hooks/agent -H "Authorization: Bearer 5abb8769be8c54302fbbbcb0db0b07d5d9955ae37f4dd0cc" -H "Content-Type: application/json" -d '{"message": "🌙 10 PM. Time to stop. Close the laptop. Sleep is your most important investment — protect it. Good night, Michael.", "deliver": true, "channel": "telegram"}' >> /tmp/sleep-reminder.log 2>&1
+
+# Cancel ApeIntelligence reminder — ~3 weeks after 2026-03-26
+0 10 16 4 * curl -s -X POST http://localhost:18789/hooks/agent -H "Authorization: Bearer 5abb8769be8c54302fbbbcb0db0b07d5d9955ae37f4dd0cc" -H "Content-Type: application/json" -d '{"message": "⚠️ Reminder: cancel ApeIntelligence subscription ($9/mo) — you subscribed on 2026-03-26. Cancel it before you get charged again.", "deliver": true, "channel": "telegram"}' >> /tmp/reminders.log 2>&1
+
+# Cancel Figma reminder — ~3 weeks after 2026-03-25
+0 10 15 4 * curl -s -X POST http://localhost:18789/hooks/agent -H "Authorization: Bearer 5abb8769be8c54302fbbbcb0db0b07d5d9955ae37f4dd0cc" -H "Content-Type: application/json" -d '{"message": "⚠️ Reminder: cancel Figma subscription (€24/mo) — you subscribed on 2026-03-25. Cancel before you get charged again.", "deliver": true, "channel": "telegram"}' >> /tmp/reminders.log 2>&1
+
+
+# Reminder: migrate OpenClaw setup from Hostinger to Railway
+0 11 26 4 * curl -s -X POST http://localhost:18789/hooks/agent -H "Authorization: Bearer 5abb8769be8c54302fbbbcb0db0b07d5d9955ae37f4dd0cc" -H "Content-Type: application/json" -d '{"message": "📦 Reminder: migrate OpenClaw setup from Hostinger VPS to Railway. You noted this on 2026-03-27.", "deliver": true, "channel": "telegram"}' >> /tmp/reminders.log 2>&1

@@ -1,0 +1,22 @@
+services:
+  agent-hub:
+    build: .
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      PORT: "4001"
+      HUB_PASSWORD: "${HUB_PASSWORD:-<REDACTED>}"
+      OPENCLAW_ROOT: "/root/.openclaw"
+      AGENTS_SKILLS_ROOT: "/root/.agents/skills"
+    volumes:
+      - /root/.openclaw:/root/.openclaw
+      - /root/.agents:/root/.agents
+      - /root/.claude:/root/.claude
+      - /root/.codex:/root/.codex
+      - /root/michael/laniameda/laniameda-hq:/root/michael/laniameda/laniameda-hq
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.agent-hub.rule=Host(`agent-hub.srv1439489.hstgr.cloud`)"
+      - "traefik.http.routers.agent-hub.entrypoints=websecure"
+      - "traefik.http.routers.agent-hub.tls.certresolver=letsencrypt"
+      - "traefik.http.services.agent-hub.loadbalancer.server.url=http://127.0.0.1:4001"

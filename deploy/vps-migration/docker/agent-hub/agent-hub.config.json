@@ -1,0 +1,62 @@
+{
+  "openclawRoot": "/root/.openclaw",
+  "agentsSkillsRoot": "/root/.agents/skills",
+  "agents": [
+    {
+      "id": "main",
+      "label": "Lani",
+      "emoji": "🧠",
+      "role": "Chief of Staff",
+      "root": "/root/.openclaw/workspace",
+      "files": ["SOUL.md", "MISSION.md", "MEMORY.md", "AGENTS.md"],
+      "skillsRoot": "/root/.openclaw/workspace/skills"
+    },
+    {
+      "id": "meda",
+      "label": "Meda",
+      "emoji": "📣",
+      "role": "CMO",
+      "root": "/root/.openclaw/workspace-meda",
+      "files": ["SOUL.md", "MISSION.md", "AGENTS.md"],
+      "skillsRoot": "/root/.openclaw/workspace-meda/skills"
+    },
+    {
+      "id": "crea",
+      "label": "Crea",
+      "emoji": "🎨",
+      "role": "Creative Director",
+      "root": "/root/.openclaw/workspace-crea",
+      "files": ["SOUL.md", "MISSION.md", "AGENTS.md"],
+      "skillsRoot": "/root/.openclaw/workspace-crea/skills"
+    },
+    {
+      "id": "persey",
+      "label": "Persey",
+      "emoji": "⚙️",
+      "role": "CTO",
+      "root": "/root/.openclaw/workspace-persey",
+      "files": ["SOUL.md", "MISSION.md", "AGENTS.md"],
+      "skillsRoot": "/root/.openclaw/workspace-persey/skills"
+    },
+    {
+      "id": "desi",
+      "label": "Desi",
+      "emoji": "🎨",
+      "role": "Designer",
+      "root": "/root/.openclaw/workspace-desi",
+      "files": ["SOUL.md", "MISSION.md", "AGENTS.md"],
+      "skillsRoot": "/root/.openclaw/workspace-desi/skills"
+    }
+  ],
+  "skillLibraries": [
+    { "id": "shared", "label": "Shared Skills", "emoji": "🧩", "root": "/root/.openclaw/skills" },
+    { "id": "agents", "label": "Agent Skills", "emoji": "🤖", "root": "/root/.agents/skills" }
+  ],
+  "studio": {
+    "id": "laniameda",
+    "label": "laniameda HQ",
+    "emoji": "🏢",
+    "root": "/root/work/laniameda/laniameda-hq",
+    "files": ["studio/vision.md", "studio/identity.md"]
+  }
+}
